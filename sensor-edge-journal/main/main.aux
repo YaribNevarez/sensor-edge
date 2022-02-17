@@ -1,0 +1,89 @@
+\relax 
+\citation{li2019sensor,dong2018rolling}
+\citation{nagayama2007structural}
+\citation{wang2019deep}
+\citation{kim2017hazardous}
+\citation{nurvitadhi2017can}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
+\newlabel{sec:introduction}{{I}{1}}
+\citation{nevarez2021accelerating}
+\citation{gao2020edgedrnn}
+\citation{meloni2019cnn}
+\citation{goodfellow2016deep}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The workflow of our approach on embedded FPGAs.}}{2}}
+\newlabel{fig:workflow}{{1}{2}}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Related work}{2}}
+\newlabel{sec:related_work}{{II}{2}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Background}{2}}
+\newlabel{sec:background}{{III}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Conv2D tensor operation}{2}}
+\newlabel{eq:conv2D}{{1}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}DepthwiseConv2D tensor operation}{2}}
+\newlabel{eq:dconv2D}{{2}{2}}
+\citation{nevarez2021accelerating}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Base embedded system architecture.}}{3}}
+\newlabel{fig:system_architecture}{{2}{3}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}System Design}{3}}
+\newlabel{sec:system_design}{{IV}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Base embedded system architecture}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Tensor processor}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Hardware architecture of the proposed tensor processor.}}{3}}
+\newlabel{fig:accelerator}{{3}{3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}1}{\fontencoding  {T1}\fontseries  {b}\selectfont  {M}odes of operation}}{3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}2}{\fontencoding  {T1}\fontseries  {b}\selectfont  {D}ot-product with with hybrid custom floating-point and logarithmic dot-product approximation}}{3}}
+\newlabel{sec:dot_product}{{\unhbox \voidb@x \hbox {IV-B}2}{3}}
+\citation{park2009dynamic}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Dot-product hardware module with (a) standard floating-point (IEEE 754) arithmetic, (b) hybrid custom floating-point, and (c) hybrid logarithmic approximation.}}{4}}
+\newlabel{fig:dot_product}{{4}{4}}
+\newlabel{eq:dot_custom_float_latency}{{3}{4}}
+\newlabel{eq:dot_log_latency}{{4}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}3}{\fontencoding  {T1}\fontseries  {b}\selectfont  {O}n-chip memory utilization}}{4}}
+\newlabel{eq:tp_memory}{{5}{4}}
+\newlabel{eq:input_memory}{{6}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Pipelined hardware module for vector dot-product with hybrid custom floating-point, (a) exhibits the initiation interval of 1 clock cycle, and (b) presents the iteration latency of 8 clock cycles. $I_H$ and $I_F$ represent the input and filter buffer indexes, respectively.}}{4}}
+\newlabel{fig:dot_product_hybrid}{{5}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Design parameters for on-chip memory buffers on the TP.}}{4}}
+\newlabel{fig:accelerator_buffers}{{6}{4}}
+\newlabel{eq:filter_memory}{{7}{4}}
+\newlabel{eq:bias_memory}{{8}{4}}
+\newlabel{eq:channel_in_memory}{{9}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Quantized aware training}{5}}
+\newlabel{alg:training}{{1}{5}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Training method.}}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-D}}Embedded software architecture}{5}}
+\newlabel{alg:quantize_training}{{2}{5}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Custom floating-point quantization method.}}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Base embedded software architecture.}}{5}}
+\newlabel{fig:sw_stack}{{7}{5}}
+\bibstyle{IEEEtran}
+\bibdata{../content/bibliography.bib}
+\bibcite{li2019sensor}{1}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Shallow CNN models for case study.}}{6}}
+\newlabel{fig:models}{{8}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Accuracy performance using the proposed training method.}}{6}}
+\newlabel{fig:accuracy}{{9}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Experimental results}{6}}
+\newlabel{sec:experimental_results}{{V}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-A}}Custom floating-point format based on classification accuracy}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-B}}Hardware design exploration}{6}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Hardware resource utilization and estimated power dissipation.}}{6}}
+\newlabel{tab:resource}{{1}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusions}{6}}
+\newlabel{sec:conclusions}{{VI}{6}}
+\@writefile{toc}{\contentsline {section}{REFERENCES}{6}}
+\bibcite{dong2018rolling}{2}
+\bibcite{nagayama2007structural}{3}
+\bibcite{wang2019deep}{4}
+\bibcite{kim2017hazardous}{5}
+\bibcite{nurvitadhi2017can}{6}
+\bibcite{nevarez2021accelerating}{7}
+\bibcite{gao2020edgedrnn}{8}
+\bibcite{meloni2019cnn}{9}
+\bibcite{goodfellow2016deep}{10}
+\bibcite{park2009dynamic}{11}
+\@writefile{toc}{\contentsline {subsection}{Yarib Nevarez}{7}}
+\@writefile{toc}{\contentsline {subsection}{ANDREAS BEERING}{7}}
+\@writefile{toc}{\contentsline {subsection}{Amir Najafi}{7}}
+\@writefile{toc}{\contentsline {subsection}{Ardalan Najafi}{7}}
+\@writefile{toc}{\contentsline {subsection}{KARL-LUDWIG KRIEGER}{7}}
+\@writefile{toc}{\contentsline {subsection}{Alberto Garcia-Ortiz}{8}}

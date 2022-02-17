@@ -1,0 +1,42 @@
+\title {SensorEdge: Design Exploration Framework for Near-Sensor Analytics on Resource-Constrained Embedded FPGAs}
+
+\author{
+	\uppercase{Yarib Nevarez}\authorrefmark{1},
+	\uppercase{Andreas Beering}\authorrefmark{2},	
+	\uppercase{David Rotermund}\authorrefmark{3},
+	\uppercase{Karl-Ludwig Krieger}\authorrefmark{4},
+	\uppercase{Klaus R. Pawelzik}\authorrefmark{5},
+	\uppercase{Alberto Garcia-Ortiz}\authorrefmark{6} \IEEEmembership{Member, IEEE},
+}
+
+\address[1]{Institute of Electrodynamics and Microelectronics, University of Bremen, Bremen 28359, Germany (e-mail: nevarez@item.uni-bremen.de)}
+
+\address[2]{Institute of Electrodynamics and Microelectronics, University of Bremen, Bremen 28359, Germany (e-mail: beering@item.uni-bremen.de)}
+
+\address[3]{Institute for Theoretical Physics, University of Bremen, Bremen 28359, Germany (e-mail: davrot@neuro.uni-bremen.de)}
+
+\address[4]{Institute of Electrodynamics and Microelectronics, University of Bremen, Bremen 28359, Germany (e-mail: krieger@uni-bremen.de)}
+
+\address[5]{Institute for Theoretical Physics, University of Bremen, Bremen 28359, Germany (e-mail: pawelzik@neuro.uni-bremen.de)}
+
+\address[6]{Institute of Electrodynamics and Microelectronics, University of Bremen, Bremen 28359, Germany (e-mail: agarcia@item.uni-bremen.de)}
+
+\tfootnote{This work is funded by the Consejo Nacional de Ciencia y Tecnologia - CONACYT}
+
+\markboth
+{Author \headeretal: Preparation of Papers for IEEE TRANSACTIONS and JOURNALS}
+{Author \headeretal: Preparation of Papers for IEEE TRANSACTIONS and JOURNALS}
+
+\corresp{Corresponding author: Yarib Nevarez (e-mail: nevarez@item.uni-bremen.de).}
+
+\begin{abstract}
+The use of artificial intelligence (AI) in near-sensor analytic applications is entering a new era based on the use of ubiquitous small connected devices. This transformation requires the adoption of low-power design methodologies that reconcile accurate results with approximate computing techniques. In this paper, we present a design methodology for training and deployment of machine learning (ML) models with scalable hardware acceleration targeting low-power and resource-limited embedded FPGAs. The key contributions of this work are the investigation of custom reduced floating-point quantization and its dedicated hardware design for low-power sensor analytics applications. We propose a quantization aware training method that improves the generalization of Convolutional Neural Networks (CNNs) increasing overall accuracy using less than 8-bits floating-point quantization on trainable parameters. As hardware accelerator, we propose a fully customizable tensor processor (TP) implementing a pipelined vector dot-product with hybrid custom floating-point and logarithmic approximation. This methodology reduces energy consumption and resource utilization preserving inference accuracy. We demonstrate our methodology implementing a CNN-based sensor analytic application for structural health monitoring (SHM) for anomaly localization. The embedded hardware/software framework is demonstrated on XC7Z007S. The TP achieves a peak power efficiency of 4.5 GFLOP/s/W, runtime acceleration of 55X, and 808X energy reduction compared to the embedded CPU on the 2D convolution tensor operators.
+\end{abstract}
+
+\begin{keywords}
+Convolutional neural networks, depthwise separable convolution, hardware accelerator, TensorFlow Lite, embedded systems, FPGA, custom floating-point, logarithmic computation, approximate computing
+\end{keywords}
+
+\titlepgskip=-15pt
+
+\maketitle

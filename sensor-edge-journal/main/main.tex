@@ -1,0 +1,65 @@
+\documentclass{ieeeaccess}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+%\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+\usepackage{graphicx}
+\usepackage{textcomp}
+
+\usepackage{enumitem}
+
+%Please add the following packages if necessary:
+\usepackage{booktabs, multirow} % for borders and merged ranges
+\usepackage{soul}% for underlines
+\usepackage[table]{xcolor} % for cell colors
+\usepackage{changepage,threeparttable} % for wide tables
+
+\usepackage[commentmarkup=footnote,final]{changes} % Add changes for correction in text. USE THIS FOR FINAL VERSION
+%\usepackage[commentmarkup=footnote]{changes} % Add changes for correction in text. USE THIS FOR REVIEW
+
+
+\newcommand\Fig[1]{\textbf{Fig.}~\ref{#1}}
+\newcommand\fig[1]{\textbf{Fig.}~\ref{#1}}
+\newcommand\Tab[1]{\textbf{Tab.}~\ref{#1}}
+\newcommand\tab[1]{\textbf{Tab.}~\ref{#1}}
+\newcommand\Equ[1]{\textbf{Eq.}~(\ref{#1})}
+\newcommand\equ[1]{\textbf{Eq.}~(\ref{#1})}
+\newcommand\Sect[1]{\textbf{Sec.}~\ref{#1}}
+\newcommand\sect[1]{\textbf{Sec.}~\ref{#1}}
+\newcommand\Refs[1]{\textbf{Ref.}~\cite{#1}}
+\newcommand\refs[1]{\textbf{Ref.}~\cite{#1}}
+\newcommand\Algo[1]{\textbf{Algorithm}~\ref{#1}}
+\newcommand\algo[1]{\textbf{Algorithm}~\ref{#1}}
+
+
+\newcommand\todo[1]{\textbf{(TODO: {#1}})\\}
+
+% To highlight "review"
+%\newcommand\REVIEW[1]{\hl{#1}}
+%To remove highlight
+\newcommand\REVIEW[1]{{#1}}
+
+\begin{document}
+\history{Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.}
+\doi{10.1109/ACCESS.2017.DOI}
+
+
+\input{../content/abstract.tex}
+\input{../content/introduction.tex}
+\input{../content/related_work.tex}
+\input{../content/background.tex}
+\input{../content/system_design.tex}
+\input{../content/experimental_results.tex}
+\input{../content/conclusions.tex}
+%\input{../content/appendix.tex}
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{../content/bibliography.bib}
+
+\input{../biography/biography.tex}
+
+\EOD
+
+\end{document}
