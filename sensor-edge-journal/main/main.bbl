@@ -53,6 +53,29 @@ Y.~C. Kim, H.-G. Yu, J.-H. Lee, D.-J. Park, and H.-W. Nam, ``Hazardous gas
 J.~Chen and X.~Ran, ``Deep learning with edge computing: A review,''
   \emph{Proceedings of the IEEE}, vol. 107, no.~8, pp. 1655--1674, 2019.
 
+\bibitem{ince2016real}
+T.~Ince, S.~Kiranyaz, L.~Eren, M.~Askar, and M.~Gabbouj, ``Real-time motor
+  fault detection by 1-d convolutional neural networks,'' \emph{IEEE
+  Transactions on Industrial Electronics}, vol.~63, no.~11, pp. 7067--7075,
+  2016.
+
+\bibitem{janssens2016convolutional}
+O.~Janssens, V.~Slavkovikj, B.~Vervisch, K.~Stockman, M.~Loccufier,
+  S.~Verstockt, R.~Van~de Walle, and S.~Van~Hoecke, ``Convolutional neural
+  network based fault detection for rotating machinery,'' \emph{Journal of
+  Sound and Vibration}, vol. 377, pp. 331--345, 2016.
+
+\bibitem{abdeljaber2017real}
+O.~Abdeljaber, O.~Avci, S.~Kiranyaz, M.~Gabbouj, and D.~J. Inman, ``Real-time
+  vibration-based structural damage detection using one-dimensional
+  convolutional neural networks,'' \emph{Journal of Sound and Vibration}, vol.
+  388, pp. 154--170, 2017.
+
+\bibitem{guo2016hierarchical}
+X.~Guo, L.~Chen, and C.~Shen, ``Hierarchical adaptive deep convolution neural
+  network and its application to bearing fault diagnosis,'' \emph{Measurement},
+  vol.~93, pp. 490--502, 2016.
+
 \bibitem{nurvitadhi2017can}
 E.~Nurvitadhi, G.~Venkatesh, J.~Sim, D.~Marr, R.~Huang, J.~Ong Gee~Hock, Y.~T.
   Liew, K.~Srivatsan, D.~Moss, S.~Subhaschandra \emph{et~al.}, ``Can fpgas beat

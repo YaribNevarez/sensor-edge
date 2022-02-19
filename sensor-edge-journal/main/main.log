@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.5.10)  19 FEB 2022 14:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.5.10)  19 FEB 2022 20:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -706,12 +706,12 @@ Underfull \vbox (badness 4024) has occurred while \output is active []
 
 
 
-Package xcolor Warning: Incompatible color definition on input line 14.
+Package xcolor Warning: Incompatible color definition on input line 15.
 
 <logo.png, id=4, 206.27063pt x 53.44969pt>
 File: logo.png Graphic file (type png)
  <use logo.png>
-Package pdftex.def Info: logo.png used on input line 14.
+Package pdftex.def Info: logo.png used on input line 15.
 (pdftex.def)             Requested size: 91.32pt x 23.66309pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -741,18 +741,18 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 File: ../figures/workflow.pdf Graphic file (type pdf)
 
 <use ../figures/workflow.pdf>
-Package pdftex.def Info: ../figures/workflow.pdf used on input line 23.
+Package pdftex.def Info: ../figures/workflow.pdf used on input line 24.
 (pdftex.def)             Requested size: 252.56088pt x 93.81027pt.
 
-Overfull \hbox (9.88733pt too wide) in paragraph at lines 23--24
+Overfull \hbox (9.88733pt too wide) in paragraph at lines 24--25
  [][] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 24.
+Package xcolor Warning: Incompatible color definition on input line 25.
 
 
-Package xcolor Warning: Incompatible color definition on input line 24.
+Package xcolor Warning: Incompatible color definition on input line 25.
 
 ) (../content/related_work.tex
 
@@ -768,16 +768,10 @@ Package xcolor Warning: Incompatible color definition on input line 3.
 
 Package xcolor Warning: Incompatible color definition on input line 8.
 
-
-Underfull \hbox (badness 1454) in paragraph at lines 9--10
-\T1/ptm/n/n/10 The \T1/ptm/m/it/10 Depth-wiseC-onv2D \T1/ptm/n/n/10 ten-sor op-
-er-a-tion is de-scribed in
- []
-
 <notaglinelogo.png, id=16, 169.38281pt x 42.91031pt>
 File: notaglinelogo.png Graphic file (type png)
  <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png used on input line 10.
+Package pdftex.def Info: notaglinelogo.png used on input line 8.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -794,8 +788,13 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[2 <./notaglinelogo.png> <../figures/workflow.pdf>])
-(../content/system_design.tex
+[2 <./notaglinelogo.png> <../figures/workflow.pdf>]
+Underfull \hbox (badness 1454) in paragraph at lines 9--10
+\T1/ptm/n/n/10 The \T1/ptm/m/it/10 Depth-wiseC-onv2D \T1/ptm/n/n/10 ten-sor op-
+er-a-tion is de-scribed in
+ []
+
+) (../content/system_design.tex
 
 Package xcolor Warning: Incompatible color definition on input line 1.
 
@@ -1141,9 +1140,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[7
-
-] (./main.aux)
+[7] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1152,13 +1149,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 7136 strings out of 494953
- 106506 string characters out of 6180977
- 205021 words of memory out of 5000000
- 10205 multiletter control sequences out of 15000+600000
- 99490 words of font info for 133 fonts, out of 8000000 for 9000
+ 7141 strings out of 494953
+ 106600 string characters out of 6180977
+ 208793 words of memory out of 5000000
+ 10210 multiletter control sequences out of 15000+600000
+ 101134 words of font info for 134 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,13n,45p,1640b,876s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,13n,52p,1632b,876s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1173,7 +1170,7 @@ ive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (7 pages, 543640 bytes).
+Output written on main.pdf (7 pages, 545121 bytes).
 PDF statistics:
  339 PDF objects out of 1000 (max. 8388607)
  193 compressed objects within 2 object streams
