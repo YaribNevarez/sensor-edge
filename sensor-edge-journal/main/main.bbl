@@ -49,6 +49,10 @@ Y.~C. Kim, H.-G. Yu, J.-H. Lee, D.-J. Park, and H.-W. Nam, ``Hazardous gas
   vol. 10433.\hskip 1em plus 0.5em minus 0.4em\relax International Society for
   Optics and Photonics, 2017, p. 1043317.
 
+\bibitem{chen2019deep}
+J.~Chen and X.~Ran, ``Deep learning with edge computing: A review,''
+  \emph{Proceedings of the IEEE}, vol. 107, no.~8, pp. 1655--1674, 2019.
+
 \bibitem{nurvitadhi2017can}
 E.~Nurvitadhi, G.~Venkatesh, J.~Sim, D.~Marr, R.~Huang, J.~Ong Gee~Hock, Y.~T.
   Liew, K.~Srivatsan, D.~Moss, S.~Subhaschandra \emph{et~al.}, ``Can fpgas beat

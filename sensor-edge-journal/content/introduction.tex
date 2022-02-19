@@ -3,7 +3,14 @@
 \label{sec:introduction}
 %%% General intro
 
-\IEEEPARstart{T}{he} constant research and the rapid evolution of machine learning (ML) techniques for sensor data analytics represent a promising landscape for Internet-of-Things (IoT) endpoint applications. CNN-based models represent the essential building blocks in 2D pattern recognition tasks. Sensor-based applications such as mechanical fault diagnosis\cite{li2019sensor,dong2018rolling}, structural health monitoring (SHM)\cite{nagayama2007structural}, human activity recognition (HAR) \cite{wang2019deep}, hazardous gas detection\cite{kim2017hazardous} have been powered by CNN-based models in industry and academia.
+\IEEEPARstart{T}{he} constant research and the rapid evolution of machine learning (ML) techniques for sensor data analytics represent a promising landscape for \REVIEW{Edge computing and} Internet-of-Things (IoT) endpoint applications. CNN-based models represent the essential building blocks in 2D pattern recognition tasks. Sensor-based applications such as mechanical fault diagnosis\cite{li2019sensor,dong2018rolling}, structural health monitoring (SHM)\cite{nagayama2007structural}, human activity recognition (HAR) \cite{wang2019deep}, hazardous gas detection\cite{kim2017hazardous} have been powered by CNN-based models in industry and academia.
+
+\REVIEW
+{
+The new paradigm of Edge computing (EC) provides new solutions by bringing analytics closer to the application, preserves sensitive and private data on devices, and provides low latency, energy efficiency, and scalability compared to cloud services while reducing the network bandwidth \mbox{\cite{chen2019deep}}. At the same time, there is an increasing need to use AI-based analytics at the Edge. Today, sensor analytic applications based on machine learning are boosted by advances in models, processing power, and big data.
+
+CNN models have demonstrated potential in sensor data analytics. In particular, this method is applied for feature extraction from 1D time series signals as well as for 2D time-frequency spectrograms. CNN models provide advantages over other models, such as local dependency and scale invariance. However, this method represents a computationally-intensive task.
+}
 
 Due to the high computational demands of CNNs, dedicated hardware is typically required to accelerate execution. In terms of computational throughput, graphics processing units (GPUs) offer the highest performance. In terms of power efficiency, ASIC and FPGA solutions are well known to be more energy efficient (than GPUs) \cite{nurvitadhi2017can}. As a result, numerous commercial ASIC and FPGA accelerators have been proposed, targeting both high performance computing (HPC) for data-centers and embedded systems applications.
 
