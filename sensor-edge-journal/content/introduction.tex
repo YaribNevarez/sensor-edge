@@ -18,7 +18,7 @@ Due to the high computational demands of CNNs, dedicated hardware \REVIEW{archit
 However, most of these CNN accelerators have been implemented to target mid- to high-range FPGAs to compute intensive CNN models such as AlexNet, VGG-16, ResNet-18. The power supply demands, physical dimensions, air cooling and heat sink requirements, and in some cases their elevated costs make these implementations inadequate or even impossible \REVIEW{for near-sensor analytics} on low-power resource-constrained edge devices.
 
 
-\REVIEW{These restrictions motivate researchers to reconsider hardware architectures targeting low-power resource-constrained applications.}
+\REVIEW{These restrictions motivate researchers to reconsider hardware architectures targeting low-power resource-constrained data analytics applications.}
 
 In this article, we present a design exploration framework for floating-point shallow CNN acceleration targeting low-power, resource-limited FPGAs. The embedded software integrates TensorFlow (TF) Lite library with delegate interface to accelerate \emph{Conv2D} tensor operations. We propose a customizable tensor processor (TP) with fully parametrized on-chip memory utilization suitable for small footprint FPGAs. To accelerate floating-point computation, we employ the pipelined hardware vector dot-product with hybrid custom floating-point and logarithmic approximation technique\cite{nevarez2021accelerating}. Further on, we propose a quantize aware training method to \REVIEW{preserve} inference accuracy with low-precision floating-point formats.
 
