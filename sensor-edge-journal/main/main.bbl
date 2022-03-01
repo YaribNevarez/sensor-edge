@@ -88,6 +88,12 @@ E.~Nurvitadhi, G.~Venkatesh, J.~Sim, D.~Marr, R.~Huang, J.~Ong Gee~Hock, Y.~T.
   \emph{Proceedings of the 2017 ACM/SIGDA International Symposium on
   Field-Programmable Gate Arrays}, 2017, pp. 5--14.
 
+\bibitem{hubara2017quantized}
+I.~Hubara, M.~Courbariaux, D.~Soudry, R.~El-Yaniv, and Y.~Bengio, ``Quantized
+  neural networks: Training neural networks with low precision weights and
+  activations,'' \emph{The Journal of Machine Learning Research}, vol.~18,
+  no.~1, pp. 6869--6898, 2017.
+
 \bibitem{nevarez2021accelerating}
 Y.~Nevarez, D.~Rotermund, K.~R. Pawelzik, and A.~Garcia-Ortiz, ``Accelerating
   spike-by-spike neural networks on fpga with hybrid custom floating-point and
