@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2022.2.22)  1 MAR 2022 03:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2022.2.22)  1 MAR 2022 23:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -759,9 +759,6 @@ Package xcolor Warning: Incompatible color definition on input line 28.
 Package xcolor Warning: Incompatible color definition on input line 1.
 
 ) (../content/background.tex
-
-Package xcolor Warning: Incompatible color definition on input line 1.
-
 <notaglinelogo.png, id=16, 169.38281pt x 42.91031pt>
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
@@ -783,6 +780,9 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [2 <./notaglinelogo.png> <../figures/workflow.pdf>]
+
+Package xcolor Warning: Incompatible color definition on input line 1.
+
 
 Package xcolor Warning: Incompatible color definition on input line 3.
 
@@ -840,12 +840,9 @@ Package xcolor Warning: Incompatible color definition on input line 19.
 
 Package xcolor Warning: Incompatible color definition on input line 22.
 
-
-Package xcolor Warning: Incompatible color definition on input line 30.
-
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 33.
+Package pdftex.def Info: notaglinelogo.png  used on input line 27.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -867,6 +864,9 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 pdfTeX warning: /usr/bin/pdflatex (file ../figures/accelerator.pdf): PDF inclus
 ion: multiple pdfs with page group included in a single page
 >]
+
+Package xcolor Warning: Incompatible color definition on input line 30.
+
 <../figures/dot-product_unit.pdf, id=62, 252.945pt x 281.85298pt>
 File: ../figures/dot-product_unit.pdf Graphic file (type pdf)
 <use ../figures/dot-product_unit.pdf>
@@ -923,7 +923,7 @@ Package xcolor Warning: Incompatible color definition on input line 59.
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 80.
+Package pdftex.def Info: notaglinelogo.png  used on input line 76.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -998,28 +998,9 @@ Underfull \hbox (badness 2717) in paragraph at lines 3--4
 \T1/ptm/n/n/10 demon-strated on XC7Z007S with 1 TP in-stance, and
  []
 
-<../figures/models.pdf, id=229, 252.945pt x 130.086pt>
-File: ../figures/models.pdf Graphic file (type pdf)
-<use ../figures/models.pdf>
-Package pdftex.def Info: ../figures/models.pdf  used on input line 9.
-(pdftex.def)             Requested size: 252.56088pt x 129.89113pt.
-
-Overfull \hbox (9.88733pt too wide) in paragraph at lines 9--10
- [][] 
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 10.
-
-
-Package xcolor Warning: Incompatible color definition on input line 10.
-
-
-Package xcolor Warning: Incompatible color definition on input line 14.
-
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 14.
+Package pdftex.def Info: notaglinelogo.png  used on input line 6.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1041,6 +1022,25 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 pdfTeX warning: /usr/bin/pdflatex (file ../figures/sw_stack.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
 >]
+<../figures/models.pdf, id=268, 252.945pt x 130.086pt>
+File: ../figures/models.pdf Graphic file (type pdf)
+<use ../figures/models.pdf>
+Package pdftex.def Info: ../figures/models.pdf  used on input line 9.
+(pdftex.def)             Requested size: 252.56088pt x 129.89113pt.
+
+Overfull \hbox (9.88733pt too wide) in paragraph at lines 9--10
+ [][] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 10.
+
+
+Package xcolor Warning: Incompatible color definition on input line 10.
+
+
+Package xcolor Warning: Incompatible color definition on input line 14.
+
 <../figures/all_models_accuracy.pdf, id=269, 813.74884pt x 130.086pt>
 File: ../figures/all_models_accuracy.pdf Graphic file (type pdf)
 <use ../figures/all_models_accuracy.pdf>
@@ -1071,6 +1071,9 @@ Package xcolor Warning: Incompatible color definition on input line 37.
 Overfull \hbox (5.74869pt too wide) in paragraph at lines 39--48
  [][] 
  []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ) (../content/conclusions.tex
 
@@ -1140,13 +1143,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 7143 strings out of 492982
- 107082 string characters out of 6134896
- 234454 words of memory out of 5000000
- 10489 multiletter control sequences out of 15000+600000
- 95384 words of font info for 122 fonts, out of 8000000 for 9000
+ 7142 strings out of 492982
+ 107070 string characters out of 6134896
+ 235454 words of memory out of 5000000
+ 10488 multiletter control sequences out of 15000+600000
+ 93740 words of font info for 121 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,52p,1586b,878s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,13n,50p,1586b,878s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1161,7 +1164,7 @@ ive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (7 pages, 550831 bytes).
+Output written on main.pdf (7 pages, 551014 bytes).
 PDF statistics:
  339 PDF objects out of 1000 (max. 8388607)
  193 compressed objects within 2 object streams
