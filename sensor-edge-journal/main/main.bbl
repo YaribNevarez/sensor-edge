@@ -88,6 +88,69 @@ E.~Nurvitadhi, G.~Venkatesh, J.~Sim, D.~Marr, R.~Huang, J.~Ong Gee~Hock, Y.~T.
   \emph{Proceedings of the 2017 ACM/SIGDA International Symposium on
   Field-Programmable Gate Arrays}, 2017, pp. 5--14.
 
+\bibitem{wu2021low}
+C.~Wu, M.~Wang, X.~Chu, K.~Wang, and L.~He, ``Low-precision floating-point
+  arithmetic for high-performance fpga-based cnn acceleration,'' \emph{ACM
+  Transactions on Reconfigurable Technology and Systems (TRETS)}, vol.~15,
+  no.~1, pp. 1--21, 2021.
+
+\bibitem{han2015deep}
+S.~Han, H.~Mao, and W.~J. Dally, ``Deep compression: Compressing deep neural
+  networks with pruning, trained quantization and huffman coding,'' \emph{arXiv
+  preprint arXiv:1510.00149}, 2015.
+
+\bibitem{han2015learning}
+S.~Han, J.~Pool, J.~Tran, and W.~Dally, ``Learning both weights and connections
+  for efficient neural network,'' \emph{Advances in neural information
+  processing systems}, vol.~28, 2015.
+
+\bibitem{mei2017200mhz}
+C.~Mei, Z.~Liu, Y.~Niu, X.~Ji, W.~Zhou, and D.~Wang, ``A 200mhz 202.4 gflops@
+  10.8 w vgg16 accelerator in xilinx vx690t,'' in \emph{2017 IEEE Global
+  Conference on Signal and Information Processing (GlobalSIP)}.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, 2017, pp. 784--788.
+
+\bibitem{logicore2012floating}
+I.~LogiCORE, ``Floating-point operator v6. 0,'' \emph{Xilinx Inc}, 2012.
+
+\bibitem{wu2020phoenix}
+C.~Wu, M.~Wang, X.~Li, J.~Lu, K.~Wang, and L.~He, ``Phoenix: A low-precision
+  floating-point quantization oriented architecture for convolutional neural
+  networks,'' \emph{arXiv preprint arXiv:2003.02628}, 2020.
+
+\bibitem{lian2019high}
+X.~Lian, Z.~Liu, Z.~Song, J.~Dai, W.~Zhou, and X.~Ji, ``High-performance
+  fpga-based cnn accelerator with block-floating-point arithmetic,'' \emph{IEEE
+  Transactions on Very Large Scale Integration (VLSI) Systems}, vol.~27, no.~8,
+  pp. 1874--1885, 2019.
+
+\bibitem{lai2017deep}
+L.~Lai, N.~Suda, and V.~Chandra, ``Deep convolutional neural network inference
+  with floating-point weights and fixed-point activations,'' \emph{arXiv
+  preprint arXiv:1703.03073}, 2017.
+
+\bibitem{settle2018quantizing}
+S.~O. Settle, M.~Bollavaram, P.~D'Alberto, E.~Delaye, O.~Fernandez, N.~Fraser,
+  A.~Ng, A.~Sirasao, and M.~Wu, ``Quantizing convolutional neural networks for
+  low-power high-throughput inference engines,'' \emph{arXiv preprint
+  arXiv:1805.07941}, 2018.
+
+\bibitem{courbariaux2015binaryconnect}
+M.~Courbariaux, Y.~Bengio, and J.-P. David, ``Binaryconnect: Training deep
+  neural networks with binary weights during propagations,'' \emph{Advances in
+  neural information processing systems}, vol.~28, 2015.
+
+\bibitem{lin2015neural}
+Z.~Lin, M.~Courbariaux, R.~Memisevic, and Y.~Bengio, ``Neural networks with few
+  multiplications,'' \emph{arXiv preprint arXiv:1510.03009}, 2015.
+
+\bibitem{colangelo2018exploration}
+P.~Colangelo, N.~Nasiri, E.~Nurvitadhi, A.~Mishra, M.~Margala, and K.~Nealis,
+  ``Exploration of low numeric precision deep learning inference using
+  intel{\textregistered} fpgas,'' in \emph{2018 IEEE 26th annual international
+  symposium on field-programmable custom computing machines (FCCM)}.\hskip 1em
+  plus 0.5em minus 0.4em\relax IEEE, 2018, pp. 73--80.
+
 \bibitem{hubara2017quantized}
 I.~Hubara, M.~Courbariaux, D.~Soudry, R.~El-Yaniv, and Y.~Bengio, ``Quantized
   neural networks: Training neural networks with low precision weights and

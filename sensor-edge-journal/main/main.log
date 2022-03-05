@@ -1,34 +1,33 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2022.2.22)  1 MAR 2022 23:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.3)  5 MAR 2022 17:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
-LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
-(./ieeeaccess.cls (./IEEEtran.cls
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14> (./ieeeaccess.cls (./IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
-\@IEEEtrantmpdimenA=\dimen102
-\@IEEEtrantmpdimenB=\dimen103
-\@IEEEtrantmpdimenC=\dimen104
-\@IEEEtrantmpcountA=\count79
-\@IEEEtrantmpcountB=\count80
-\@IEEEtrantmpcountC=\count81
+\@IEEEtrantmpdimenA=\dimen134
+\@IEEEtrantmpdimenB=\dimen135
+\@IEEEtrantmpdimenC=\dimen136
+\@IEEEtrantmpcountA=\count167
+\@IEEEtrantmpcountB=\count168
+\@IEEEtrantmpcountC=\count169
 \@IEEEtrantmptoksA=\toks14
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 503.
-
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5
+03.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
 -- Using PDF output.
-\@IEEEnormalsizeunitybaselineskip=\dimen105
+\@IEEEnormalsizeunitybaselineskip=\dimen137
 -- This is a 10 point document.
-\CLASSINFOnormalsizebaselineskip=\dimen106
-\CLASSINFOnormalsizeunitybaselineskip=\dimen107
-\IEEEnormaljot=\dimen108
+\CLASSINFOnormalsizebaselineskip=\dimen138
+\CLASSINFOnormalsizeunitybaselineskip=\dimen139
+\IEEEnormaljot=\dimen140
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
@@ -79,43 +78,46 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
 
-\IEEEquantizedlength=\dimen109
-\IEEEquantizedlengthdiff=\dimen110
-\IEEEquantizedtextheightdiff=\dimen111
-\IEEEilabelindentA=\dimen112
-\IEEEilabelindentB=\dimen113
-\IEEEilabelindent=\dimen114
-\IEEEelabelindent=\dimen115
-\IEEEdlabelindent=\dimen116
-\IEEElabelindent=\dimen117
-\IEEEiednormlabelsep=\dimen118
-\IEEEiedmathlabelsep=\dimen119
-\IEEEiedtopsep=\skip41
-\c@section=\count82
-\c@subsection=\count83
-\c@subsubsection=\count84
-\c@paragraph=\count85
-\c@IEEEsubequation=\count86
-\abovecaptionskip=\skip42
-\belowcaptionskip=\skip43
-\c@figure=\count87
-\c@table=\count88
-\@IEEEeqnnumcols=\count89
-\@IEEEeqncolcnt=\count90
-\@IEEEsubeqnnumrollback=\count91
-\@IEEEquantizeheightA=\dimen120
-\@IEEEquantizeheightB=\dimen121
-\@IEEEquantizeheightC=\dimen122
-\@IEEEquantizeprevdepth=\dimen123
-\@IEEEquantizemultiple=\count92
-\@IEEEquantizeboxA=\box26
-\@IEEEtmpitemindent=\dimen124
-\IEEEPARstartletwidth=\dimen125
-\c@IEEEbiography=\count93
-\@IEEEtranrubishbin=\box27
-) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
-)
+\IEEEquantizedlength=\dimen141
+\IEEEquantizedlengthdiff=\dimen142
+\IEEEquantizedtextheightdiff=\dimen143
+\IEEEilabelindentA=\dimen144
+\IEEEilabelindentB=\dimen145
+\IEEEilabelindent=\dimen146
+\IEEEelabelindent=\dimen147
+\IEEEdlabelindent=\dimen148
+\IEEElabelindent=\dimen149
+\IEEEiednormlabelsep=\dimen150
+\IEEEiedmathlabelsep=\dimen151
+\IEEEiedtopsep=\skip47
+\c@section=\count170
+\c@subsection=\count171
+\c@subsubsection=\count172
+\c@paragraph=\count173
+\c@IEEEsubequation=\count174
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\c@figure=\count175
+\c@table=\count176
+\@IEEEeqnnumcols=\count177
+\@IEEEeqncolcnt=\count178
+\@IEEEsubeqnnumrollback=\count179
+\@IEEEquantizeheightA=\dimen152
+\@IEEEquantizeheightB=\dimen153
+\@IEEEquantizeheightC=\dimen154
+\@IEEEquantizeprevdepth=\dimen155
+\@IEEEquantizemultiple=\count180
+\@IEEEquantizeboxA=\box45
+\@IEEEtmpitemindent=\dimen156
+\IEEEPARstartletwidth=\dimen157
+\c@IEEEbiography=\count181
+\@IEEEtranrubishbin=\box46
+) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+))
 (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
@@ -125,7 +127,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@tempa@toks=\toks16
 
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))
-\XKV@depth=\count94
+\XKV@depth=\count182
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )){/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -139,9 +141,9 @@ ile
 
 pdfTeX warning: /usr/bin/pdflatex (file t1-giovannistd.map): cannot open font m
 ap file
-\@draftversionrule=\dimen126
+\@draftversionrule=\dimen158
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
@@ -155,31 +157,31 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 Package: spotcolor 2006/11/15 v1.2 Package for adding Spot Color support to pdf
 LaTeX.
  (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 105.
 )
-\thecolorprofile=\count95
-\thecolor=\count96
+\thecolorprofile=\count183
+\thecolor=\count184
 )
 \PANTONE=\toks17
 Package color Info: Redefining color black on input line 135.
-\figbox=\box28
-\titlewidth=\skip44
-\abstractwidth=\skip45
-\c@addrCtr=\count97
-\abstractbox=\box29
-\indexbox=\box30
-\absht=\dimen127
-\kwdht=\dimen128
-\@tempcntc=\count98
-\titlepgskip=\skip46
-\maketitlebox=\box31
+\figbox=\box47
+\titlewidth=\skip50
+\abstractwidth=\skip51
+\c@addrCtr=\count185
+\abstractbox=\box48
+\indexbox=\box49
+\absht=\dimen159
+\kwdht=\dimen160
+\@tempcntc=\count186
+\titlepgskip=\skip52
+\maketitlebox=\box50
 )
 (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
@@ -187,8 +189,8 @@ LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2017/09/02 v2.17a AMS math features
-\@mathmargin=\skip47
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip53
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -197,52 +199,52 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks18
-\ex@=\dimen129
+\ex@=\dimen161
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen130
+\pmbraise@=\dimen162
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count99
-LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count100
-\leftroot@=\count101
-LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count102
-\DOTSCASE@=\count103
-LaTeX Info: Redefining \ldots on input line 472.
-LaTeX Info: Redefining \dots on input line 475.
-LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box32
-\strutbox@=\box33
-\big@size=\dimen131
-LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count104
-\c@MaxMatrixCols=\count105
-\dotsspace@=\muskip10
-\c@parentequation=\count106
-\dspbrk@lvl=\count107
+\inf@bad=\count187
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count188
+\leftroot@=\count189
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count190
+\DOTSCASE@=\count191
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+\big@size=\dimen163
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count192
+\c@MaxMatrixCols=\count193
+\dotsspace@=\muskip16
+\c@parentequation=\count194
+\dspbrk@lvl=\count195
 \tag@help=\toks19
-\row@=\count108
-\column@=\count109
-\maxfields@=\count110
+\row@=\count196
+\column@=\count197
+\maxfields@=\count198
 \andhelp@=\toks20
-\eqnshift@=\dimen132
-\alignsep@=\dimen133
-\tagshift@=\dimen134
-\tagwidth@=\dimen135
-\totwidth@=\dimen136
-\lineht@=\dimen137
+\eqnshift@=\dimen164
+\alignsep@=\dimen165
+\tagshift@=\dimen166
+\tagwidth@=\dimen167
+\totwidth@=\dimen168
+\lineht@=\dimen169
 \@envbody=\toks21
-\multlinegap=\skip48
-\multlinetaggap=\skip49
+\multlinegap=\skip54
+\multlinetaggap=\skip55
 \mathdisplay@stack=\toks22
-LaTeX Info: Redefining \[ on input line 2817.
-LaTeX Info: Redefining \] on input line 2818.
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
@@ -251,6 +253,7 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
@@ -260,21 +263,21 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@ALC@unique=\count111
-\c@ALC@line=\count112
-\c@ALC@rem=\count113
-\c@ALC@depth=\count114
-\ALC@tlm=\skip50
-\algorithmicindent=\skip51
+\c@ALC@unique=\count199
+\c@ALC@line=\count266
+\c@ALC@rem=\count267
+\c@ALC@depth=\count268
+\ALC@tlm=\skip56
+\algorithmicindent=\skip57
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count115
-\algocf@hangindent=\skip52
+\c@AlgoLine=\count269
+\algocf@hangindent=\skip58
 
 (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count116
+\c@checkoddpage=\count270
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
@@ -282,164 +285,86 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 (/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\skiptotal=\skip53
-\skiplinenumber=\skip54
-\skiprule=\skip55
-\skiphlne=\skip56
-\skiptext=\skip57
-\skiplength=\skip58
-\algomargin=\skip59
-\skipalgocfslide=\skip60
-\algowidth=\dimen138
-\inoutsize=\dimen139
-\inoutindent=\dimen140
-\interspacetitleruled=\dimen141
-\interspacealgoruled=\dimen142
-\interspacetitleboxruled=\dimen143
-\algocf@ruledwidth=\skip61
-\algocf@inoutbox=\box34
-\algocf@inputbox=\box35
-\AlCapSkip=\skip62
-\AlCapHSkip=\skip63
-\algoskipindent=\skip64
-\algocf@nlbox=\box36
-\algocf@hangingbox=\box37
-\algocf@untilbox=\box38
-\algocf@skipuntil=\skip65
-\algocf@capbox=\box39
-\algocf@lcaptionbox=\skip66
-\algoheightruledefault=\skip67
-\algoheightrule=\skip68
-\algotitleheightruledefault=\skip69
-\algotitleheightrule=\skip70
-\c@algocfline=\count117
-\c@algocfproc=\count118
-\c@algocf=\count119
-\algocf@algoframe=\box40
-\algocf@algobox=\box41
+\skiptotal=\skip59
+\skiplinenumber=\skip60
+\skiprule=\skip61
+\skiphlne=\skip62
+\skiptext=\skip63
+\skiplength=\skip64
+\algomargin=\skip65
+\skipalgocfslide=\skip66
+\algowidth=\dimen170
+\inoutsize=\dimen171
+\inoutindent=\dimen172
+\interspacetitleruled=\dimen173
+\interspacealgoruled=\dimen174
+\interspacetitleboxruled=\dimen175
+\algocf@ruledwidth=\skip67
+\algocf@inoutbox=\box53
+\algocf@inputbox=\box54
+\AlCapSkip=\skip68
+\AlCapHSkip=\skip69
+\algoskipindent=\skip70
+\algocf@nlbox=\box55
+\algocf@hangingbox=\box56
+\algocf@untilbox=\box57
+\algocf@skipuntil=\skip71
+\algocf@capbox=\box58
+\algocf@lcaptionbox=\skip72
+\algoheightruledefault=\skip73
+\algoheightrule=\skip74
+\algotitleheightruledefault=\skip75
+\algotitleheightrule=\skip76
+\c@algocfline=\count271
+\c@algocfproc=\count272
+\c@algocf=\count273
+\algocf@algoframe=\box59
+\algocf@algobox=\box60
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
-\Gin@req@height=\dimen144
-\Gin@req@width=\dimen145
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen176
+\Gin@req@width=\dimen177
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
-Package textcomp Info: Sub-encoding information:
-(textcomp)               5 = only ISO-Adobe without \textcurrency
-(textcomp)               4 = 5 + \texteuro
-(textcomp)               3 = 4 + \textohm
-(textcomp)               2 = 3 + \textestimated + \textcurrency
-(textcomp)               1 = TS1 - \textcircled - \t
-(textcomp)               0 = TS1 (full)
-(textcomp)             Font families with sub-encoding setting implement
-(textcomp)             only a restricted character set as indicated.
-(textcomp)             Family '?' is the default used for unknown fonts.
-(textcomp)             See the documentation for details.
-Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
-File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
-)
-LaTeX Info: Redefining \oldstylenums on input line 334.
-Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
-Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
-Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
-Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
-Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
-Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
-Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
-Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
-Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
-Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
-Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
-Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
-Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
-Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
-Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
-Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
-Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
-Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
-Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
-Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
-Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
-Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
-Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
-Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
-
-Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
-Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
-Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
-Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
-Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
-Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
-Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
-Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
-Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
-Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
-Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
-Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
-Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
-Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
-Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
-Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
-Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
-Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
-Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
-Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
-Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
-Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
-Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
-Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
-Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
-Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
-Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
-Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
-Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
-Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
-Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
-Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
-Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
-Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
-Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
-Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
-Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
 (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
-Package: enumitem 2011/09/28 v3.5.2 Customized lists
+Package: enumitem 2019/06/20 v3.9 Customized lists
 \enitkv@toks@=\toks23
-\labelindent=\skip71
-\enit@outerparindent=\dimen146
+\labelindent=\skip77
+\enit@outerparindent=\dimen178
 \enit@toks=\toks24
-\enit@inbox=\box42
-\enitdp@description=\count120
+\enit@inbox=\box61
+\enit@count@id=\count274
+\enitdp@description=\count275
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
-Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen147
-\lightrulewidth=\dimen148
-\cmidrulewidth=\dimen149
-\belowrulesep=\dimen150
-\belowbottomsep=\dimen151
-\aboverulesep=\dimen152
-\abovetopsep=\dimen153
-\cmidrulesep=\dimen154
-\cmidrulekern=\dimen155
-\defaultaddspace=\dimen156
-\@cmidla=\count121
-\@cmidlb=\count122
-\@aboverulesep=\dimen157
-\@belowrulesep=\dimen158
-\@thisruleclass=\count123
-\@lastruleclass=\count124
-\@thisrulewidth=\dimen159
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen179
+\lightrulewidth=\dimen180
+\cmidrulewidth=\dimen181
+\belowrulesep=\dimen182
+\belowbottomsep=\dimen183
+\aboverulesep=\dimen184
+\abovetopsep=\dimen185
+\cmidrulesep=\dimen186
+\cmidrulekern=\dimen187
+\defaultaddspace=\dimen188
+\@cmidla=\count276
+\@cmidlb=\count277
+\@aboverulesep=\dimen189
+\@belowrulesep=\dimen190
+\@thisruleclass=\count278
+\@lastruleclass=\count279
+\@thisrulewidth=\dimen191
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
-Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
-\multirow@colwidth=\skip72
-\multirow@cntb=\count125
-\multirow@dima=\skip73
-\bigstrutjot=\dimen160
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip78
+\multirow@cntb=\count280
+\multirow@dima=\skip79
+\bigstrutjot=\dimen192
 )
 (/usr/share/texlive/texmf-dist/tex/latex/soul/soul.sty
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
@@ -448,10 +373,10 @@ Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@cmds=\toks27
 \SOUL@buffer=\toks28
 \SOUL@token=\toks29
-\SOUL@spaceskip=\skip74
-\SOUL@ttwidth=\dimen161
-\SOUL@uldp=\dimen162
-\SOUL@ulht=\dimen163
+\SOUL@spaceskip=\skip80
+\SOUL@ttwidth=\dimen193
+\SOUL@uldp=\dimen194
+\SOUL@ulht=\dimen195
 )
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -462,21 +387,23 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
 (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
-Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
-\col@sep=\dimen164
-\extrarowheight=\dimen165
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen196
+\ar@mcellbox=\box62
+\extrarowheight=\dimen197
 \NC@list=\toks30
-\extratabsurround=\skip75
-\backup@length=\skip76
+\extratabsurround=\skip81
+\backup@length=\skip82
+\ar@cellbox=\box63
 )
 \everycr=\toks31
-\minrowclearance=\skip77
+\minrowclearance=\skip83
 )
 LaTeX Info: Redefining \color on input line 709.
-\rownum=\count126
+\rownum=\count281
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -489,95 +416,102 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/changepage/changepage.sty
 Package: changepage 2009/10/20 v1.0c check page and change page layout
-\c@cp@cntr=\count127
-\cp@tempcnt=\count128
+\c@cp@cntr=\count282
+\cp@tempcnt=\count283
 LaTeX Info: Redefining \checkoddpage on input line 59.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box43
+\@tempboxb=\box64
 )
 (/usr/share/texlive/texmf-dist/tex/latex/changes/changes.sty
-Package: changes 2015/04/27 v2.0.4 changes package
+Package: changes 2019/11/17 v3.2.1 changes package
 
-*** changes package 2015/04/27 v2.0.4 ***
+*** changes package 2019/11/17 v3.2.1 ***
 (/usr/share/texlive/texmf-dist/tex/latex/xifthen/xifthen.sty
 Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count129
-\calc@Bcount=\count130
-\calc@Adimen=\dimen166
-\calc@Bdimen=\dimen167
-\calc@Askip=\skip78
-\calc@Bskip=\skip79
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count284
+\calc@Bcount=\count285
+\calc@Adimen=\dimen198
+\calc@Bdimen=\dimen199
+\calc@Askip=\skip84
+\calc@Bskip=\skip85
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count131
-\calc@Cskip=\skip80
+\calc@Ccount=\count286
+\calc@Cskip=\skip86
 )
 (/usr/share/texlive/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
-Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
+Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
 ))
-
-Package changes Warning: Unknown option 'commentmarkup=footnote' on input line 
-248.
-
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count287
+\decimalpart=\count288
+)
+Package: xstring 2019/02/06 v1.83 String manipulations (CT)
+)
+ulem-option 'normalem,normalbf', passed to package ulem
+truncate-option 'breakall,fit', passed to package truncate
+changes-option 'commentmarkup=footnote'
 changes-option 'final'
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/pdfcolmk.sty
-Package: pdfcolmk 2016/05/16 v1.3 Color support for pdfTeX via marks (HO)
-Package pdfcolmk Info: The color stack of pdfTeX >= 1.40 is used. Therefore
-(pdfcolmk)             this package is not necessary and not loaded.
-)
 (/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box44
-\UL@hyphenbox=\box45
-\UL@skip=\skip81
+\UL@box=\box65
+\UL@hyphenbox=\box66
+\UL@skip=\skip87
 \UL@hook=\toks32
-\UL@height=\dimen168
-\UL@pe=\count132
-\UL@pixel=\dimen169
-\ULC@box=\box46
-Package: ulem 2012/05/18
-\ULdepth=\dimen170
+\UL@height=\dimen256
+\UL@pe=\count289
+\UL@pixel=\dimen257
+\ULC@box=\box67
+Package: ulem 2019/11/18
+\ULdepth=\dimen258
 )
-\c@Changes@AuthorCount=\count133
-\c@Changes@Author=\count134
-\c@Changes@AddCount=\count135
-\c@Changes@DeleteCount=\count136
-\c@Changes@ReplaceCount=\count137
+\c@Changes@AuthorCount=\count290
+\c@Changes@Author=\count291
+\c@Changes@addedCount=\count292
+\c@Changes@deletedCount=\count293
+\c@Changes@replacedCount=\count294
+\c@Changes@highlightCount=\count295
+\c@Changes@commentCount=\count296
+\c@authorcommentcount=\count297
 
 (/usr/share/texlive/texmf-dist/tex/latex/truncate/truncate.sty
 Package: truncate 2001/08/20  ver 3.6
 \@Trunc@RestHyph=\toks33
 )
-\Changes@Len@summ=\skip82
-) (./main.aux)
+\Changes@truncate@width=\skip88
+\Changes@summary@width=\skip89
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count298
+\l__pdf_internal_box=\box68
+)
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
 LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 43.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
-File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    ... okay on input line 43.
 
 -- Lines per column: 56 (exact).
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 43.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 43
+.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
@@ -587,64 +521,51 @@ LaTeX Font Warning: Font shape `T1/ptm/n/n' undefined
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count138
-\scratchdimen=\dimen171
-\scratchbox=\box47
-\nofMPsegments=\count139
-\nofMParguments=\count140
+\scratchcounter=\count299
+\scratchdimen=\dimen259
+\scratchbox=\box69
+\nofMPsegments=\count300
+\nofMParguments=\count301
 \everyMPshowfont=\toks34
-\MPscratchCnt=\count141
-\MPscratchDim=\dimen172
-\MPnumerator=\count142
-\makeMPintoPDFobject=\count143
+\MPscratchCnt=\count302
+\MPscratchDim=\dimen260
+\MPnumerator=\count303
+\makeMPintoPDFobject=\count304
 \everyMPtoPDFconversion=\toks35
-) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
 )
-Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
+85.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
+(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -660,7 +581,8 @@ Package pdftex.def Info: bullet.png  used on input line 12.
 
 Package xcolor Warning: Incompatible color definition on input line 12.
 
-LaTeX Font Info:    Try loading font information for T1+phv on input line 12.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 12
+.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
@@ -691,11 +613,13 @@ Overfull \hbox (9.2679pt too wide) in paragraph at lines 22--22
 []  
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
+
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -704,15 +628,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 Package xcolor Warning: Incompatible color definition on input line 2.
 
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 6.
 
-Package xcolor Warning: Incompatible color definition on input line 17.
+Underfull \vbox (badness 4024) has occurred while \output is active []
+
+
+
+Package xcolor Warning: Incompatible color definition on input line 16.
 
 <logo.png, id=4, 206.27063pt x 53.44969pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
-Package pdftex.def Info: logo.png  used on input line 17.
+Package pdftex.def Info: logo.png  used on input line 16.
 (pdftex.def)             Requested size: 91.32pt x 23.66309pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -741,28 +667,30 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 <../figures/workflow.pdf, id=15, 252.945pt x 93.951pt>
 File: ../figures/workflow.pdf Graphic file (type pdf)
 <use ../figures/workflow.pdf>
-Package pdftex.def Info: ../figures/workflow.pdf  used on input line 27.
+Package pdftex.def Info: ../figures/workflow.pdf  used on input line 26.
 (pdftex.def)             Requested size: 252.56088pt x 93.81027pt.
 
-Overfull \hbox (9.88733pt too wide) in paragraph at lines 27--28
+Overfull \hbox (9.88733pt too wide) in paragraph at lines 26--27
  [][] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 28.
+Package xcolor Warning: Incompatible color definition on input line 27.
 
 
-Package xcolor Warning: Incompatible color definition on input line 28.
+Package xcolor Warning: Incompatible color definition on input line 27.
 
 ) (../content/related_work.tex
 
 Package xcolor Warning: Incompatible color definition on input line 1.
 
-) (../content/background.tex
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
 <notaglinelogo.png, id=16, 169.38281pt x 42.91031pt>
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 1.
+Package pdftex.def Info: notaglinelogo.png  used on input line 9.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -780,6 +708,13 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [2 <./notaglinelogo.png> <../figures/workflow.pdf>]
+
+Package xcolor Warning: Incompatible color definition on input line 11.
+
+
+Package xcolor Warning: Incompatible color definition on input line 14.
+
+) (../content/background.tex
 
 Package xcolor Warning: Incompatible color definition on input line 1.
 
@@ -802,7 +737,7 @@ Package xcolor Warning: Incompatible color definition on input line 1.
 
 Package xcolor Warning: Incompatible color definition on input line 5.
 
-<../figures/system_design.pdf, id=37, 252.945pt x 195.129pt>
+<../figures/system_design.pdf, id=38, 252.945pt x 195.129pt>
 File: ../figures/system_design.pdf Graphic file (type pdf)
 <use ../figures/system_design.pdf>
 Package pdftex.def Info: ../figures/system_design.pdf  used on input line 10.
@@ -821,7 +756,7 @@ Package xcolor Warning: Incompatible color definition on input line 11.
 
 Package xcolor Warning: Incompatible color definition on input line 14.
 
-<../figures/accelerator.pdf, id=38, 252.945pt x 216.81pt>
+<../figures/accelerator.pdf, id=39, 252.945pt x 216.81pt>
 File: ../figures/accelerator.pdf Graphic file (type pdf)
 <use ../figures/accelerator.pdf>
 Package pdftex.def Info: ../figures/accelerator.pdf  used on input line 18.
@@ -842,7 +777,7 @@ Package xcolor Warning: Incompatible color definition on input line 22.
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 27.
+Package pdftex.def Info: notaglinelogo.png  used on input line 25.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -859,15 +794,11 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[3 <../figures/system_design.pdf> <../figures/accelerator.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ../figures/accelerator.pdf): PDF inclus
-ion: multiple pdfs with page group included in a single page
->]
+[3 <../figures/system_design.pdf>]
 
 Package xcolor Warning: Incompatible color definition on input line 30.
 
-<../figures/dot-product_unit.pdf, id=62, 252.945pt x 281.85298pt>
+<../figures/dot-product_unit.pdf, id=56, 252.945pt x 281.85298pt>
 File: ../figures/dot-product_unit.pdf Graphic file (type pdf)
 <use ../figures/dot-product_unit.pdf>
 Package pdftex.def Info: ../figures/dot-product_unit.pdf  used on input line 42
@@ -884,7 +815,7 @@ Package xcolor Warning: Incompatible color definition on input line 44.
 
 Package xcolor Warning: Incompatible color definition on input line 44.
 
-<../figures/dot_product_hybrid.pdf, id=63, 252.945pt x 252.945pt>
+<../figures/dot_product_hybrid.pdf, id=57, 252.945pt x 252.945pt>
 File: ../figures/dot_product_hybrid.pdf Graphic file (type pdf)
 <use ../figures/dot_product_hybrid.pdf>
 Package pdftex.def Info: ../figures/dot_product_hybrid.pdf  used on input line 
@@ -904,26 +835,9 @@ Package xcolor Warning: Incompatible color definition on input line 51.
 
 Package xcolor Warning: Incompatible color definition on input line 54.
 
-<../figures/accelerator_buffers.pdf, id=64, 252.945pt x 144.54pt>
-File: ../figures/accelerator_buffers.pdf Graphic file (type pdf)
-<use ../figures/accelerator_buffers.pdf>
-Package pdftex.def Info: ../figures/accelerator_buffers.pdf  used on input line
- 58.
-(pdftex.def)             Requested size: 252.56088pt x 144.32349pt.
-
-Overfull \hbox (9.88733pt too wide) in paragraph at lines 58--59
- [][] 
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 59.
-
-
-Package xcolor Warning: Incompatible color definition on input line 59.
-
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 76.
+Package pdftex.def Info: notaglinelogo.png  used on input line 54.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -940,11 +854,32 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[4 <../figures/dot-product_unit.pdf> <../figures/dot_product_hybrid.pdf
+[4 <../figures/accelerator.pdf> <../figures/dot-product_unit.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ../figures/dot-product_unit.pdf): PDF i
+nclusion: multiple pdfs with page group included in a single page
+> <../figures/dot_product_hybrid.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ../figures/dot_product_hybrid.pdf): PDF
  inclusion: multiple pdfs with page group included in a single page
 >]
+<../figures/accelerator_buffers.pdf, id=227, 252.945pt x 144.54pt>
+File: ../figures/accelerator_buffers.pdf Graphic file (type pdf)
+<use ../figures/accelerator_buffers.pdf>
+Package pdftex.def Info: ../figures/accelerator_buffers.pdf  used on input line
+ 58.
+(pdftex.def)             Requested size: 252.56088pt x 144.32349pt.
+
+Overfull \hbox (9.88733pt too wide) in paragraph at lines 58--59
+ [][] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 59.
+
+
+Package xcolor Warning: Incompatible color definition on input line 59.
+
 
 Package xcolor Warning: Incompatible color definition on input line 83.
 
@@ -984,23 +919,11 @@ Package xcolor Warning: Incompatible color definition on input line 157.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
 Package xcolor Warning: Incompatible color definition on input line 160.
-
-) (../content/experimental_results.tex
-
-Package xcolor Warning: Incompatible color definition on input line 1.
-
-
-Underfull \hbox (badness 2717) in paragraph at lines 3--4
-\T1/ptm/n/n/10 demon-strated on XC7Z007S with 1 TP in-stance, and
- []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 6.
+Package pdftex.def Info: notaglinelogo.png  used on input line 166.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1017,12 +940,16 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[5 <../figures/accelerator_buffers.pdf> <../figures/sw_stack.pdf
+[5 <../figures/accelerator_buffers.pdf>]) (../content/experimental_results.tex
 
-pdfTeX warning: /usr/bin/pdflatex (file ../figures/sw_stack.pdf): PDF inclusion
-: multiple pdfs with page group included in a single page
->]
-<../figures/models.pdf, id=268, 252.945pt x 130.086pt>
+Package xcolor Warning: Incompatible color definition on input line 1.
+
+
+Underfull \hbox (badness 2717) in paragraph at lines 3--4
+\T1/ptm/n/n/10 demon-strated on XC7Z007S with 1 TP in-stance, and
+ []
+
+<../figures/models.pdf, id=262, 252.945pt x 130.086pt>
 File: ../figures/models.pdf Graphic file (type pdf)
 <use ../figures/models.pdf>
 Package pdftex.def Info: ../figures/models.pdf  used on input line 9.
@@ -1041,7 +968,7 @@ Package xcolor Warning: Incompatible color definition on input line 10.
 
 Package xcolor Warning: Incompatible color definition on input line 14.
 
-<../figures/all_models_accuracy.pdf, id=269, 813.74884pt x 130.086pt>
+<../figures/all_models_accuracy.pdf, id=263, 813.74884pt x 130.086pt>
 File: ../figures/all_models_accuracy.pdf Graphic file (type pdf)
 <use ../figures/all_models_accuracy.pdf>
 Package pdftex.def Info: ../figures/all_models_accuracy.pdf  used on input line
@@ -1064,25 +991,9 @@ Package xcolor Warning: Incompatible color definition on input line 27.
 
 LaTeX Warning: Reference `tab:perf' on page 6 undefined on input line 28.
 
-
-Package xcolor Warning: Incompatible color definition on input line 37.
-
-
-Overfull \hbox (5.74869pt too wide) in paragraph at lines 39--48
- [][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) (../content/conclusions.tex
-
-Package xcolor Warning: Incompatible color definition on input line 1.
-
-)
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 56.
+Package pdftex.def Info: notaglinelogo.png  used on input line 32.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1099,21 +1010,70 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[6 <../figures/models.pdf> <../figures/all_models_accuracy.pdf
+[6 <../figures/sw_stack.pdf> <../figures/models.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ../figures/models.pdf): PDF inclusion: 
+multiple pdfs with page group included in a single page
+> <../figures/all_models_accuracy.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ../figures/all_models_accuracy.pdf): PD
 F inclusion: multiple pdfs with page group included in a single page
->] (./main.bbl
+>]
+
+Package xcolor Warning: Incompatible color definition on input line 37.
+
+
+Overfull \hbox (5.74869pt too wide) in paragraph at lines 39--48
+ [][] 
+ []
+
+) (../content/conclusions.tex
+
+Package xcolor Warning: Incompatible color definition on input line 1.
+
+) (./main.bbl
 
 Package xcolor Warning: Incompatible color definition on input line 2.
 
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
+50.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
+
+LaTeX Font Warning: Font shape `TS1/ptm/n/n' undefined
+(Font)              using `TS1/ptm/m/n' instead
+(Font)              for symbol `textregistered' on input line 150.
+
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 170.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[7])
 File: bullet.png Graphic file (type png)
 <use bullet.png>
 Package pdftex.def Info: bullet.png  used on input line 63.
 (pdftex.def)             Requested size: 5.0pt x 14.6871pt.
 \Changes@OutFile=\write3
 \openout3 = `main.soc'.
+
+\tf@loc=\write4
+\openout4 = `main.loc'.
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
@@ -1134,7 +1094,9 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[7] (./main.aux)
+[8
+
+] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1143,13 +1105,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 7142 strings out of 492982
- 107070 string characters out of 6134896
- 235454 words of memory out of 5000000
- 10488 multiletter control sequences out of 15000+600000
- 93740 words of font info for 121 fonts, out of 8000000 for 9000
+ 7569 strings out of 481239
+ 113838 string characters out of 5920378
+ 429854 words of memory out of 5000000
+ 22608 multiletter control sequences out of 15000+600000
+ 624396 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,50p,1586b,878s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,13n,55p,1686b,875s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1164,10 +1126,10 @@ ive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (7 pages, 551014 bytes).
+Output written on main.pdf (8 pages, 555002 bytes).
 PDF statistics:
- 339 PDF objects out of 1000 (max. 8388607)
- 193 compressed objects within 2 object streams
+ 342 PDF objects out of 1000 (max. 8388607)
+ 195 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  69 words of extra memory for PDF output out of 10000 (max. 10000000)
 

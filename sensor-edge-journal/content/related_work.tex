@@ -1,8 +1,15 @@
 \section{Related work}
 \label{sec:related_work}
+\subsection{Hardware implementations targeting resource-constrained FPGAs}
 In the literature we find plenty of hardware architectures
 dedicated to CNN accelerators implemented in FPGA and ASIC designs. However the related work on low-power and resource-limited devices is reduced. To the best of our knowledge, two research papers have been reported hardware implementations targeting XC7Z007S as the smallest device from Zynq-7000 SoC Family.
 
 In \cite{gao2020edgedrnn}, Chang Gao et al., presented EdgeDRNN, a recurrent neural network (RNN) accelerator for edge inference. This implementation adopts the spiking neural network (SNN) inspired delta network algorithm to exploit temporal sparsity in RNNs. However, this hardware architecture is dedicated to RNNs.
 
 In \cite{meloni2019cnn}, Paolo Meloni et al., presented a CNN inference accelerator for compact and cost-optimized devices. This implementation uses fixed-point for processing light-weight CNN architectures with a power efficiency between 2.49 to 2.98 GOPS/s/W.
+
+\subsection{Hybrid custom floating-point quantization}
+Reference \mbox{\cite{lai2017deep}} proposed a mixed data representation with floating-point for weights and fixed-point for activations (e.g., outputs of a layer). Reference \mbox{\cite{settle2018quantizing}} developed an 8-bit floating-point quantization scheme, which needs an extra inference batch to compensate for the quantization error. However, Reference \mbox{\cite{lai2017deep}} and Reference \mbox{\cite{settle2018quantizing}} did not present a circuit design for their approaches.
+
+\subsubsection{FPGA implementations}
+Reference \mbox{\cite{mei2017200mhz}} implements 16-bit floating-point in contrast to the 32-bit commonly used for computing. However, this implementation is inadequate for embedded applications, since the target device is a PCIe architecture. The 8-bit floating-point is also tried in FPGA \mbox{\cite{wu2021low}}. Another 8-bit arithmetic, called block floating-point (BFP), is also applied \mbox{\cite{lian2019high}}, where a parameter has its own mantissa but shares a same exponent for one data block.
