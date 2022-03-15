@@ -110,30 +110,11 @@ C.~Mei, Z.~Liu, Y.~Niu, X.~Ji, W.~Zhou, and D.~Wang, ``A 200mhz 202.4 gflops@
   Conference on Signal and Information Processing (GlobalSIP)}.\hskip 1em plus
   0.5em minus 0.4em\relax IEEE, 2017, pp. 784--788.
 
-\bibitem{logicore2012floating}
-I.~LogiCORE, ``Floating-point operator v6. 0,'' \emph{Xilinx Inc}, 2012.
-
-\bibitem{wu2020phoenix}
-C.~Wu, M.~Wang, X.~Li, J.~Lu, K.~Wang, and L.~He, ``Phoenix: A low-precision
-  floating-point quantization oriented architecture for convolutional neural
-  networks,'' \emph{arXiv preprint arXiv:2003.02628}, 2020.
-
 \bibitem{lian2019high}
 X.~Lian, Z.~Liu, Z.~Song, J.~Dai, W.~Zhou, and X.~Ji, ``High-performance
   fpga-based cnn accelerator with block-floating-point arithmetic,'' \emph{IEEE
   Transactions on Very Large Scale Integration (VLSI) Systems}, vol.~27, no.~8,
   pp. 1874--1885, 2019.
-
-\bibitem{lai2017deep}
-L.~Lai, N.~Suda, and V.~Chandra, ``Deep convolutional neural network inference
-  with floating-point weights and fixed-point activations,'' \emph{arXiv
-  preprint arXiv:1703.03073}, 2017.
-
-\bibitem{settle2018quantizing}
-S.~O. Settle, M.~Bollavaram, P.~D'Alberto, E.~Delaye, O.~Fernandez, N.~Fraser,
-  A.~Ng, A.~Sirasao, and M.~Wu, ``Quantizing convolutional neural networks for
-  low-power high-throughput inference engines,'' \emph{arXiv preprint
-  arXiv:1805.07941}, 2018.
 
 \bibitem{courbariaux2015binaryconnect}
 M.~Courbariaux, Y.~Bengio, and J.-P. David, ``Binaryconnect: Training deep
@@ -150,12 +131,6 @@ P.~Colangelo, N.~Nasiri, E.~Nurvitadhi, A.~Mishra, M.~Margala, and K.~Nealis,
   intel{\textregistered} fpgas,'' in \emph{2018 IEEE 26th annual international
   symposium on field-programmable custom computing machines (FCCM)}.\hskip 1em
   plus 0.5em minus 0.4em\relax IEEE, 2018, pp. 73--80.
-
-\bibitem{hubara2017quantized}
-I.~Hubara, M.~Courbariaux, D.~Soudry, R.~El-Yaniv, and Y.~Bengio, ``Quantized
-  neural networks: Training neural networks with low precision weights and
-  activations,'' \emph{The Journal of Machine Learning Research}, vol.~18,
-  no.~1, pp. 6869--6898, 2017.
 
 \bibitem{nevarez2021accelerating}
 Y.~Nevarez, D.~Rotermund, K.~R. Pawelzik, and A.~Garcia-Ortiz, ``Accelerating
@@ -174,6 +149,17 @@ P.~Meloni, A.~Garufi, G.~Deriu, M.~Carreras, and D.~Loi, ``Cnn hardware
   Design and Architectures for Signal and Image Processing (DASIP)}.\hskip 1em
   plus 0.5em minus 0.4em\relax IEEE, 2019, pp. 7--12.
 
+\bibitem{lai2017deep}
+L.~Lai, N.~Suda, and V.~Chandra, ``Deep convolutional neural network inference
+  with floating-point weights and fixed-point activations,'' \emph{arXiv
+  preprint arXiv:1703.03073}, 2017.
+
+\bibitem{settle2018quantizing}
+S.~O. Settle, M.~Bollavaram, P.~D'Alberto, E.~Delaye, O.~Fernandez, N.~Fraser,
+  A.~Ng, A.~Sirasao, and M.~Wu, ``Quantizing convolutional neural networks for
+  low-power high-throughput inference engines,'' \emph{arXiv preprint
+  arXiv:1805.07941}, 2018.
+
 \bibitem{goodfellow2016deep}
 I.~Goodfellow, Y.~Bengio, and A.~Courville, \emph{Deep learning}.\hskip 1em
   plus 0.5em minus 0.4em\relax MIT press, 2016.
@@ -183,5 +169,19 @@ J.~Park, J.~H. Choi, and K.~Roy, ``Dynamic bit-width adaptation in dct: An
   approach to trade off image quality and computation energy,'' \emph{IEEE
   transactions on very large scale integration (VLSI) systems}, vol.~18, no.~5,
   pp. 787--793, 2009.
+
+\bibitem{xilinx2015zynq}
+U.~Xilinx, ``Zynq-7000 all programmable soc: Technical reference manual,''
+  2015.
+
+\bibitem{hrica2012floating}
+J.~Hrica, ``Floating-point design with vivado hls,'' \emph{Xilinx Application
+  Note}, 2012.
+
+\bibitem{venkataramani2015approximate}
+S.~Venkataramani, S.~T. Chakradhar, K.~Roy, and A.~Raghunathan, ``Approximate
+  computing and the quest for computing efficiency,'' in \emph{2015 52nd
+  ACM/EDAC/IEEE Design Automation Conference (DAC)}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2015, pp. 1--6.
 
 \end{thebibliography}

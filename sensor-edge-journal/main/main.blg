@@ -12,7 +12,11 @@ Repeated entry---line 785 of file ../content/bibliography.bib
  : @article{wang2019deep
  :                      ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for ""
+Repeated entry---line 1031 of file ../content/bibliography.bib
+ : @techreport{xilinx2015zynq
+ :                           ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "nevarez2020accelerator"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -20,43 +24,43 @@ Warning--I didn't find a database entry for ""
 Done.
 You've used 30 entries,
             4087 wiz_defined-function locations,
-            988 strings with 14191 characters,
-and the built_in function-call counts, 22797 in all, are:
-= -- 1778
-> -- 714
-< -- 160
-+ -- 370
-- -- 142
-* -- 1110
-:= -- 3383
-add.period$ -- 65
+            987 strings with 14058 characters,
+and the built_in function-call counts, 22276 in all, are:
+= -- 1731
+> -- 683
+< -- 152
++ -- 352
+- -- 136
+* -- 1075
+:= -- 3316
+add.period$ -- 66
 call.type$ -- 30
 change.case$ -- 29
-chr.to.int$ -- 354
+chr.to.int$ -- 336
 cite$ -- 30
-duplicate$ -- 1666
-empty$ -- 1786
-format.name$ -- 171
-if$ -- 5296
+duplicate$ -- 1637
+empty$ -- 1779
+format.name$ -- 164
+if$ -- 5178
 int.to.chr$ -- 0
 int.to.str$ -- 30
-missing$ -- 320
+missing$ -- 316
 newline$ -- 113
 num.names$ -- 30
-pop$ -- 777
+pop$ -- 774
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1729
+skip$ -- 1692
 stack$ -- 0
-substring$ -- 873
-swap$ -- 1329
-text.length$ -- 42
+substring$ -- 831
+swap$ -- 1289
+text.length$ -- 40
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 30
 warning$ -- 0
 while$ -- 96
 width$ -- 32
-write$ -- 304
-(There was 1 error message)
+write$ -- 301
+(There were 2 error messages)
