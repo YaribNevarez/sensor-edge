@@ -1,10 +1,9 @@
 \section{System Design}
 \label{sec:system_design}
-In this section we describe the system design as a hardware/software co-design framework for floating-point CNN acceleration targeting resource-limited FPGAs. This is a scalable and parameterized architecture that allows design exploration integrated with TensorFlow Lite.
+In this section we describe the system design as a hardware/software co-design framework for floating-point CNN acceleration targeting resource-limited FPGAs. This is a parameterized architecture that allows design exploration with TensorFlow Lite.
 
-\subsection{Base embedded system architecture} As a hardware/software co-design, the system architecture is an embedded CPU+FPGA-based platform, where the acceleration of tensor operations is based on asynchronous\footnote{The system is synchronous at the circuit level, but the execution is asynchronous in terms of jobs.} execution in parallel TPs. \Fig{fig:system_architecture} illustrates the system hardware architecture as a scalable structure. For operational configuration, each TP uses AXI-Lite interface. For data transfer, each TP uses AXI-Stream interfaces via Direct Memory Access (DMA) allowing data movement with high transfer rate. Each TP asserts an interrupt flag once the job or transaction is complete. Interrupt events are handled by the embedded CPU to collect results and start a new transaction.
-
-The hardware architecture can resize its resource utilization by modifying the number of TP instances prior to the hardware synthesis, this provides scalability with a good trade-off between area and throughput.
+\subsection{Base embedded system architecture}
+As a hardware/software co-design, the system architecture is an embedded CPU+FPGA platform. \Fig{fig:system_architecture} illustrates the top-level hardware architecture. The TPs execute the low-level tensor operations delegated from the CPU. The TPs employ AXI-Lite interface for configuration and AXI-Stream interfaces via Direct Memory Access (DMA) for data movement from of-chip DDR memory. Each TP asserts an interrupt flag once the job/transaction is complete. Interrupt events are handled by the embedded CPU to collect results and start a new transaction. The hardware architecture can resize its resource utilization by modifying the number of TP instances prior to the hardware synthesis.
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{../figures/system_design.pdf}
@@ -13,15 +12,19 @@ The hardware architecture can resize its resource utilization by modifying the n
 \end{figure}
 \subsection{Tensor processor}
 The TP is a dedicated hardware module to compute tensor operations. The hardware architecture is described in \fig{fig:accelerator}. This architecture implements high performance off-chip communication with AXI-Stream, direct CPU communication with AXI-Lite, and on-chip storage utilizing BRAM. This hardware architecture is implemented with high-level synthesis (HLS). The tensor operations are implemented based on the C++ TensorFlow Lite micro kernels.
+
+The TP is an extensible hardware module that executes low-level tensor operations. This implementation creates a cooperative hardware-software architecture. In this paper, we focus on the \emph{Conv2D} tensor operator that executes inference of convolution layers.
+
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{../figures/accelerator.pdf}
 	\caption{Hardware architecture of the proposed tensor processor.}
 	\label{fig:accelerator}
 \end{figure}
-\subsubsection{\textbf{Modes of operation}} This accelerator offers two modes of operation: \emph{configuration} and \emph{execution}.
+\subsubsection{\textbf{Modes of operation}}
+This accelerator has two modes of operation: \emph{configuration} and \emph{execution}.
 \begin{itemize}
-	\item In \emph{configuration} mode, the TP receives the tensor operation ID and hyperparameters: stride, dilation, padding, offset, activation, depth-multiplier, input shape, filter shape, bias shape, and output shape. Afterwards, the TP receives filter and bias tensors to be locally stored.
+	\item In \emph{configuration} mode, the TP receives the tensor operation ID and hyperparameters: stride, dilation, padding, offset, activation, depth-multiplier, input shape, filter shape, bias shape, and output shape. Afterwards, the TP receives filter and bias tensors, which are locally stored in BRAM.
 	
 	\item In \emph{execution} mode, the TP executes the tensor operator according to the hyperparameters given in the configuration mode. During execution, the input and output tensor-buffers are moved from/to the TF Lite memory regions via DMA.
 \end{itemize}
@@ -40,8 +43,7 @@ L_{log}=N+6
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{../figures/dot-product_unit.pdf}
-	\caption{Dot-product hardware module with (a) standard floating-point
-		(IEEE 754) arithmetic, (b) hybrid custom floating-point, and (c) hybrid logarithmic approximation.}
+	\caption{Dot-product hardware module with (a) standard floating-point and (b) Hybrid-Float6.}
 	\label{fig:dot_product}
 \end{figure}
 \begin{figure}[t!]

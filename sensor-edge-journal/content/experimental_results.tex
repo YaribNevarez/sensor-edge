@@ -6,12 +6,12 @@ In this platform, we implement the proposed hardware architecture to deploy the 
 
 For the evaluation of our approach, we address a design exploration by reviewing the computational latency, inference accuracy, resource utilization, and power dissipation. First, we benchmark the model inference on the embedded CPU, and then repeat the measurements on hardware processing units with standard floating-point computation. Afterwards, we evaluate our TP, addressing a design exploration with hybrid custom floating-point, as well as the hybrid logarithmic approximation. Finally, we present a discussion of the presented results.
 
-\begin{figure}[t!]
+\begin{figure*}[t!]
 	\centering
-	\includegraphics[width=0.5\textwidth]{../figures/models.pdf}
-	\caption{Shallow CNN models for case study.}
+	\includegraphics[width=\textwidth]{../figures/model.pdf}
+	\caption{CNN model for case study.}
 	\label{fig:models}
-\end{figure}
+\end{figure*}
 
 \subsection{Performance benchmark}
 \subsubsection{Benchmark on embedded CPU}
