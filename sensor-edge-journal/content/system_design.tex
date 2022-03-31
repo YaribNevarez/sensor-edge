@@ -1,9 +1,9 @@
 \section{System Design}
 \label{sec:system_design}
-In this section we describe the system design as a hardware/software co-design framework for floating-point CNN acceleration targeting resource-limited FPGAs. This is a parameterized architecture that allows design exploration with TensorFlow Lite.
+The system design is a hardware/software co-design framework for low-power AI deployment. This architecture allows design exploration of dedicated hardware for TensorFlow Lite on low-cost embedded FPGAs.
 
 \subsection{Base embedded system architecture}
-As a hardware/software co-design, the system architecture is an embedded CPU+FPGA platform. \Fig{fig:system_architecture} illustrates the top-level hardware architecture. The TPs execute the low-level tensor operations delegated from the CPU. The TPs employ AXI-Lite interface for configuration and AXI-Stream interfaces via Direct Memory Access (DMA) for data movement from of-chip DDR memory. Each TP asserts an interrupt flag once the job/transaction is complete. Interrupt events are handled by the embedded CPU to collect results and start a new transaction. The hardware architecture can resize its resource utilization by modifying the number of TP instances prior to the hardware synthesis.
+The base embedded system architecture implements a cooperative hardware-software platform. \Fig{fig:system_architecture} illustrates the top-level hardware architecture. The TPs execute low-level tensor operations delegated from the embedded CPU. The TPs employ AXI-Lite interface for configuration and AXI-Stream interfaces via Direct Memory Access (DMA) for data movement from DDR memory. Each TP asserts an interrupt flag once the job/transaction is complete. Interrupt events are handled by the embedded CPU to collect results and start a new transaction. The hardware architecture can resize its resource utilization and energy consumption by customizing the TPs prior to the hardware synthesis.
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{../figures/system_design.pdf}
@@ -11,9 +11,9 @@ As a hardware/software co-design, the system architecture is an embedded CPU+FPG
 	\label{fig:system_architecture}
 \end{figure}
 \subsection{Tensor processor}
-The TP is a dedicated hardware module to compute tensor operations. The hardware architecture is described in \fig{fig:accelerator}. This architecture implements high performance off-chip communication with AXI-Stream, direct CPU communication with AXI-Lite, and on-chip storage utilizing BRAM. This hardware architecture is implemented with high-level synthesis (HLS). The tensor operations are implemented based on the C++ TensorFlow Lite micro kernels.
+The TP is a dedicated hardware module to compute tensor operations. The hardware architecture is described in \fig{fig:accelerator}. This architecture implements high performance communication with AXI-Stream, direct CPU communication with AXI-Lite, and on-chip storage utilizing BRAM. This hardware architecture is implemented with high-level synthesis (HLS). The tensor operations are implemented based on the C++ TensorFlow Lite micro kernels.
 
-The TP is an extensible hardware module that executes low-level tensor operations. This implementation creates a cooperative hardware-software architecture. In this paper, we focus on the \emph{Conv2D} tensor operator that executes inference of convolution layers.
+The TP is an extensible hardware module that executes low-level tensor operations. In this paper, we focus on the \emph{Conv2D} tensor operator that executes inference of convolution layers.
 
 \begin{figure}[t!]
 	\centering
@@ -22,25 +22,21 @@ The TP is an extensible hardware module that executes low-level tensor operation
 	\label{fig:accelerator}
 \end{figure}
 \subsubsection{\textbf{Modes of operation}}
-This accelerator has two modes of operation: \emph{configuration} and \emph{execution}.
+The TP has two modes of operation: \emph{configuration} and \emph{execution}.
 \begin{itemize}
 	\item In \emph{configuration} mode, the TP receives the tensor operation ID for \emph{Conv2D} and hyperparameters: stride, dilation, padding, offset, activation, depth-multiplier, input shape, filter shape, bias shape, and output shape. Afterwards, the TP receives filter and bias tensors, which are locally stored in BRAM.
 	
-	\item In \emph{execution} mode, the TP executes the tensor operation according to the hyperparameters given in the configuration mode. During execution, the input and output tensor-buffers are moved from/to the DDR memory via DMA.
+	\item In \emph{execution} mode, the TP executes the tensor operation according to the hyperparameters given in the configuration mode. During execution, the input and output tensors are moved from/to the DDR memory via DMA.
 \end{itemize}
 \subsubsection{\textbf{Dot-product with hybrid floating-point}}
 \label{sec:dot_product}
-We implement the floating-point computation adopting the dot-product with hybrid custom floating-point and logarithmic approximation\cite{nevarez2021accelerating}. The hardware dot-product is illustrated in \Fig{fig:dot_product}. This approach: (1) denormalizes input values, (2) executes computation with integer format for exponent and mantissa, and finally, (3) it normalizes the result into IEEE 754 format, see \Fig{fig:dot_product_hybrid}. Rather than a parallelized structure, this is a pipelined hardware design suitable for resource-limited devices. The latency in clock cycles of this hardware module is defined by \equ{eq:dot_custom_float_latency} and \equ{eq:dot_log_latency}, where $N$ is the vector length. The latency equations are obtained from the general pipelined hardware latency formula: $L=\left(N-1\right)II+IL$, where $II$ is the initiation interval (\fig{fig:dot_product_hybrid}(a)), and $IL$ is the iteration latency (\fig{fig:dot_product_hybrid}(b)). Both $II$ and $IL$ are obtained from the high-level synthesis analysis. The hybrid logarithmic computation removes the mantissa bit-field, which removes the mantissa multiplication and correction in clock cycle 3 and 4, respectively, see \fig{fig:dot_product_hybrid}.
+We implement the floating-point computation adopting the dot-product with hybrid custom floating-point\cite{nevarez2021accelerating}. The hardware dot-product is illustrated in \Fig{fig:dot_product}. This approach: (1) denormalizes input values, (2) executes computation with integer format for exponent and mantissa, and finally, (3) it normalizes the result into IEEE 754 format, see \Fig{fig:dot_product_hybrid}. 
+
+Rather than a parallelized structure, this is a pipelined hardware design suitable for resource-limited devices. The latency in clock cycles of this hardware module is defined by \equ{eq:dot_custom_float_latency}, where $N$ is the vector length. The latency equations are obtained from the general pipelined hardware latency formula: $L=\left(N-1\right)II+IL$, where $II$ is the initiation interval (\fig{fig:dot_product_hybrid}(a)), and $IL$ is the iteration latency (\fig{fig:dot_product_hybrid}(b)). Both $II$ and $IL$ are obtained from the high-level synthesis results. Both the exponent and mantissa bit widths of the filter and bias buffers are set to a 4-bit exponent and a 1-bit mantissa (E4M1), which corresponds to float6 quantization.
 
 \begin{eqnarray} \label{eq:dot_custom_float_latency}
 L_{hf}=N+7
 \end{eqnarray}
-
-\begin{eqnarray} \label{eq:dot_log_latency}
-L_{log}=N+6
-\end{eqnarray}
-
-As a design parameter, both the exponent and mantissa bit-width of the weight/filter vector provides a tunable knob to trade-off between resource utilization and QoR \cite{park2009dynamic}. These parameters must be defined before hardware synthesis.
 
 \begin{figure}[t!]
 	\centering
@@ -95,10 +91,10 @@ As a design trade-off, \Equ{eq:channel_in_memory} defines the capacity of output
 C_{O}=\frac{TP_{M}-V_{M}-K_{H}W_{I}C_{I}BitSize_{I}}{C_{I}K_{W}K_{H}BitSize_{F}+BitSize_{B}}
 \end{eqnarray}
 
-The floating-point formats implemented in the TP are defined by $BitSize_F$, $BitSize_B$ and $BitSize_I$. The HF6 is defined by 1-bit sign, 4-bit exponent and 1-bit mantissa. These are design parameters defined before hardware synthesis. This allows fine control of BRAM utilization, which is suitable for resource-limited devices.
+The floating-point formats implemented in the TP are defined by $BitSize_F$, $BitSize_B$ and $BitSize_I$. The HF6 defines 6-bits for $BitSize_F$ and $BitSize_B$, and 32-bits for $BitSize_I$. These are design parameters defined before hardware synthesis. This allows fine control of BRAM utilization, which is suitable for resource-limited devices.
 
 \subsection{Quantized aware training}
-The quantize-aware training method is an iterative optimization. The custom CNN model is initially trained with early stop monitoring for minimal validation loss, then the CNN model is retrained including the quantization method implemented as a callback function, see \Algo{alg:training}. The quantization method maps the full precision filter and bias values with rounding to the closest representable quantized values, see \Algo{alg:quantize_training}. The quantize-aware training method starts with a wide exponent size target (e.g. 3-bits) and gradually reduces the target size until the model drops to a given accuracy degradation threshold (e.g. 1\%). We have observed that the exponent bit size plays a more predominant influence on the model accuracy than the mantissa bit size. The mantissa bit size can be set to the minimum (e.g. 1-bit). This method quantizes the filter and bias tensors of the \emph{Conv2D} and \emph{SeparableConv2D} layers. This method is integrated in TensorFlow/Keras framework. The resulting quantized parameters are truncated and buffered in the on-chip memory of the TP during \emph{configuration} mode.
+The quantize-aware training method is an iterative optimization. The custom CNN model is initially trained with early stop monitoring for minimal validation loss, then the CNN model is retrained including the quantization method implemented as a callback function, see \Algo{alg:training}. The quantization method maps the full precision filter and bias values with rounding to the closest representable quantized values, see \Algo{alg:quantize_training}. We have observed that the exponent bit size plays a more predominant influence on the model accuracy than the mantissa bit size. In \cite{lai2017deep}, Lai et al. demonstrated that 4-bit exponent is adequate and consistent across different networks (SqueezeNet, AlexNet, GoogLeNet, VGG-16). In this work, we investigate 4-bit exponent and 1-bit mantissa. This method quantizes the filter and bias tensors of the \emph{Conv2D}. This method is integrated in TensorFlow/Keras framework. On the desktop computer, the resulting quantized parameters are wrapped into the standard floating-point. On the embedded system, the 6-bit floating-point values are extracted and buffered in the on-chip memory of the TP during operation.
 \begin{algorithm}[h!]
 	\label{alg:training}
 	\caption{Training method.}
