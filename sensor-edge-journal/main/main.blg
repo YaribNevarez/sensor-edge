@@ -22,45 +22,45 @@ Warning--I didn't find a database entry for "nevarez2020accelerator"
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 30 entries,
+You've used 28 entries,
             4087 wiz_defined-function locations,
-            987 strings with 14058 characters,
-and the built_in function-call counts, 22276 in all, are:
-= -- 1731
-> -- 683
-< -- 152
-+ -- 352
-- -- 136
-* -- 1075
-:= -- 3316
-add.period$ -- 66
-call.type$ -- 30
-change.case$ -- 29
-chr.to.int$ -- 336
-cite$ -- 30
-duplicate$ -- 1637
-empty$ -- 1779
-format.name$ -- 164
-if$ -- 5178
+            977 strings with 13708 characters,
+and the built_in function-call counts, 20506 in all, are:
+= -- 1586
+> -- 643
+< -- 134
++ -- 330
+- -- 130
+* -- 990
+:= -- 3062
+add.period$ -- 61
+call.type$ -- 28
+change.case$ -- 27
+chr.to.int$ -- 294
+cite$ -- 28
+duplicate$ -- 1514
+empty$ -- 1637
+format.name$ -- 156
+if$ -- 4759
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 316
-newline$ -- 113
-num.names$ -- 30
-pop$ -- 774
+int.to.str$ -- 28
+missing$ -- 296
+newline$ -- 107
+num.names$ -- 28
+pop$ -- 730
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1692
+skip$ -- 1555
 stack$ -- 0
-substring$ -- 831
-swap$ -- 1289
-text.length$ -- 40
+substring$ -- 731
+swap$ -- 1183
+text.length$ -- 36
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 30
+type$ -- 28
 warning$ -- 0
-while$ -- 96
-width$ -- 32
-write$ -- 301
+while$ -- 86
+width$ -- 30
+write$ -- 281
 (There were 2 error messages)

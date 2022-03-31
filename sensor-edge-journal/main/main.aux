@@ -1,32 +1,31 @@
 \relax 
+\citation{lom2016industry}
 \citation{li2019sensor,dong2018rolling}
 \citation{nagayama2007structural}
 \citation{wang2019deep}
 \citation{kim2017hazardous}
-\citation{lom2016industry}
-\citation{chen2019deep}
 \citation{ince2016real,janssens2016convolutional,abdeljaber2017real,guo2016hierarchical}
 \citation{nurvitadhi2017can}
-\providecommand \oddpage@label [2]{}
-\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}\protected@file@percent }
-\newlabel{sec:introduction}{{I}{1}}
 \citation{wu2021low}
 \citation{han2015deep,han2015learning}
 \citation{mei2017200mhz,wu2021low,lian2019high}
+\providecommand \oddpage@label [2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}\protected@file@percent }
+\newlabel{sec:introduction}{{I}{1}}
 \citation{courbariaux2015binaryconnect}
 \citation{lin2015neural}
 \citation{colangelo2018exploration}
 \citation{gao2020edgedrnn}
 \citation{meloni2019cnn}
+\citation{lai2017deep}
+\citation{settle2018quantizing}
+\citation{lai2017deep}
+\citation{settle2018quantizing}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The workflow of our approach on embedded FPGAs.}}{2}\protected@file@percent }
 \newlabel{fig:workflow}{{1}{2}}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Related work}{2}\protected@file@percent }
 \newlabel{sec:related_work}{{II}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Hardware implementations targeting resource-constrained FPGAs}{2}\protected@file@percent }
-\citation{lai2017deep}
-\citation{settle2018quantizing}
-\citation{lai2017deep}
-\citation{settle2018quantizing}
 \citation{mei2017200mhz}
 \citation{wu2021low}
 \citation{lian2019high}
@@ -40,76 +39,77 @@
 \@writefile{toc}{\contentsline {section}{\numberline {IV}System Design}{3}\protected@file@percent }
 \newlabel{sec:system_design}{{IV}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Base embedded system architecture}{3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Tensor processor}{3}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Base embedded system architecture.}}{3}\protected@file@percent }
 \newlabel{fig:system_architecture}{{2}{3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Hardware architecture of the proposed tensor processor.}}{3}\protected@file@percent }
 \newlabel{fig:accelerator}{{3}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Tensor processor}{3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}1}{\fontencoding  {T1}\fontseries  {b}\selectfont  {M}odes of operation}}{3}\protected@file@percent }
 \citation{nevarez2021accelerating}
 \citation{park2009dynamic}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}2}{\fontencoding  {T1}\fontseries  {b}\selectfont  {D}ot-product with with hybrid custom floating-point and logarithmic dot-product approximation}}{4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Dot-product hardware module with (a) standard floating-point and (b) Hybrid-Float6.}}{4}\protected@file@percent }
+\newlabel{fig:dot_product}{{4}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}2}{\fontencoding  {T1}\fontseries  {b}\selectfont  {D}ot-product with hybrid floating-point}}{4}\protected@file@percent }
 \newlabel{sec:dot_product}{{\mbox  {IV-B}2}{4}}
 \newlabel{eq:dot_custom_float_latency}{{2}{4}}
 \newlabel{eq:dot_log_latency}{{3}{4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}3}{\fontencoding  {T1}\fontseries  {b}\selectfont  {O}n-chip memory utilization}}{4}\protected@file@percent }
-\newlabel{eq:tp_memory}{{4}{4}}
-\newlabel{eq:input_memory}{{5}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Dot-product hardware module with (a) standard floating-point and (b) Hybrid-Float6.}}{4}\protected@file@percent }
-\newlabel{fig:dot_product}{{4}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Pipelined hardware module for vector dot-product with hybrid custom floating-point, (a) exhibits the initiation interval of 1 clock cycle, and (b) presents the iteration latency of 8 clock cycles. $I_H$ and $I_F$ represent the input and filter buffer indexes, respectively.}}{4}\protected@file@percent }
 \newlabel{fig:dot_product_hybrid}{{5}{4}}
-\newlabel{eq:filter_memory}{{6}{4}}
-\citation{xilinx2015zynq}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Design parameters for on-chip memory buffers on the TP.}}{5}\protected@file@percent }
-\newlabel{fig:accelerator_buffers}{{6}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Design parameters for on-chip memory buffers on the TP.}}{4}\protected@file@percent }
+\newlabel{fig:accelerator_buffers}{{6}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}3}{\fontencoding  {T1}\fontseries  {b}\selectfont  {O}n-chip memory utilization}}{4}\protected@file@percent }
+\newlabel{eq:tp_memory}{{4}{4}}
+\newlabel{eq:input_memory}{{5}{5}}
+\newlabel{eq:filter_memory}{{6}{5}}
 \newlabel{eq:bias_memory}{{7}{5}}
 \newlabel{eq:channel_in_memory}{{8}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Quantized aware training}{5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Embedded software architecture}{5}\protected@file@percent }
 \newlabel{alg:training}{{1}{5}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Training method.}}{5}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Base embedded software architecture.}}{5}\protected@file@percent }
 \newlabel{fig:sw_stack}{{7}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Embedded software architecture}{5}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {V}Experimental results}{5}\protected@file@percent }
 \newlabel{sec:experimental_results}{{V}{5}}
-\citation{hrica2012floating}
-\citation{hrica2012floating}
-\citation{hrica2012floating}
-\citation{hrica2012floating}
-\citation{hrica2012floating}
-\citation{hrica2012floating}
-\citation{hrica2012floating}
+\citation{xilinx2015zynq}
 \newlabel{alg:quantize_training}{{2}{6}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Custom floating-point quantization method.}}{6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}CNN Model Design Exploration}{6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Hardware Design Exploration}{6}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Inference on embedded CPU.}}{6}\protected@file@percent }
 \newlabel{tab:latency_sw}{{1}{6}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Performance of TP with standard floating-point (IEEE 754) computation.}}{6}\protected@file@percent }
-\newlabel{tab:latency_fp}{{2}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Performance benchmark}{6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-A}1}Benchmark on embedded CPU}{6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-A}2}Benchmark on tensor processor with standard floating-point computation}{6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Performance benchmark}{6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-C}1}Benchmark on embedded CPU}{6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-C}2}Benchmark on tensor processor with standard floating-point computation}{6}\protected@file@percent }
+\citation{hrica2012floating}
+\citation{hrica2012floating}
+\citation{hrica2012floating}
+\citation{hrica2012floating}
+\citation{hrica2012floating}
+\citation{hrica2012floating}
+\citation{hrica2012floating}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces CNN model for case study.}}{7}\protected@file@percent }
 \newlabel{fig:models}{{8}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Computation on embedded CPU.}}{7}\protected@file@percent }
 \newlabel{fig:latency_sw}{{9}{7}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Performance of TP with standard floating-point (IEEE 754) computation.}}{7}\protected@file@percent }
+\newlabel{tab:latency_fp}{{2}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Performance of TP with standard floating-point (IEEE 754) computation.}}{7}\protected@file@percent }
 \newlabel{fig:latency_pu_fp}{{10}{7}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Resource utilization and power dissipation with standard floating-point (IEEE 754) computation.}}{7}\protected@file@percent }
 \newlabel{tab:resource_fp}{{3}{7}}
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Resource utilization and power dissipation of multiplier and adder floating-point (IEEE 754) operator cores.}}{7}\protected@file@percent }
 \newlabel{tab:LogiCORE}{{4}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Design exploration with hybrid custom floating-point and logarithmic approximation}{7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-B}1}Parameters for numeric representation of weight matrix}{7}\protected@file@percent }
-\newlabel{sec:parameters}{{\mbox  {V-B}1}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Design exploration with hybrid custom floating-point and logarithmic approximation}{7}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces $\qopname  \relax o{log}_2$-histogram of each synaptic weight matrix showing the percentage of matrix elements with given integer exponent.}}{8}\protected@file@percent }
 \newlabel{fig:log2histogram}{{11}{8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-B}2}Design exploration for dot-product with hybrid custom floating-point approximation}{8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-D}1}Parameters for numeric representation of weight matrix}{8}\protected@file@percent }
+\newlabel{sec:parameters}{{\mbox  {V-D}1}{8}}
 \@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Performance on processing units with hybrid custom floating-point approximation, (a) exhibits computation schedule, (b) presents cyclic computation schedule, and (c) shows the performance of {\it  Conv2} from a previous computation cycle during the preprocessing of {\it  H1\_CONV} on the current computation cycle without bottleneck.}}{8}\protected@file@percent }
 \newlabel{fig:latency_pu_cfp_cycle}{{12}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-D}2}Design exploration for dot-product with hybrid custom floating-point approximation}{8}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Resource utilization and power dissipation of processing units with hybrid custom floating-point approximation.}}{8}\protected@file@percent }
 \newlabel{tab:resource_cfp}{{5}{8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-B}3}Design exploration for dot-product whit hybrid logarithmic approximation}{8}\protected@file@percent }
 \citation{nevarez2020accelerator}
 \citation{nevarez2020accelerator}
 \citation{nevarez2020accelerator}
@@ -117,15 +117,13 @@
 \newlabel{tab:latency_cfp}{{6}{9}}
 \@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Performance of hardware processing units with hybrid logarithmic approximation.}}{9}\protected@file@percent }
 \newlabel{tab:latency_log}{{7}{9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Performance of processing units with hybrid logarithmic approximation, (a) exhibits computation schedule, and (b) illustrates cyclic computation schedule.}}{9}\protected@file@percent }
-\newlabel{fig:latency_pu_log_cycle}{{13}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Results and discussion}{9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-D}3}Design exploration for dot-product whit hybrid logarithmic approximation}{9}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Resource utilization and power dissipation of processing units with hybrid logarithmic approximation.}}{9}\protected@file@percent }
 \newlabel{tab:resource_log}{{8}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Hardware design exploration}{9}\protected@file@percent }
-\bibstyle{IEEEtran}
-\bibdata{../content/bibliography.bib}
-\bibcite{li2019sensor}{1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-E}}Results and discussion}{9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Performance of processing units with hybrid logarithmic approximation, (a) exhibits computation schedule, and (b) illustrates cyclic computation schedule.}}{9}\protected@file@percent }
+\newlabel{fig:latency_pu_log_cycle}{{13}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-F}}Hardware design exploration}{9}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Experimental results.}}{10}\protected@file@percent }
 \newlabel{tab:results}{{9}{10}}
 \@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Platform implementations.}}{10}\protected@file@percent }
@@ -136,33 +134,34 @@
 \newlabel{tab:resource}{{11}{10}}
 \@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusions}{10}\protected@file@percent }
 \newlabel{sec:conclusions}{{VI}{10}}
-\@writefile{toc}{\contentsline {section}{REFERENCES}{10}\protected@file@percent }
-\bibcite{dong2018rolling}{2}
-\bibcite{nagayama2007structural}{3}
-\bibcite{wang2019deep}{4}
-\bibcite{kim2017hazardous}{5}
-\bibcite{lom2016industry}{6}
-\bibcite{chen2019deep}{7}
-\bibcite{ince2016real}{8}
-\bibcite{janssens2016convolutional}{9}
-\bibcite{abdeljaber2017real}{10}
-\bibcite{guo2016hierarchical}{11}
-\bibcite{nurvitadhi2017can}{12}
-\bibcite{wu2021low}{13}
-\bibcite{han2015deep}{14}
-\bibcite{han2015learning}{15}
-\bibcite{mei2017200mhz}{16}
-\bibcite{lian2019high}{17}
-\bibcite{courbariaux2015binaryconnect}{18}
-\bibcite{lin2015neural}{19}
-\bibcite{colangelo2018exploration}{20}
-\bibcite{nevarez2021accelerating}{21}
-\bibcite{gao2020edgedrnn}{22}
-\bibcite{meloni2019cnn}{23}
-\bibcite{lai2017deep}{24}
-\bibcite{settle2018quantizing}{25}
-\bibcite{goodfellow2016deep}{26}
-\bibcite{park2009dynamic}{27}
-\bibcite{xilinx2015zynq}{28}
-\bibcite{hrica2012floating}{29}
-\bibcite{venkataramani2015approximate}{30}
+\bibstyle{IEEEtran}
+\bibdata{../content/bibliography.bib}
+\bibcite{lom2016industry}{1}
+\bibcite{li2019sensor}{2}
+\bibcite{dong2018rolling}{3}
+\bibcite{nagayama2007structural}{4}
+\bibcite{wang2019deep}{5}
+\bibcite{kim2017hazardous}{6}
+\bibcite{ince2016real}{7}
+\bibcite{janssens2016convolutional}{8}
+\bibcite{abdeljaber2017real}{9}
+\bibcite{guo2016hierarchical}{10}
+\bibcite{nurvitadhi2017can}{11}
+\bibcite{wu2021low}{12}
+\bibcite{han2015deep}{13}
+\bibcite{han2015learning}{14}
+\bibcite{mei2017200mhz}{15}
+\bibcite{lian2019high}{16}
+\bibcite{courbariaux2015binaryconnect}{17}
+\bibcite{lin2015neural}{18}
+\bibcite{colangelo2018exploration}{19}
+\bibcite{gao2020edgedrnn}{20}
+\bibcite{meloni2019cnn}{21}
+\bibcite{lai2017deep}{22}
+\bibcite{settle2018quantizing}{23}
+\bibcite{goodfellow2016deep}{24}
+\bibcite{nevarez2021accelerating}{25}
+\bibcite{park2009dynamic}{26}
+\bibcite{xilinx2015zynq}{27}
+\bibcite{hrica2012floating}{28}
+\@writefile{toc}{\contentsline {section}{REFERENCES}{11}\protected@file@percent }

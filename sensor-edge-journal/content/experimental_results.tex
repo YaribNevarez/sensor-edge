@@ -1,10 +1,14 @@
 \section{Experimental results}
 \label{sec:experimental_results}
-The proposed hardware/software co-design framework is demonstrated on the MiniZed development board with a Zynq-7007S system-on-chip (SoC). This device integrates a single ARM Cortex-A9 processing system (PS) and programmable logic (PL) equivalent to Xilinx Artix-7 (FPGA) in a single chip \cite{xilinx2015zynq}. The Zynq-7007S SoC architecture maps the custom logic and software in the PL and PS respectively as an embedded system.
+In this section, we present experimental results of a sensor analytics application for SHM and its hardware deployment.
 
-In this platform, we implement the proposed hardware architecture to deploy the \REVIEWR{CNN model} for \REVIEWR{SHM} shown in \Fig{fig:models}. The CNN model is created, trained, and quantized using Keras/TensorFlow with Python on a desktop computer. The resulting model is converted to TensorFlow Lite, which is deployed on the MiniZed. The Zynq-7007S SoC performs the model inference with TensorFlow Lite core API running on the PS. The computational workload of the convolution layers is delegated to the TP on the PL.
+To demonstrate the HF6 quantization, we implement an analytics application to predict x- y- coordinates of structural anomalies based on acoustic sensor data with CNN-regression models. We address the model design exploration using TensorFlow and Keras library.
 
-For the evaluation of our approach, we address a design exploration by reviewing the computational latency, inference accuracy, resource utilization, and power dissipation. First, we benchmark the model inference on the embedded CPU, and then repeat the measurements on hardware processing units with standard floating-point computation. Afterwards, we evaluate our TP, addressing a design exploration with hybrid custom floating-point, as well as the hybrid logarithmic approximation. Finally, we present a discussion of the presented results.
+To demonstrate the HF6 hardware concept, we deploy the CNN model for low-power inference in the smallest Zynq SoC. For comparison, the hardware engine is implemented with 32-bit floating-point, 8-bit fixed-point, and HF6. We address the hardware design exploration using HLS.
+
+We present statistical evaluations of the CNN models with standard floating-point, fixed-point, and HF6 quantization. We evaluate the computational latency, resource utilization, and power dissipation. Finally, we present a discussion of the presented results.
+
+\subsection{CNN Model Design Exploration}
 
 \begin{figure*}[t!]
 	\centering
@@ -12,6 +16,11 @@ For the evaluation of our approach, we address a design exploration by reviewing
 	\caption{CNN model for case study.}
 	\label{fig:models}
 \end{figure*}
+
+\subsection{Hardware Design Exploration}
+The proposed hardware/software co-design framework is demonstrated on the MiniZed development board with a Zynq-7007S system-on-chip (SoC). This device integrates a single ARM Cortex-A9 processing system (PS) and programmable logic (PL) equivalent to Xilinx Artix-7 (FPGA) in a single chip \cite{xilinx2015zynq}. The Zynq-7007S SoC architecture maps the custom logic and software in the PL and PS respectively as an embedded system.
+
+In this platform, we implement the proposed hardware architecture to deploy the \REVIEWR{CNN model} for \REVIEWR{SHM} shown in \Fig{fig:models}. The CNN model is created, trained, and quantized using Keras/TensorFlow with Python on a desktop computer. The resulting model is converted to TensorFlow Lite, which is deployed on the MiniZed. The Zynq-7007S SoC performs the model inference with TensorFlow Lite core API running on the PS. The computational workload of the convolution layers is delegated to the TP on the PL.
 
 \subsection{Performance benchmark}
 \subsubsection{Benchmark on embedded CPU}

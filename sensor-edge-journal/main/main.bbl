@@ -21,6 +21,11 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{lom2016industry}
+M.~Lom, O.~Pribyl, and M.~Svitek, ``Industry 4.0 as a part of smart cities,''
+  in \emph{2016 Smart Cities Symposium Prague (SCSP)}.\hskip 1em plus 0.5em
+  minus 0.4em\relax IEEE, 2016, pp. 1--6.
+
 \bibitem{li2019sensor}
 G.~Li, C.~Deng, J.~Wu, X.~Xu, X.~Shao, and Y.~Wang, ``Sensor data-driven
   bearing fault diagnosis based on deep convolutional neural networks and
@@ -48,15 +53,6 @@ Y.~C. Kim, H.-G. Yu, J.-H. Lee, D.-J. Park, and H.-W. Nam, ``Hazardous gas
   \emph{Electro-Optical and Infrared Systems: Technology and Applications XIV},
   vol. 10433.\hskip 1em plus 0.5em minus 0.4em\relax International Society for
   Optics and Photonics, 2017, p. 1043317.
-
-\bibitem{lom2016industry}
-M.~Lom, O.~Pribyl, and M.~Svitek, ``Industry 4.0 as a part of smart cities,''
-  in \emph{2016 Smart Cities Symposium Prague (SCSP)}.\hskip 1em plus 0.5em
-  minus 0.4em\relax IEEE, 2016, pp. 1--6.
-
-\bibitem{chen2019deep}
-J.~Chen and X.~Ran, ``Deep learning with edge computing: A review,''
-  \emph{Proceedings of the IEEE}, vol. 107, no.~8, pp. 1655--1674, 2019.
 
 \bibitem{ince2016real}
 T.~Ince, S.~Kiranyaz, L.~Eren, M.~Askar, and M.~Gabbouj, ``Real-time motor
@@ -132,11 +128,6 @@ P.~Colangelo, N.~Nasiri, E.~Nurvitadhi, A.~Mishra, M.~Margala, and K.~Nealis,
   symposium on field-programmable custom computing machines (FCCM)}.\hskip 1em
   plus 0.5em minus 0.4em\relax IEEE, 2018, pp. 73--80.
 
-\bibitem{nevarez2021accelerating}
-Y.~Nevarez, D.~Rotermund, K.~R. Pawelzik, and A.~Garcia-Ortiz, ``Accelerating
-  spike-by-spike neural networks on fpga with hybrid custom floating-point and
-  logarithmic dot-product approximation,'' \emph{IEEE Access}, 2021.
-
 \bibitem{gao2020edgedrnn}
 C.~Gao, A.~Rios-Navarro, X.~Chen, S.-C. Liu, and T.~Delbruck, ``Edgedrnn:
   Recurrent neural network accelerator for edge inference,'' \emph{IEEE Journal
@@ -164,6 +155,11 @@ S.~O. Settle, M.~Bollavaram, P.~D'Alberto, E.~Delaye, O.~Fernandez, N.~Fraser,
 I.~Goodfellow, Y.~Bengio, and A.~Courville, \emph{Deep learning}.\hskip 1em
   plus 0.5em minus 0.4em\relax MIT press, 2016.
 
+\bibitem{nevarez2021accelerating}
+Y.~Nevarez, D.~Rotermund, K.~R. Pawelzik, and A.~Garcia-Ortiz, ``Accelerating
+  spike-by-spike neural networks on fpga with hybrid custom floating-point and
+  logarithmic dot-product approximation,'' \emph{IEEE Access}, 2021.
+
 \bibitem{park2009dynamic}
 J.~Park, J.~H. Choi, and K.~Roy, ``Dynamic bit-width adaptation in dct: An
   approach to trade off image quality and computation energy,'' \emph{IEEE
@@ -177,11 +173,5 @@ U.~Xilinx, ``Zynq-7000 all programmable soc: Technical reference manual,''
 \bibitem{hrica2012floating}
 J.~Hrica, ``Floating-point design with vivado hls,'' \emph{Xilinx Application
   Note}, 2012.
-
-\bibitem{venkataramani2015approximate}
-S.~Venkataramani, S.~T. Chakradhar, K.~Roy, and A.~Raghunathan, ``Approximate
-  computing and the quest for computing efficiency,'' in \emph{2015 52nd
-  ACM/EDAC/IEEE Design Automation Conference (DAC)}.\hskip 1em plus 0.5em minus
-  0.4em\relax IEEE, 2015, pp. 1--6.
 
 \end{thebibliography}
