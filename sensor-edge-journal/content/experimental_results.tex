@@ -1,14 +1,12 @@
 \section{Experimental results}
 \label{sec:experimental_results}
-In this section, we present experimental results of a sensor analytics application for SHM and its hardware deployment.
+In this section, we present a sensor analytics application for structural health monitoring as a use case to demonstrate the applicability of our approach. 
 
-To demonstrate the HF6 quantization, we implement an analytics application to predict x- y- coordinates of structural anomalies based on acoustic sensor data with CNN-regression models. We address the model design exploration using TensorFlow and Keras library.
+To demonstrate the HF6 quantization, we implement an analytics application to predict x- y- coordinates of structural anomalies based on acoustic sensor data with a CNN-regression model. We implement the model using TensorFlow and Keras library.
 
-To demonstrate the HF6 hardware concept, we deploy the CNN model for low-power inference in the smallest Zynq SoC. For comparison, the hardware engine is implemented with 32-bit floating-point, 8-bit fixed-point, and HF6. We address the hardware design exploration using HLS.
+To demonstrate the HF6 hardware concept, we deploy the CNN model for low-power inference in the smallest Zynq SoC. We compare the performance of the TP with 32-bit floating-point, 8-bit fixed-point, and HF6. We address the hardware design exploration using HLS.
 
-We present statistical evaluations of the CNN models with standard floating-point, fixed-point, and HF6 quantization. We evaluate the computational latency, resource utilization, and power dissipation. Finally, we present a discussion of the presented results.
-
-\subsection{CNN Model Design Exploration}
+\subsection{CNN Regression Model}
 
 \begin{figure*}[t!]
 	\centering
@@ -16,6 +14,20 @@ We present statistical evaluations of the CNN models with standard floating-poin
 	\caption{CNN model for case study.}
 	\label{fig:models}
 \end{figure*}
+
+\begin{figure*}[t!]
+	\centering
+	\includegraphics[width=\textwidth]{../figures/histograms/model_evaluation.pdf}
+	\caption{CNN model for case study.}
+	\label{fig:model_evaluation}
+\end{figure*}
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=1\columnwidth]{../figures/runtime/runtime.pdf}
+	\caption{CNN model for case study.}
+	\label{fig:runtime}
+\end{figure}
 
 \subsection{Hardware Design Exploration}
 The proposed hardware/software co-design framework is demonstrated on the MiniZed development board with a Zynq-7007S system-on-chip (SoC). This device integrates a single ARM Cortex-A9 processing system (PS) and programmable logic (PL) equivalent to Xilinx Artix-7 (FPGA) in a single chip \cite{xilinx2015zynq}. The Zynq-7007S SoC architecture maps the custom logic and software in the PL and PS respectively as an embedded system.
@@ -46,13 +58,6 @@ The inference on the CPU achieves a latency of \REVIEWR{$40 ms$}. The model is c
 		\bottomrule
 	\end{tabular}
 \end{table}
-
-\begin{figure}[t!]
-	\centering
-	\includegraphics[width=1\columnwidth]{../figures/latency_sw.pdf}
-	\caption{Computation on embedded CPU.}
-	\label{fig:latency_sw}
-\end{figure}
 
 \subsubsection{Benchmark on tensor processor with standard floating-point computation}
 To benchmark the computation on hardware TP with standard floating-point, we implement the system architecture with one TP. In this case, the embedded software builds the CNN as a sequential model mapping \emph{Conv2D} tensor operations to the TP at 200 MHz as clock frequency. The hardware mapping and the computation schedule of this deployment are displayed in \Tab{tab:latency_fp} and \fig{fig:latency_pu_fp}.

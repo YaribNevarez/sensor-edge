@@ -60,6 +60,7 @@
 \newlabel{eq:input_memory}{{4}{4}}
 \newlabel{eq:filter_memory}{{5}{4}}
 \citation{lai2017deep}
+\citation{xilinx2015zynq}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Base embedded software architecture.}}{5}\protected@file@percent }
 \newlabel{fig:sw_stack}{{7}{5}}
 \newlabel{eq:bias_memory}{{6}{5}}
@@ -70,74 +71,66 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Embedded software architecture}{5}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {V}Experimental results}{5}\protected@file@percent }
 \newlabel{sec:experimental_results}{{V}{5}}
-\citation{xilinx2015zynq}
-\citation{hrica2012floating}
-\citation{hrica2012floating}
-\citation{hrica2012floating}
-\citation{hrica2012floating}
-\citation{hrica2012floating}
-\citation{hrica2012floating}
-\citation{hrica2012floating}
-\newlabel{alg:quantize_training}{{2}{6}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Custom floating-point quantization method.}}{6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}CNN Model Design Exploration}{6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}CNN Regression Model}{5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces CNN model for case study.}}{6}\protected@file@percent }
+\newlabel{fig:models}{{8}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces CNN model for case study.}}{6}\protected@file@percent }
+\newlabel{fig:model_evaluation}{{9}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Hardware Design Exploration}{6}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Inference on embedded CPU.}}{6}\protected@file@percent }
-\newlabel{tab:latency_sw}{{1}{6}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Performance of TP with standard floating-point (IEEE 754) computation.}}{6}\protected@file@percent }
-\newlabel{tab:latency_fp}{{2}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Performance benchmark}{6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-C}1}Benchmark on embedded CPU}{6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-C}2}Benchmark on tensor processor with standard floating-point computation}{6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces CNN model for case study.}}{7}\protected@file@percent }
-\newlabel{fig:models}{{8}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Computation on embedded CPU.}}{7}\protected@file@percent }
-\newlabel{fig:latency_sw}{{9}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Performance of TP with standard floating-point (IEEE 754) computation.}}{7}\protected@file@percent }
-\newlabel{fig:latency_pu_fp}{{10}{7}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Resource utilization and power dissipation with standard floating-point (IEEE 754) computation.}}{7}\protected@file@percent }
-\newlabel{tab:resource_fp}{{3}{7}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Resource utilization and power dissipation of multiplier and adder floating-point (IEEE 754) operator cores.}}{7}\protected@file@percent }
-\newlabel{tab:LogiCORE}{{4}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Design exploration with hybrid custom floating-point and logarithmic approximation}{7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-D}1}Parameters for numeric representation of weight matrix}{7}\protected@file@percent }
-\newlabel{sec:parameters}{{\mbox  {V-D}1}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces $\qopname  \relax o{log}_2$-histogram of each synaptic weight matrix showing the percentage of matrix elements with given integer exponent.}}{8}\protected@file@percent }
-\newlabel{fig:log2histogram}{{11}{8}}
+\newlabel{alg:quantize_training}{{2}{7}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Custom floating-point quantization method.}}{7}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Inference on embedded CPU.}}{7}\protected@file@percent }
+\newlabel{tab:latency_sw}{{1}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces CNN model for case study.}}{7}\protected@file@percent }
+\newlabel{fig:runtime}{{10}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-C}2}Benchmark on tensor processor with standard floating-point computation}{7}\protected@file@percent }
+\citation{hrica2012floating}
+\citation{hrica2012floating}
+\citation{hrica2012floating}
+\citation{hrica2012floating}
+\citation{hrica2012floating}
+\citation{hrica2012floating}
+\citation{hrica2012floating}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Performance of TP with standard floating-point (IEEE 754) computation.}}{8}\protected@file@percent }
+\newlabel{tab:latency_fp}{{2}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Performance of TP with standard floating-point (IEEE 754) computation.}}{8}\protected@file@percent }
+\newlabel{fig:latency_pu_fp}{{11}{8}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Resource utilization and power dissipation with standard floating-point (IEEE 754) computation.}}{8}\protected@file@percent }
+\newlabel{tab:resource_fp}{{3}{8}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Resource utilization and power dissipation of multiplier and adder floating-point (IEEE 754) operator cores.}}{8}\protected@file@percent }
+\newlabel{tab:LogiCORE}{{4}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Design exploration with hybrid custom floating-point and logarithmic approximation}{8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-D}1}Parameters for numeric representation of weight matrix}{8}\protected@file@percent }
+\newlabel{sec:parameters}{{\mbox  {V-D}1}{8}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-D}2}Design exploration for dot-product with hybrid custom floating-point approximation}{8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Performance on processing units with hybrid custom floating-point approximation, (a) exhibits computation schedule, (b) presents cyclic computation schedule, and (c) shows the performance of {\it  Conv2} from a previous computation cycle during the preprocessing of {\it  H1\_CONV} on the current computation cycle without bottleneck.}}{8}\protected@file@percent }
-\newlabel{fig:latency_pu_cfp_cycle}{{12}{8}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Resource utilization and power dissipation of processing units with hybrid custom floating-point approximation.}}{8}\protected@file@percent }
-\newlabel{tab:resource_cfp}{{5}{8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-D}3}Design exploration for dot-product whit hybrid logarithmic approximation}{8}\protected@file@percent }
-\citation{nevarez2020accelerator}
-\citation{nevarez2020accelerator}
-\citation{nevarez2020accelerator}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces $\qopname  \relax o{log}_2$-histogram of each synaptic weight matrix showing the percentage of matrix elements with given integer exponent.}}{9}\protected@file@percent }
+\newlabel{fig:log2histogram}{{12}{9}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Resource utilization and power dissipation of processing units with hybrid custom floating-point approximation.}}{9}\protected@file@percent }
+\newlabel{tab:resource_cfp}{{5}{9}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-D}3}Design exploration for dot-product whit hybrid logarithmic approximation}{9}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Performance of hardware processing units with hybrid custom floating-point approximation.}}{9}\protected@file@percent }
 \newlabel{tab:latency_cfp}{{6}{9}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Performance of hardware processing units with hybrid logarithmic approximation.}}{9}\protected@file@percent }
-\newlabel{tab:latency_log}{{7}{9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Performance of processing units with hybrid logarithmic approximation, (a) exhibits computation schedule, and (b) illustrates cyclic computation schedule.}}{9}\protected@file@percent }
-\newlabel{fig:latency_pu_log_cycle}{{13}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Performance on processing units with hybrid custom floating-point approximation, (a) exhibits computation schedule, (b) presents cyclic computation schedule, and (c) shows the performance of {\it  Conv2} from a previous computation cycle during the preprocessing of {\it  H1\_CONV} on the current computation cycle without bottleneck.}}{9}\protected@file@percent }
+\newlabel{fig:latency_pu_cfp_cycle}{{13}{9}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-E}}Results and discussion}{9}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Resource utilization and power dissipation of processing units with hybrid logarithmic approximation.}}{9}\protected@file@percent }
-\newlabel{tab:resource_log}{{8}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-F}}Hardware design exploration}{9}\protected@file@percent }
+\citation{nevarez2020accelerator}
+\citation{nevarez2020accelerator}
+\citation{nevarez2020accelerator}
 \bibstyle{IEEEtran}
 \bibdata{../content/bibliography.bib}
 \bibcite{lom2016industry}{1}
-\bibcite{li2019sensor}{2}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Experimental results.}}{10}\protected@file@percent }
-\newlabel{tab:results}{{9}{10}}
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Platform implementations.}}{10}\protected@file@percent }
-\newlabel{tab:platform_comparison}{{10}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Power dissipation breakdown of platform implementations, (a) {\fontencoding  {T1}\fontseries  {b}\selectfont  {R}ef.}\nobreakspace  {}\cite  {nevarez2020accelerator} architecture with homogeneous AUs using standard floating-point arithmetic (IEEE 754), (b) reference architecture with specialized heterogeneous PUs using standard floating-point arithmetic (IEEE 754), (c) proposed architecture with hybrid custom floating-point approximation, and (d) proposed architecture with hybrid logarithmic approximation.}}{10}\protected@file@percent }
-\newlabel{fig:platform_power_dissipation_breakdown}{{14}{10}}
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Hardware resource utilization and estimated power dissipation.}}{10}\protected@file@percent }
-\newlabel{tab:resource}{{11}{10}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Performance of hardware processing units with hybrid logarithmic approximation.}}{10}\protected@file@percent }
+\newlabel{tab:latency_log}{{7}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Performance of processing units with hybrid logarithmic approximation, (a) exhibits computation schedule, and (b) illustrates cyclic computation schedule.}}{10}\protected@file@percent }
+\newlabel{fig:latency_pu_log_cycle}{{14}{10}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Resource utilization and power dissipation of processing units with hybrid logarithmic approximation.}}{10}\protected@file@percent }
+\newlabel{tab:resource_log}{{8}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-F}}Hardware design exploration}{10}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusions}{10}\protected@file@percent }
 \newlabel{sec:conclusions}{{VI}{10}}
-\@writefile{toc}{\contentsline {section}{REFERENCES}{10}\protected@file@percent }
+\bibcite{li2019sensor}{2}
 \bibcite{dong2018rolling}{3}
 \bibcite{nagayama2007structural}{4}
 \bibcite{wang2019deep}{5}
@@ -146,6 +139,15 @@
 \bibcite{janssens2016convolutional}{8}
 \bibcite{abdeljaber2017real}{9}
 \bibcite{guo2016hierarchical}{10}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Experimental results.}}{11}\protected@file@percent }
+\newlabel{tab:results}{{9}{11}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Platform implementations.}}{11}\protected@file@percent }
+\newlabel{tab:platform_comparison}{{10}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Power dissipation breakdown of platform implementations, (a) {\fontencoding  {T1}\fontseries  {b}\selectfont  {R}ef.}\nobreakspace  {}\cite  {nevarez2020accelerator} architecture with homogeneous AUs using standard floating-point arithmetic (IEEE 754), (b) reference architecture with specialized heterogeneous PUs using standard floating-point arithmetic (IEEE 754), (c) proposed architecture with hybrid custom floating-point approximation, and (d) proposed architecture with hybrid logarithmic approximation.}}{11}\protected@file@percent }
+\newlabel{fig:platform_power_dissipation_breakdown}{{15}{11}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Hardware resource utilization and estimated power dissipation.}}{11}\protected@file@percent }
+\newlabel{tab:resource}{{11}{11}}
+\@writefile{toc}{\contentsline {section}{REFERENCES}{11}\protected@file@percent }
 \bibcite{nurvitadhi2017can}{11}
 \bibcite{wu2021low}{12}
 \bibcite{han2015deep}{13}
