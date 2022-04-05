@@ -74,11 +74,12 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}CNN Regression Model}{5}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces CNN model for case study.}}{6}\protected@file@percent }
 \newlabel{fig:models}{{8}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces CNN model for case study.}}{6}\protected@file@percent }
-\newlabel{fig:model_evaluation}{{9}{6}}
+\newlabel{alg:quantize_training}{{2}{6}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Custom floating-point quantization method.}}{6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Hardware Design Exploration}{6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Performance benchmark}{6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-C}1}Benchmark on embedded CPU}{6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-C}2}Benchmark on tensor processor with standard floating-point computation}{6}\protected@file@percent }
 \citation{hrica2012floating}
 \citation{hrica2012floating}
 \citation{hrica2012floating}
@@ -86,9 +87,8 @@
 \citation{hrica2012floating}
 \citation{hrica2012floating}
 \citation{hrica2012floating}
-\newlabel{alg:quantize_training}{{2}{7}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Custom floating-point quantization method.}}{7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-C}2}Benchmark on tensor processor with standard floating-point computation}{7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Sampling layout for training and validation data set.}}{7}\protected@file@percent }
+\newlabel{fig:data_set}{{9}{7}}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Resource utilization and power dissipation of multiplier and adder floating-point (IEEE 754) operator cores.}}{7}\protected@file@percent }
 \newlabel{tab:LogiCORE}{{1}{7}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Performance of the CPU and TP on each CONV\_2D tensor operation, computational cost, latency, throughput, power efficiency, and energy consumption.}}{7}\protected@file@percent }
@@ -96,22 +96,18 @@
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Resource utilization and power dissipation on the Zynq-7007S SoC.}}{7}\protected@file@percent }
 \newlabel{tab: }{{3}{7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Design exploration with hybrid custom floating-point and logarithmic approximation}{7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces CNN model for case study.}}{8}\protected@file@percent }
+\newlabel{fig:model_evaluation}{{10}{8}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-D}1}Parameters for numeric representation of weight matrix}{8}\protected@file@percent }
 \newlabel{sec:parameters}{{\mbox  {V-D}1}{8}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-D}2}Design exploration for dot-product with hybrid custom floating-point approximation}{8}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-D}3}Design exploration for dot-product whit hybrid logarithmic approximation}{8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Acceleration and power reduction of the TP with floating-point and HF6 vs CPU.}}{8}\protected@file@percent }
-\newlabel{fig:ACCELERATION}{{10}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-E}}Results and discussion}{8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-F}}Hardware design exploration}{8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Inference run-time of TensorFlow Lite on the embedded system. (a) CPU ARM Cortex-A9 at 666MHz, (b) cooperative CPU + TP with floating-point Xilinx LogiCORE IP at 200MHz, and (c) cooperative CPU + TP with Hybrid-Float6 at 200MHz.}}{9}\protected@file@percent }
-\newlabel{fig:runtime}{{11}{9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Hardware resource utilization on the Zynq-7007S SoC.}}{9}\protected@file@percent }
-\newlabel{fig:resource_utilization}{{12}{9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Estimated power dissipation on the Zynq-7007S SoC with PS at 666MHz and PL at 200MHz.}}{9}\protected@file@percent }
-\newlabel{fig:power}{{13}{9}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusions}{9}\protected@file@percent }
-\newlabel{sec:conclusions}{{VI}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Acceleration and power reduction of the TP with floating-point and HF6 vs CPU.}}{9}\protected@file@percent }
+\newlabel{fig:ACCELERATION}{{11}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-E}}Results and discussion}{9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-F}}Hardware design exploration}{9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Inference run-time of TensorFlow Lite on the embedded system. (a) CPU ARM Cortex-A9 at 666MHz, (b) cooperative CPU + TP with floating-point Xilinx LogiCORE IP at 200MHz, and (c) cooperative CPU + TP with Hybrid-Float6 at 200MHz.}}{9}\protected@file@percent }
+\newlabel{fig:runtime}{{12}{9}}
 \bibstyle{IEEEtran}
 \bibdata{../content/bibliography.bib}
 \bibcite{lom2016industry}{1}
@@ -135,6 +131,13 @@
 \bibcite{colangelo2018exploration}{19}
 \bibcite{gao2020edgedrnn}{20}
 \bibcite{meloni2019cnn}{21}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Hardware resource utilization on the Zynq-7007S SoC.}}{10}\protected@file@percent }
+\newlabel{fig:resource_utilization}{{13}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Estimated power dissipation on the Zynq-7007S SoC with PS at 666MHz and PL at 200MHz.}}{10}\protected@file@percent }
+\newlabel{fig:power}{{14}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusions}{10}\protected@file@percent }
+\newlabel{sec:conclusions}{{VI}{10}}
+\@writefile{toc}{\contentsline {section}{REFERENCES}{10}\protected@file@percent }
 \bibcite{lai2017deep}{22}
 \bibcite{settle2018quantizing}{23}
 \bibcite{goodfellow2016deep}{24}
@@ -142,4 +145,3 @@
 \bibcite{park2009dynamic}{26}
 \bibcite{xilinx2015zynq}{27}
 \bibcite{hrica2012floating}{28}
-\@writefile{toc}{\contentsline {section}{REFERENCES}{10}\protected@file@percent }

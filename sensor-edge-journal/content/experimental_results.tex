@@ -4,7 +4,7 @@ In this section, we present a sensor analytics application for structural health
 
 To demonstrate the HF6 quantization, we implement an analytics application to predict x- y- coordinates of structural anomalies based on acoustic sensor data with a CNN-regression model. We implement the model using TensorFlow and Keras library.
 
-To demonstrate the HF6 hardware concept, we deploy the CNN model for low-power inference in the smallest Zynq SoC. We compare the performance of the TP with 32-bit floating-point, 8-bit fixed-point, and HF6. We address the hardware design exploration using HLS.
+To demonstrate the HF6 hardware concept, we deploy the CNN model for low-power inference in the smallest Zynq SoC. We compare the performance of the TP with standard floating-point and HF6. We address the hardware design exploration using HLS.
 
 \subsection{CNN Regression Model}
 
@@ -15,6 +15,13 @@ To demonstrate the HF6 hardware concept, we deploy the CNN model for low-power i
 	\label{fig:models}
 \end{figure*}
 
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=\columnwidth]{../figures/histograms/data_set.pdf}
+	\caption{Sampling layout for training and validation data set.}
+	\label{fig:data_set}
+\end{figure}
+
 \begin{figure*}[t!]
 	\centering
 	\includegraphics[width=\textwidth]{../figures/histograms/model_evaluation.pdf}
@@ -23,7 +30,7 @@ To demonstrate the HF6 hardware concept, we deploy the CNN model for low-power i
 \end{figure*}
 
 \subsection{Hardware Design Exploration}
-The proposed hardware/software co-design framework is demonstrated on the MiniZed development board with a Zynq-7007S system-on-chip (SoC). This device integrates a single ARM Cortex-A9 processing system (PS) and programmable logic (PL) equivalent to Xilinx Artix-7 (FPGA) in a single chip \cite{xilinx2015zynq}. The Zynq-7007S SoC architecture maps the custom logic and software in the PL and PS respectively as an embedded system.
+The proposed hardware/software co-design is demonstrated on the Zynq-7007S system-on-chip (SoC) in the MiniZed development board. This device integrates a single ARM Cortex-A9 processing system (PS) and programmable logic (PL) equivalent to Xilinx Artix-7 (FPGA) in a single chip \cite{xilinx2015zynq}. The Zynq-7007S SoC architecture maps the custom logic and software in the PL and PS respectively as an embedded system.
 
 In this platform, we implement the proposed hardware architecture to deploy the \REVIEWR{CNN model} for \REVIEWR{SHM} shown in \Fig{fig:models}. The CNN model is created, trained, and quantized using Keras/TensorFlow with Python on a desktop computer. The resulting model is converted to TensorFlow Lite, which is deployed on the MiniZed. The Zynq-7007S SoC performs the model inference with TensorFlow Lite core API running on the PS. The computational workload of the convolution layers is delegated to the TP on the PL.
 
