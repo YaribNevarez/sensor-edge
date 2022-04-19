@@ -93,35 +93,81 @@ C_{O}=\frac{TP_{M}-V_{M}-K_{H}W_{I}C_{I}BitSize_{I}}{C_{I}K_{W}K_{H}BitSize_{F}+
 
 The floating-point formats implemented in the TP are defined by $BitSize_F$, $BitSize_B$ and $BitSize_I$. The HF6 defines 6-bits for $BitSize_F$ and $BitSize_B$, and 32-bits for $BitSize_I$. These are design parameters defined before hardware synthesis. This allows fine control of BRAM utilization, which is suitable for resource-limited devices.
 
-\subsection{Quantized aware training}
-The quantize-aware training method is an iterative optimization. This method is implemented using TensorFlow/Keras framework. The custom CNN model is initially trained with early stop monitoring for minimal validation loss, then the CNN model is retrained including the quantization method implemented as a callback function, see \Algo{alg:training}. The quantization method maps the full precision filter and bias values with rounding to the closest representable quantized values, see \Algo{alg:quantize_training}. We have observed that the exponent bit size plays a more predominant influence on the model accuracy than the mantissa bit size. In \cite{lai2017deep}, Lai et al. demonstrated that 4-bit exponent is adequate and consistent across different networks (SqueezeNet, AlexNet, GoogLeNet, VGG-16). In this work, we investigate 4-bit exponent and 1-bit mantissa. This method quantizes the filter and bias tensors of the convolution layers. On the desktop computer, the resulting quantized parameters are wrapped into the standard floating-point. On the embedded system, the 6-bit floating-point values are extracted and buffered in the on-chip memory of the TP during operation.
+\subsection{Training Method}
+The CNN-regression models are trained and quantized in separate stages.
+\subsubsection{Training with Iterative Early Stop Cycle}
+To achieve better performance on CNN-regression models, we implement a training procedure with iterative early stop cycle. This allows to reach better local minima. This is a four steps process: (1) a base model is obtained with an initial training, (2) the base model is iteratively re-trained to search for better local minima, (3) in case of a better local minimum, the base model is updated and used for subsequent re-training iterations, (4) the training cycle is automatically aborted with a patience of unsatisfactory search iterations. See \Algo{alg:training}. This method minimizes the MSE, which is calculated with the Euclidean distance between the validation and predicted coordinates. The early stop has a patience of 10 epochs and mini-batch size between 512 to 1024 samples.
+
+\subsubsection{Quantized Aware Training}
+The quantization method is integrated into the training process, this operates after each mini-batch update. The quantization is applied on the trainable parameters of convolution layers. This method is implemented as a callback function in the TensorFlow/Keras framework, see \Algo{alg:quantization_integration}.
+
+The quantization method uses rounding strategy to reduce the floating-point memory representation. This maps the full precision floating-point values to the closest representable 6-bit floating-point values, see \Algo{alg:quantize_training}. We have observed that the exponent bit size plays a more predominant influence on the model accuracy than the mantissa bit size. In \cite{lai2017deep}, Lai et al. demonstrated that 4-bit exponent is adequate and consistent across different networks (SqueezeNet, AlexNet, GoogLeNet, VGG-16). In this work, we investigate 4-bit exponent and 1-bit mantissa. This method quantizes the filter and bias tensors of the convolution layers.
+
+The resulting quantized parameters are wrapped into the standard floating-point. This allows compatibility with standard hardware. On the proposed embedded system, the 6-bit floating-point values are extracted and buffered in the on-chip memory of the TP during operation.
+
 \begin{algorithm}[h!]
 	\label{alg:training}
-	\caption{Training method.}
+	\caption{Training with iterative early stop cycle.}
 	\begin{algorithmic}
 		\SetAlgoLined
 		\renewcommand{\algorithmicrequire}{\textbf{input:}}
 		\renewcommand{\algorithmicensure}{\textbf{output:}}
-		\REQUIRE $MODEL$ as the CNN.
-		\REQUIRE $E_{size}$ as the target exponent bit size.
-		\REQUIRE $M_{size}$ as the target mantissa bits size.
+		\REQUIRE $MODEL$ as the input model.
 		\REQUIRE $D_{train}$ as the training data set.
 		\REQUIRE $D_{val}$ as the validation data set.
-		\REQUIRE $Acc_d$ as the accuracy degradation threshold.
-		\REQUIRE $Loop_{max}$ as the max quantization loop iterations.
-		\ENSURE $MODEL$ as the quantized CNN.
-		\STATE $Train(MODEL, D_{train}, D_{val})$ // Regular training
-		\STATE $acc_i \gets Evaluate(MODEL, D_{val})$ // Benchmark
-		\STATE $acc_q \gets 0, loop_c \gets 0$ // Initialize quantize training
-		\WHILE {$(acc_q<acc_i - Acc_d) \land (loop_c<Loop_{max})$}
-		\STATE // Iterative optimization
-		\STATE $callback \gets Quantize(E_{size}, M_{size})$
-		\STATE $Train(MODEL, D_{train}, D_{val}, callback)$
-		\STATE $acc_q \gets Evaluate(MODEL, D_{val})$
-		\STATE $loop_c \gets loop_c + 1$
+		\REQUIRE $N_{I}$ as the stop patience for iterative training cycle.
+		\REQUIRE $N_{E}$ as the early stop patience (epochs) for training.
+		\ENSURE $MODEL$ as the full-precision output model.
+		\STATE $Train(MODEL, D_{train}, D_{val}, N_{E})$
+		\STATE $mse_i \gets Evaluate(MODEL, D_{val})$ // Benchmark
+		\STATE $n_i \gets 0$
+		\WHILE {$n_I<N_I$}
+		\STATE // Iterative early stop cycle
+		\STATE $Train(MODEL, D_{train}, D_{val}, N_{E})$
+		\STATE $mse_v \gets Evaluate(MODEL, D_{val})$
+		\IF{$mse_v < mse_i$}
+			\STATE $Update(MODEL)$
+			\STATE $mse_i \gets mse_v$
+		\ELSE
+			\STATE $MODEL  \gets LoadPreviousModel()$
+			\STATE $n_I \gets n_I + 1$
+		\ENDIF
 		\ENDWHILE
 	\end{algorithmic}
 \end{algorithm}
+
+
+\begin{algorithm}[h!]
+	\label{alg:quantization_integration}
+	\caption{Quantized aware training.}
+	\begin{algorithmic}
+		\SetAlgoLined
+		\renewcommand{\algorithmicrequire}{\textbf{input:}}
+		\renewcommand{\algorithmicensure}{\textbf{output:}}
+		\REQUIRE $MODEL$ as the full-precision input model.
+		\REQUIRE $E_{size}$ as the target exponent bits size.
+		\REQUIRE $M_{size}$ as the target mantissa bits size.
+		\REQUIRE $D_{train}$ as the training data set.
+		\REQUIRE $D_{val}$ as the validation data set.
+		\REQUIRE $N_{E}$ as the number of epochs.
+		\ENSURE $MODEL$ as the quantized output model.
+		\STATE $MODEL \gets Quantize(MODEL,E_{size}, M_{size})$
+		\STATE $mse_i \gets Evaluate(MODEL, D_{val})$ // Benchmark
+		\STATE $Train(MODEL, D_{train}, D_{val}, N_E)$
+		\STATE
+		\STATE \bf{OnMiniBatchUpdate\_Callback():}
+		\STATE $MODEL \gets Quantize(MODEL,E_{size}, M_{size})$
+		\IF {$1<epoch$}
+		\STATE // Update model after first epoch
+		\STATE $mse_v \gets Evaluate(MODEL, D_{val})$
+		\IF{$mse_v < mse_i$}
+		\STATE $Update(MODEL)$
+		\STATE $mse_i \gets mse_v$
+		\ENDIF
+		\ENDIF
+	\end{algorithmic}
+\end{algorithm}
+
 \begin{algorithm}[h!]
 	\label{alg:quantize_training}
 	\caption{Custom floating-point quantization method.}
