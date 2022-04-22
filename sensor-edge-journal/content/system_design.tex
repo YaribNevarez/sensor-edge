@@ -117,13 +117,14 @@ The resulting quantized parameters are wrapped into the standard floating-point.
 		\REQUIRE $D_{val}$ as the validation data set.
 		\REQUIRE $N_{I}$ as the stop patience for iterative training cycle.
 		\REQUIRE $N_{E}$ as the early stop patience (epochs) for training.
+		\REQUIRE $B_{size}$ as the mini-batch size.
 		\ENSURE $MODEL$ as the full-precision output model.
-		\STATE $Train(MODEL, D_{train}, D_{val}, N_{E})$
+		\STATE $Train(MODEL, D_{train}, D_{val}, N_{E}, B_{size})$
 		\STATE $mse_i \gets Evaluate(MODEL, D_{val})$ // Benchmark
 		\STATE $n_i \gets 0$
 		\WHILE {$n_I<N_I$}
 		\STATE // Iterative early stop cycle
-		\STATE $Train(MODEL, D_{train}, D_{val}, N_{E})$
+		\STATE $Train(MODEL, D_{train}, D_{val}, N_{E}, B_{size})$
 		\STATE $mse_v \gets Evaluate(MODEL, D_{val})$
 		\IF{$mse_v < mse_i$}
 			\STATE $Update(MODEL)$
@@ -139,7 +140,7 @@ The resulting quantized parameters are wrapped into the standard floating-point.
 
 \begin{algorithm}[h!]
 	\label{alg:quantization_integration}
-	\caption{Quantized aware training.}
+	\caption{Quantization aware training.}
 	\begin{algorithmic}
 		\SetAlgoLined
 		\renewcommand{\algorithmicrequire}{\textbf{input:}}
@@ -149,11 +150,12 @@ The resulting quantized parameters are wrapped into the standard floating-point.
 		\REQUIRE $M_{size}$ as the target mantissa bits size.
 		\REQUIRE $D_{train}$ as the training data set.
 		\REQUIRE $D_{val}$ as the validation data set.
-		\REQUIRE $N_{E}$ as the number of epochs.
+		\REQUIRE $N_{ep}$ as the number of epochs.
+		\REQUIRE $B_{size}$ as the mini-batch size.
 		\ENSURE $MODEL$ as the quantized output model.
 		\STATE $MODEL \gets Quantize(MODEL,E_{size}, M_{size})$
 		\STATE $mse_i \gets Evaluate(MODEL, D_{val})$ // Benchmark
-		\STATE $Train(MODEL, D_{train}, D_{val}, N_E)$
+		\STATE $Train(MODEL, D_{train}, D_{val}, N_{ep}, B_{size})$
 		\STATE
 		\STATE \bf{OnMiniBatchUpdate\_Callback():}
 		\STATE $MODEL \gets Quantize(MODEL,E_{size}, M_{size})$

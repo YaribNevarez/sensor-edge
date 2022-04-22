@@ -8,11 +8,11 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ../content/bibliography.bib
-Repeated entry---line 861 of file ../content/bibliography.bib
+Repeated entry---line 877 of file ../content/bibliography.bib
  : @article{wang2019deep
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1107 of file ../content/bibliography.bib
+Repeated entry---line 1123 of file ../content/bibliography.bib
  : @techreport{xilinx2015zynq
  :                           ,
 I'm skipping whatever remains of this entry
