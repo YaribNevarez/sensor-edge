@@ -75,7 +75,7 @@ The data analytics is implemented with a CNN-regression model, see \fig{fig:mode
 
 \subsection{Training}
 \subsubsection{Base Model}
-The model in \fig{fig:model} is trained using Adam algorithm with iterative early stop, described in \Algo{alg:training}. The Adam optimizer is configured with the default settings presented in \cite{kingma2014adam}: $\alpha = 0.001$, $\beta_1 = 0.9$, $\beta_2 = 0.999$, and $\epsilon = 1\mathrm{e}{-8}$. The training cycle aborts with patience of 10 search iterations, the optimizer is executed with early stop patience of 10 epochs, and mini-batch size of 512 samples. ($N_I = 10$, $N_E=10$, $B_{size}=512$.)
+The model in \fig{fig:model} is trained using Adam algorithm with iterative early stop, described in \Algo{alg:training}. The Adam optimizer is configured with the default settings presented in \cite{kingma2014adam}: $\alpha = 0.001$, $\beta_1 = 0.9$, $\beta_2 = 0.999$, and $\epsilon = 1\mathrm{e}{-8}$. The training cycle patience is 10 search iterations, the optimizer is executed with early stop patience of 10 epochs, and mini-batch size of 512 samples. ($N_I = 10$, $N_E=10$, $B_{size}=512$.)
 
 The training results are illustrated in \fig{fig:optimization}(a). The initial model is obtained at the first early stop. Each stop initializes the moving averages of the Adam optimizer. In subsequent iterations, the model is updated when better minimum is reached.
 
@@ -98,14 +98,21 @@ The model achieves $MSE=0.0122m^2$ and $MAE=0.0955m$. See \fig{fig:model_evaluat
 \subsubsection{TensorFlow Lite 8-bit quantization}
 This integer quantization is an optimization method that converts 32-bit floating-point numbers (such as weights and activations) to the nearest 8-bit fixed-point numbers. This quantization scheme allows inference to be carried out using integer-only arithmetic\cite{hannwindowsine}.
 
-The base model is quantized using the TensorFlow Lite library with integer-only quantization settings. The input and output activation tensors are represented by 8-bit signed integer. The filter and bias tensors are represented by 8-bit and 32-bit signed integers, respectively. For convolution layers, this quantization includes two additional tensor coefficients (output-multiplier and output-shift). These tensors are the same shape as the bias tensor and are represented by 32-bit signed integers.
+The base model is quantized using the TensorFlow Lite library with integer-only quantization settings. The filter and bias tensors are represented by 8-bit and 32-bit signed integers, respectively. The input and output activation tensors are represented by 8-bit signed integer. For convolution layers, this quantization includes two additional tensor coefficients (output-multiplier and output-shift). These tensors are the same shape as the bias tensor and are represented by 32-bit signed integers.
 
 The model achieves $MSE=0.0122 m^2$ and $MAE=0.0952m$. See \fig{fig:model_evaluation}(b). The MAE gets an improvement of 0.3\% compared to the base model. We attribute this to the regularization effect.
 
-\subsubsection{Quantization Aware Training}
-The HF6 quantization is a post-training step. This is applied with the quantization aware training method described in \Algo{alg:quantization_integration}. We run this method during two epochs with mini-batch size of 10 samples with quantization parameters of 4-bit exponent and 1-bit mantissa. ($N_{ep}=2$, $B_{size}=10$, $E_{size}=4$, $M_{size}=1$.) 
+\subsubsection{Quantization Aware Training for HF6}
+The HF6 quantization is a post-training step. This is applied with the quantization aware training method described in \Algo{alg:quantization_integration}. We run this method during two epochs with mini-batch size of 10 samples with quantization parameters of 4-bit exponent and 1-bit mantissa. ($N_{ep}=2$, $B_{size}=10$, $E_{size}=4$, $M_{size}=1$.)
 
-The quantization aware training is illustrated in \fig{fig:optimization}(b). First, the performance of the mode with HF6 quantization without retraining obtains $MSE=0.0188m^2$ and $MAE=0.1232m$, these correspond to 54\% and 29\% error increase, respectively. See \fig{fig:model_evaluation}(c). Furthermore, the model achieves $MSE=0.0112$ and $MAE=0.0919$, these correspond to 9\% and 3.5\% error decrease, respectively. See \fig{fig:model_evaluation}(d).
+The quantization aware training is illustrated in \fig{fig:optimization}(b). Initially, the model is quantized with HF6 format without optimization, this obtains $MSE=0.0188m^2$ and $MAE=0.1232m$, these correspond to 54\% and 29\% error increase, respectively. This represents the inference of the base model without quantization aware training on HF6 hardware. See \fig{fig:model_evaluation}(c).
+
+The final model after the quantization aware training achieves $MSE=0.0112$ and $MAE=0.0919$, these correspond to 9\% and 3.5\% error reduction, respectively. See \fig{fig:model_evaluation}(d).
+
+\subsubsection{Quantization Aware Training for Hybrid-Logarithmic 6-bit}
+For comparison, we quantize and optimize the base model with 6-bit logarithmic quantization on convolution layers. The filter and bias tensors are represented by 6-bit signed logarithmic. The input and output activation tensors are represented by standard floating-point. This is applied with \Algo{alg:quantization_integration}. ($N_{ep}=2$, $B_{size}=10$, $E_{size}=5$, $M_{size}=0$.)
+
+The model after the quantization aware training achieves $MSE=0.0123$ and $MAE=0.0968$, these correspond to 0.8\% and 1.36\% error increase, respectively. See \fig{fig:model_evaluation}(e).
 
 \subsection{Hardware Design Exploration}
 The proposed hardware/software co-design is demonstrated on the Zynq-7007S system-on-chip (SoC) in the MiniZed development board. This device integrates a single ARM Cortex-A9 processing system (PS) and programmable logic (PL) equivalent to Xilinx Artix-7 (FPGA) in a single chip \cite{xilinx2015zynq}. The Zynq-7007S SoC architecture maps the custom logic and software in the PL and PS respectively as an embedded system.
