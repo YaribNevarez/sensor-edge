@@ -65,12 +65,12 @@ The data analytics is implemented with a CNN-regression model, see \fig{fig:mode
 \end{enumerate}
 
 
-\begin{figure*}[t!]
+\begin{figure}[t!]
 	\centering
-	\includegraphics[width=\textwidth]{../figures/model.pdf}
-	\caption{CNN model for sensor analytics.}
+	\includegraphics[width=\columnwidth]{../figures/models.pdf}
+	\caption{CNN-regression model for sensor analytics.}
 	\label{fig:model}
-\end{figure*}
+\end{figure}
 
 
 \subsection{Training}
@@ -112,14 +112,7 @@ For comparison, we execute the QAT on the base model for 6-bit logarithmic quant
 
 The model achieves $MSE=0.0123$ and $MAE=0.0968$, which correspond to 0.82\% and 1.36\% error increase, respectively. See \fig{fig:model_evaluation}(e).
 
-The performance of the model with different data representations is summarized in \fig{fig:normalized_mse_mae}.
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=\columnwidth]{../figures/histograms/Normalized_MSE_and_MAE.pdf}
-	\caption{Performance of the model with different data representations.}
-	\label{fig:normalized_mse_mae}
-\end{figure}
+The performance of the model with different data representations is summarized in \fig{fig:model_evaluation}(f).
 
 \subsection{Hardware Design Exploration}
 The proposed hardware/software co-design is demonstrated on the Zynq-7007S system-on-chip (SoC) in the MiniZed development board. This device integrates a single ARM Cortex-A9 processing system (PS) and programmable logic (PL) equivalent to Xilinx Artix-7 (FPGA) in a single chip \cite{xilinx2015zynq}. The Zynq-7007S SoC architecture maps the custom logic and software in the PL and PS, respectively.
