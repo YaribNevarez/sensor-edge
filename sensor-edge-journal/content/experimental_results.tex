@@ -88,7 +88,7 @@ The training results are illustrated in \fig{fig:optimization}(a). The initial m
 	\label{fig:optimization}
 \end{figure}
 
-The resulting model achieves $MSE=0.0122m^2$ and $MAE=0.0955m$. See \fig{fig:model_evaluation}(a). In total, the training takes 379 epochs in 25 stops. The first stop takes 43 epochs for the initial model and subsequent training iterations take an average of 14 epochs. The training time is 216 minutes using a PC with AMD Ryzen 5 5600H and NVIDIA GeForce RTX 3050.
+The resulting model achieves $MSE=0.0122m^2$ and $MAE=0.0955m$. See \fig{fig:model_evaluation}(a). In total, the training takes 379 epochs in 25 stops. The first stop takes 43 epochs for the initial model and subsequent training iterations take an average of 14 epochs. The training time is 53 minutes using a PC with AMD Ryzen 5 5600H and NVIDIA GeForce RTX 3050.
 
 \begin{figure}[h!]
 	\centering
@@ -107,7 +107,7 @@ The fixed-point model achieves $MSE=0.0122 m^2$ and $MAE=0.0952m$. See \fig{fig:
 \subsubsection{Quantization Aware Training for Hybrid-Float6}
 The QAT is a post-training step, this is applied with the method described in \Algo{alg:quantization_integration}. We run this method during two epochs with mini-batch size of 10 samples with 4-bit exponent and 1-bit mantissa as parameters. ($N_{ep}=2$, $B_{size}=10$, $E_{size}=4$, $M_{size}=1$.)
 
-The QAT is illustrated in \fig{fig:optimization}(b). Initially, the model is quantized with HF6 format (without QAT), this obtains $MSE=0.0188m^2$ and $MAE=0.1232m$. This represents the inference of the base model without QAT on HF6 hardware. See \fig{fig:model_evaluation}(c). The final model after QAT achieves $MSE=0.0112$ and $MAE=0.0919$, these correspond to 8.2\% and 3.77\% error reduction, respectively. See \fig{fig:model_evaluation}(d). The QAT time is 214 minutes.
+The QAT is illustrated in \fig{fig:optimization}(b). Initially, the model is quantized with HF6 format (without QAT), this obtains $MSE=0.0188m^2$ and $MAE=0.1232m$. This represents the inference of the base model without QAT on HF6 hardware. See \fig{fig:model_evaluation}(c). The final model after QAT achieves $MSE=0.0112$ and $MAE=0.0919$, these correspond to 8.2\% and 3.77\% error reduction, respectively. See \fig{fig:model_evaluation}(d). The QAT time is 185 minutes.
 
 \subsubsection{Quantization Aware Training for Hybrid-Logarithmic 6-bit}
 To compare the inference with 6-bit logarithmic quantization, we execute the QAT on the base model with hybrid-logarithmic parameters. The filter and bias tensors of convolution layers are represented by 6-bit signed logarithmic. The input and output activation tensors are represented by standard floating-point. This is applied with \Algo{alg:quantization_integration}. ($N_{ep}=2$, $B_{size}=10$, $E_{size}=5$, $M_{size}=0$.)
