@@ -54,54 +54,55 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}3}{\fontencoding  {T1}\fontseries  {b}\selectfont  {O}n-chip memory utilization}}{4}\protected@file@percent }
 \newlabel{sec:memory_utilization}{{\mbox  {IV-B}3}{4}}
 \newlabel{eq:tp_memory}{{3}{4}}
+\newlabel{eq:tp_memory_buffer}{{4}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Pipelined hardware module for vector dot-product with hybrid custom floating-point, (a) exhibits the initiation interval of 1 clock cycle, and (b) presents the iteration latency of 8 clock cycles. $I_H$ and $I_F$ represent the input and filter buffer indexes, respectively.}}{4}\protected@file@percent }
 \newlabel{fig:dot_product_hybrid}{{5}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Design parameters for on-chip memory buffers on the TP.}}{4}\protected@file@percent }
 \newlabel{fig:accelerator_buffers}{{6}{4}}
-\newlabel{eq:input_memory}{{4}{4}}
-\newlabel{eq:filter_memory}{{5}{4}}
+\newlabel{eq:input_memory}{{5}{4}}
+\newlabel{eq:filter_memory}{{6}{4}}
 \citation{lai2017deep}
-\newlabel{eq:bias_memory}{{6}{5}}
-\newlabel{eq:channel_in_memory}{{7}{5}}
+\newlabel{eq:bias_memory}{{7}{5}}
+\newlabel{eq:channel_in_memory}{{8}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Training Method}{5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-C}1}Training with Iterative Early Stop Cycle}{5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-C}2}Quantized Aware Training}{5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Base embedded software architecture.}}{5}\protected@file@percent }
-\newlabel{fig:sw_stack}{{7}{5}}
 \newlabel{alg:training}{{1}{5}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Training with iterative early stop cycle.}}{5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Embedded software architecture}{5}\protected@file@percent }
+\newlabel{alg:quantization_integration}{{2}{5}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Quantization aware training.}}{5}\protected@file@percent }
 \citation{hannwindowsine}
-\newlabel{alg:quantization_integration}{{2}{6}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Quantization aware training.}}{6}\protected@file@percent }
+\newlabel{alg:quantize_training}{{3}{6}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Custom floating-point quantization.}}{6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Base embedded software architecture.}}{6}\protected@file@percent }
+\newlabel{fig:sw_stack}{{7}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Embedded software architecture}{6}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {V}Experimental results}{6}\protected@file@percent }
 \newlabel{sec:experimental_results}{{V}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Sensor Analytics Application}{6}\protected@file@percent }
-\newlabel{alg:quantize_training}{{3}{6}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Custom floating-point quantization.}}{6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-A}1}Experimental Setup}{6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-A}2}Data Sets}{6}\protected@file@percent }
 \citation{stft_lit}
 \citation{blackman_window}
 \citation{kingma2014adam}
-\newlabel{stft_eq2}{{9}{7}}
-\newlabel{stft_eq3}{{10}{7}}
+\newlabel{stft_eq2}{{10}{7}}
+\newlabel{stft_eq3}{{11}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Spectrograms of sensors $S_1, S_2$ converted to grayscale for pulses at $x =0.105$, $y = 0.109$ with noise disturbance.}}{7}\protected@file@percent }
 \newlabel{fig:spectrograms}{{8}{7}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-A}3}CNN-Regression Model}{7}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Training}{7}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-B}1}Base Model}{7}\protected@file@percent }
 \citation{hannwindowsine}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces (a) Illustrates the Sampling layout for training and validation data set.}}{8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Experimental setup for sensor analytics on structural health monitoring.}}{8}\protected@file@percent }
 \newlabel{fig:data_set}{{9}{8}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-B}2}TensorFlow Lite 8-bit quantization}{8}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces CNN-regression model for sensor analytics.}}{8}\protected@file@percent }
 \newlabel{fig:model}{{10}{8}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-B}3}Quantization Aware Training for Hybrid-Float6}{8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-B}4}Quantization Aware Training for Hybrid-Logarithmic 6-bit}{8}\protected@file@percent }
 \citation{xilinx2015zynq}
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Training results.}}{9}\protected@file@percent }
 \newlabel{fig:optimization}{{11}{9}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-B}4}Quantization Aware Training for Hybrid-Logarithmic 6-bit}{9}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Hardware Design Exploration}{9}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Performance of the model with different data representations.}}{9}\protected@file@percent }
 \newlabel{fig:model_evaluation}{{12}{9}}
@@ -110,25 +111,26 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-C}2}Benchmark on Tensor Processor with Standard Floating-Point Hardware}{10}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Resource utilization and power dissipation on the Zynq-7007S SoC.}}{10}\protected@file@percent }
 \newlabel{tab:resource_utilization}{{1}{10}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Performance of the CPU and TP on each Conv2D tensor operation. This table presents: computational cost, latency, throughput, power efficiency, and energy consumption.}}{10}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Compute performance of the CPU and TP on each Conv2D tensor operation. This table presents: tensor operation, computational cost, latency, throughput, power efficiency, and estimated energy consumption.}}{10}\protected@file@percent }
 \newlabel{tab:performance}{{2}{10}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Resource utilization and power dissipation of multiplier and adder floating-point (IEEE 754) operator cores.}}{10}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Resource utilization and power dissipation of multiplier and adder floating-point (IEEE 754) operator cores (Xilinx LogiCORE IP).}}{10}\protected@file@percent }
 \newlabel{tab:LogiCORE}{{3}{10}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-C}3}Tensor Processor with Hybrid-Float6 Hardware}{10}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Results and discussion}{10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-D}1}Training}{10}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Run-time inference of TensorFlow Lite on the Zynq-7007S SoC. (a) CPU ARM Cortex-A9 at 666MHz, (b) cooperative CPU + TP with floating-point Xilinx LogiCORE IP at 200MHz, and (c) cooperative CPU + TP with Hybrid-Float6 at 200MHz.}}{11}\protected@file@percent }
+\newlabel{fig:runtime}{{13}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces 2D error distribution of the CNN-regression model.}}{11}\protected@file@percent }
+\newlabel{fig:2d_error_distribtion}{{14}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Inference acceleration and power reduction on the TP with floating-point and HF6 vs. CPU on the Zynq-7007S SoC.}}{11}\protected@file@percent }
+\newlabel{fig:acceleration}{{15}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Hardware resource utilization on the Zynq-7007S SoC.}}{11}\protected@file@percent }
+\newlabel{fig:resource_utilization}{{16}{11}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusions}{11}\protected@file@percent }
+\newlabel{sec:conclusions}{{VI}{11}}
 \bibstyle{IEEEtran}
 \bibdata{../content/bibliography.bib}
 \bibcite{lom2016industry}{1}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Inference run-time of TensorFlow Lite on the embedded system. (a) CPU ARM Cortex-A9 at 666MHz, (b) cooperative CPU + TP with floating-point Xilinx LogiCORE IP at 200MHz, and (c) cooperative CPU + TP with Hybrid-Float6 at 200MHz.}}{11}\protected@file@percent }
-\newlabel{fig:runtime}{{13}{11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Acceleration and power reduction of the TP with floating-point and HF6 vs. CPU on the Zynq-7007S SoC.}}{11}\protected@file@percent }
-\newlabel{fig:acceleration}{{14}{11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Hardware resource utilization on the Zynq-7007S SoC.}}{11}\protected@file@percent }
-\newlabel{fig:resource_utilization}{{15}{11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Estimated power dissipation on the Zynq-7007S SoC with PS at 666MHz and PL at 200MHz.}}{11}\protected@file@percent }
-\newlabel{fig:power}{{16}{11}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusions}{11}\protected@file@percent }
-\newlabel{sec:conclusions}{{VI}{11}}
 \bibcite{li2019sensor}{2}
 \bibcite{dong2018rolling}{3}
 \bibcite{nagayama2007structural}{4}
@@ -159,4 +161,6 @@
 \bibcite{kingma2014adam}{29}
 \bibcite{xilinx2015zynq}{30}
 \bibcite{hrica2012floating}{31}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Estimated power dissipation on the Zynq-7007S SoC with PS at 666MHz and PL at 200MHz.}}{12}\protected@file@percent }
+\newlabel{fig:power}{{17}{12}}
 \@writefile{toc}{\contentsline {section}{REFERENCES}{12}\protected@file@percent }

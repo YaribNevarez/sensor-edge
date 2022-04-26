@@ -33,7 +33,6 @@ The TP has two modes of operation: \emph{configuration} and \emph{execution}.
 We implement the floating-point computation adopting the dot-product with hybrid custom floating-point\cite{nevarez2021accelerating}. The hardware dot-product is illustrated in \Fig{fig:dot_product}. This approach: (1) denormalizes input values, (2) executes computation with integer format for exponent and mantissa, and finally, (3) it normalizes the result into IEEE 754 format, see \Fig{fig:dot_product_hybrid}. 
 
 Rather than a parallelized structure, this is a pipelined hardware design suitable for resource-limited devices. The latency in clock cycles of this hardware module is defined by \equ{eq:dot_custom_float_latency}, where $N$ is the vector length. The latency equations are obtained from the general pipelined hardware latency formula: $L=\left(N-1\right)II+IL$, where $II$ is the initiation interval (\fig{fig:dot_product_hybrid}(a)), and $IL$ is the iteration latency (\fig{fig:dot_product_hybrid}(b)). Both $II$ and $IL$ are obtained from the high-level synthesis results. Both the exponent and mantissa bit widths of the filter and bias buffers are set to a 4-bit exponent and a 1-bit mantissa (E4M1), which corresponds to float6 quantization.
-
 \begin{eqnarray} \label{eq:dot_custom_float_latency}
 L_{hf}=N+7
 \end{eqnarray}
@@ -55,39 +54,36 @@ L_{hf}=N+7
 
 \subsubsection{\textbf{On-chip memory utilization}}
 \label{sec:memory_utilization}
-The total on-chip memory utilization on the TP is defined by \Equ{eq:tp_memory}, where $Input_{M}$ is the \emph{input buffer}, $Filter_{M}$ is the \emph{filter buffer}, $Bias_{M}$ is the \emph{bias buffer}, and $V_{M}$ represents the local variables required for the design. The on-chip memory buffers are defined in bits. \fig{fig:accelerator_buffers} illustrates the convolution operation utilizing the on-chip memory buffers.
-
+The total on-chip memory utilization on the TP is defined by \Equ{eq:tp_memory}, where $TP_B$ and $V_{M}$ represent the tensor buffers and local variables required for the design, respectively. \Equ{eq:tp_memory_buffer} defines the tensor buffers, where $Input_{M}$ is the \emph{input buffer}, $Filter_{M}$ is the \emph{filter buffer}, $Bias_{M}$ is the \emph{bias buffer}. The on-chip memory buffers are defined in bits. \fig{fig:accelerator_buffers} illustrates the convolution operation utilizing the on-chip memory buffers.
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{../figures/accelerator_buffers.pdf}
 	\caption{Design parameters for on-chip memory buffers on the TP.}
 	\label{fig:accelerator_buffers}
 \end{figure}
-
 \begin{eqnarray} \label{eq:tp_memory}
-TP_{M}=Input_{M}+Filter_{M}+Bias_{M}+V_{M}
+TP_{M}=TP_B+V_{M}
+\end{eqnarray}
+\begin{eqnarray} \label{eq:tp_memory_buffer}
+TP_{B}=Input_{M}+Filter_{M}+Bias_{M}
 \end{eqnarray}
 
 The memory utilization of \emph{input buffer} is defined by \Equ{eq:input_memory}, where $K_{H}$ is the height of the convolution kernel, $W_{I}$ is the width of the input tensor, $C_{I}$ is the number of input channels, and $BitSize_{I}$ is the bit size of each input tensor element.
-
 \begin{eqnarray} \label{eq:input_memory}
 Input_{M}=K_{H}W_{I}C_{I}BitSize_{I}
 \end{eqnarray}
 
 The memory utilization of \emph{filter buffer} is defined by \Equ{eq:filter_memory}, where $K_{W}$ and $K_{H}$ are the width and height of the convolution kernel, respectively; $C_{I}$ and $C_{O}$ are the number of input and output channels, respectively; and $BitSize_{F}$ is the bit size of each filter element.
-
 \begin{eqnarray} \label{eq:filter_memory}
 Filter_{M}=C_{I}K_{W}K_{H}C_{O}BitSize_{F}
 \end{eqnarray}
 
 The memory utilization of \emph{bias buffer} is defined by \Equ{eq:bias_memory}, where $C_{O}$ is the number of output channels, and $BitSize_{B}$ is the bit size of each bias element.
-
 \begin{eqnarray} \label{eq:bias_memory}
 Bias_{M}=C_{O}BitSize_{B}
 \end{eqnarray}
 
 As a design trade-off, \Equ{eq:channel_in_memory} defines the capacity of output channels based on the given design parameters. The total on-chip memory $TP_{M}$ determines the TP capacity.
-
 \begin{eqnarray} \label{eq:channel_in_memory}
 C_{O}=\frac{TP_{M}-V_{M}-K_{H}W_{I}C_{I}BitSize_{I}}{C_{I}K_{W}K_{H}BitSize_{F}+BitSize_{B}}
 \end{eqnarray}
