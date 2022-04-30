@@ -102,31 +102,31 @@ This integer quantization is an optimization method that converts 32-bit floatin
 
 The base model is quantized using the TensorFlow Lite library with integer-only quantization settings. The filter and bias tensors are represented by 8-bit and 32-bit signed integers, respectively. The input and output activation tensors are represented by 8-bit signed integer. For convolution layers, this quantization includes two additional tensor coefficients (output-multiplier and output-shift). These tensors are the same shape as the bias tensor and are represented by 32-bit signed integers.
 
-The fixed-point model achieves $MSE=0.0122 m^2$ and $MAE=0.0952m$. See \fig{fig:model_evaluation}(b). The MAE gets a reduction of 0.31\% compared to the base model. We attribute this to the regularization effect.
+The fixed-point model achieves $MSE=0.0122 m^2$ and $MAE=0.0952m$. See \fig{fig:model_evaluation}(b). The MAE obtains a reduction of 0.31\% compared to the base model. We attribute this to the regularization effect.
 
 \subsubsection{Quantization Aware Training for Hybrid-Float6}
 The QAT is a post-training step, this is applied with the method described in \Algo{alg:quantization_integration}. We run this method during two epochs with mini-batch size of 10 samples with 4-bit exponent and 1-bit mantissa as parameters. ($N_{ep}=2$, $B_{size}=10$, $E_{size}=4$, $M_{size}=1$.)
 
-The QAT is illustrated in \fig{fig:optimization}(b). Initially, the model is quantized with HF6 format (without QAT), this obtains $MSE=0.0188m^2$ and $MAE=0.1232m$. This represents the inference of the base model without QAT on HF6 hardware. See \fig{fig:model_evaluation}(c). The final model after QAT achieves $MSE=0.0112$ and $MAE=0.0919$, these correspond to 8.2\% and 3.77\% error reduction, respectively. See \fig{fig:model_evaluation}(d). The QAT time is 185 minutes.
+The QAT is illustrated in \fig{fig:optimization}(b). First, the model gets quantized with HF6 format (before QAT), this obtains $MSE=0.0188m^2$ and $MAE=0.1232m$. This illustrates the inference of the base floating-point model on HF6 hardware. See \fig{fig:model_evaluation}(c). The final model after QAT achieves $MSE=0.0112$ and $MAE=0.0919$. This is an error reduction of 8.2\% and 3.77\%, respectively. See \fig{fig:model_evaluation}(d). The QAT time is 185 minutes.
 
 \subsubsection{Quantization Aware Training for Hybrid-Logarithmic 6-bit}
-To compare the inference with 6-bit logarithmic quantization, we execute the QAT on the base model with hybrid-logarithmic parameters. The filter and bias tensors of convolution layers are represented by 6-bit signed logarithmic. The input and output activation tensors are represented by standard floating-point. This is applied with \Algo{alg:quantization_integration}. ($N_{ep}=2$, $B_{size}=10$, $E_{size}=5$, $M_{size}=0$.)
+For the sake of comparison, we generate the model with 6-bit logarithmic quantization on convolution parameters. This quantization matches the hardware resource utilization of HF6. We run the QAT on the base model with hybrid logarithmic parameters. The filter and bias tensors of convolution layers are represented by 6-bit signed logarithmic. The input and output activation tensors are represented by standard floating-point. This is applied with \Algo{alg:quantization_integration}. ($N_{ep}=2$, $B_{size}=10$, $E_{size}=5$, $M_{size}=0$.)
 
-The model achieves $MSE=0.0123$ and $MAE=0.0968$, which correspond to 0.82\% and 1.36\% error increase, respectively. See \fig{fig:model_evaluation}(e).
+The model reaches $MSE=0.0123$ and $MAE=0.0968$, which correspond to an error increase of 0.82\% and 1.36\%, respectively. See \fig{fig:model_evaluation}(e).
 
 A summary of the inference with different data representations is presented in \fig{fig:model_evaluation}(f).
 
 \subsection{Hardware Design Exploration}
 The proposed hardware/software co-design is demonstrated on the Zynq-7007S system-on-chip (SoC) on the MiniZed development board. This SoC integrates a single ARM Cortex-A9 processing system (PS) and programmable logic (PL) equivalent to Xilinx Artix-7 (FPGA) in a single chip \cite{xilinx2015zynq}. The Zynq-7007S SoC architecture maps the custom logic and software in the PL and PS, respectively.
 
-In this platform, we implement the proposed hardware/software architecture to deploy the sensor analytics application. The desired model is converted to TensorFlow Lite (floating-point) and deployed on the MiniZed. The 6-bit floating-point representation is extracted from the standard floating-point in the HF6 hardware. The Zynq-7007S SoC performs inference executing TensorFlow Lite on the PS. The computational workload of convolution layers is delegated to the dedicated hardware.
+In this platform, we implement the proposed hardware/software architecture to deploy the sensor analytics application. The desired model is converted to TensorFlow Lite (floating-point) and deployed on the SoC as a hex dump in a C array, this is used for the embedded software build. The Zynq-7007S SoC performs inference running TensorFlow Lite on the PS. The computational workload of convolution layers is delegated to the dedicated hardware.
 
 \subsubsection{Benchmark on Embedded CPU}
-We examine the performance of the embedded CPU for inference without dedicated hardware acceleration. In this case, TensorFlow Lite builds the CNN as a sequential model mapping the entire computation to the CPU (ARM Cortex-A9) at 666 MHz and a power dissipation of $1.187W$.
+We examined the performance of the embedded CPU for inference without hardware acceleration. In this case, TensorFlow Lite creates the CNN as a sequential model that allocates all computation to the CPU (ARM Cortex-A9) at 666 MHz and power dissipation of $1,187 W$.
 
-The compute performance and inference schedule of the model on the CPU is shown in \Tab{tab:performance}(a) and \fig{fig:runtime}(a), respectively.
+The compute performance and run-time inference of the CPU are shown in \Tab{tab:performance}(a) and \fig{fig:runtime}(a), respectively.
 
-\subsubsection{Benchmark on Tensor Processor with Standard Floating-Point Hardware}
+\subsubsection{Benchmark on Tensor Processor with Standard Floating-Point Hardware using Xilinx LogiCORE IP}
 For this design, we implement the TP with standard floating-point hardware. The design parameters are:
 \begin{itemize}
 	\item Max convolution kernel size: $K_W = K_H = 3$.
@@ -136,11 +136,11 @@ For this design, we implement the TP with standard floating-point hardware. The 
 	\item Input tensor bit-size: $BitSize_I=32$.
 \end{itemize}
 
-Using equations from Section \ref{sec:memory_utilization}, the on-chip memory requirements are $Input_M=84,480b$, $Filter_M=950,400b$, $Bias_M=1,920b$. Hence, the required on-chip memory buffer size is $TP_B=1,036,800b$.
+Using equations from Section \ref{sec:memory_utilization}, the on-chip memory buffer utilization are $Input_M=84,480$b, $Filter_M=950,400$b, and $Bias_M=1,920$b. Hence, the required on-chip memory buffer size is $TP_B=1,036,800$b.
 
 The post-implementation resource utilization and power dissipation are presented in \Tab{tab:resource_utilization}(a). The complete hardware platform utilizes 83\% of BRAM, this includes the on-chip memory requirements of the TP, DMA, and AXI interconnects. The total available on-chip memory (BRAM) on the Zynq-7007S SoC is 1.8Mb. The estimated power dissipation of the TP is $85mW$ at $200MHz$ (this estimation is provided by Xilinx Vivado).
 
-\begin{table}[!htp]\centering
+\begin{table}[!h]\centering
 	\caption{Resource utilization and power dissipation on the Zynq-7007S SoC.}\label{tab:resource_utilization}
 	\scriptsize
 	\begin{tabular}{lrrrrrr}\toprule
@@ -158,7 +158,7 @@ The compute performance and inference schedule of the model on this hardware imp
 
 The implementation of dot-product with standard floating-point arithmetic (IEEE 754) utilizes proprietary multiplier and adder floating-point operator cores. Vivado HLS implements floating-point arithmetic operations by mapping them onto Xilinx LogiCORE IP cores, these floating-point operator cores are instantiated in the resultant RTL \cite{hrica2012floating}. In this case, the implementation of the dot-product with the standard floating-point computation reuses the multiplier and adder cores already instantiated in other compute sections of the TP. The post-implementation resource utilization and power dissipation of the floating-point operator cores are shown in \Tab{tab:LogiCORE}.
 
-\begin{table}[!htp]\centering
+\begin{table}[!t]\centering
 	\caption{Compute performance of the CPU and TP on each Conv2D tensor operation. This table presents: tensor operation, computational cost, latency, throughput, power efficiency, and estimated energy consumption.}\label{tab:performance}
 	\scriptsize
 	\begin{tabular}{lrrrrrr}\toprule
@@ -178,6 +178,13 @@ The implementation of dot-product with standard floating-point arithmetic (IEEE 
 		\bottomrule
 	\end{tabular}
 \end{table}
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=1\columnwidth]{../figures/power_breakdown/acceleration_power_reduction.pdf}
+	\caption{Inference acceleration and power reduction on the TP with floating-point and HF6 vs. CPU on the Zynq-7007S SoC.}
+	\label{fig:acceleration}
+\end{figure}
 
 
 \begin{table}[!h]\centering
@@ -200,7 +207,7 @@ Using equations from Section \ref{sec:memory_utilization}, the on-chip memory re
 
 The post-implementation resource utilization and power dissipation are presented in \Tab{tab:resource_utilization}(b). The complete hardware platform utilizes 30\% of BRAM, this includes the on-chip memory requirements of the TP, DMA, and AXI interconnects. The estimated power dissipation of the TP is $84mW$ at $200MHz$ (this estimation is provided by Xilinx Vivado).
 
-The compute performance and inference schedule of the model on this hardware implementation is shown in \Tab{tab:performance}(c) and \fig{fig:runtime}(c), respectively.
+The compute performance and inference schedule of the model on this hardware implementation is shown in \Tab{tab:performance}(c) and \fig{fig:runtime}(c), respectively. \Fig{fig:acceleration} presents a comparison of acceleration and reduction of power dissipation between floating-point and HF6 hardware implementations.
 
 \begin{figure}[t!]
 	\centering
@@ -210,36 +217,45 @@ The compute performance and inference schedule of the model on this hardware imp
 \end{figure}
 
 \subsection{Results and discussion}
-\subsubsection{Training}
-The TensorFlow Lite 8-bit quantization preserves accuracy of the model. The regularization effect in this quantization can benefit the solution. However, the error distribution in linear regressions gets highly discretized. The HF6 quantization qualitatively improves the error distribution and the accuracy of the model. See \fig{fig:2d_error_distribtion}.
+\subsubsection{CNN-Regression Model}
+The training with iterative early stop obtains a model with enhanced accuracy than using plain early stop. This is method iteratively restarts the moving averages of Adam optimizer, which helps to search for better local minima. This iterative searching is suitable for models with reduced computational cost; for example, low-power sensor analytics applications.
+
+The TensorFlow Lite 8-bit quantization preserves overall accuracy. The regularization effect can improve the solution. However, the error distribution in CNN linear regressions gets slightly degraded. \fig{fig:2d_error_distribtion}(b) shows this effect on three different models, where vertical and horizontal patterns appear in the fixed-point quantization. We attribute this effect to the 8-bit resolution in the output activation maps. In the case of HF6 quantization, the activation maps are floating-point preventing this degradation.
+
+The proposed HF6 quantization preserves model accuracy and reduces power dissipation with an efficient parameter quantization.
 
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=1\columnwidth]{../figures/histograms/2D_error_distribtion.pdf}
-	\caption{2D error distribution of the CNN-regression model.}
+	\caption{2D error distribution of three CNN-regression models.}
 	\label{fig:2d_error_distribtion}
 \end{figure}
 
-The hybrid dot-product with custom floating-point does not reuse the available floating-point operator cores instantiated from other computational sections (see {\Tab{tab:LogiCORE}}). Therefore, the logic required for the dot-product must be implemented, which is reflected as additional utilization of LUT and FF resources.
+\subsubsection{Hardware/Software Platform}
+The HF6 hardware implementation reduces on-chip memory and DSP utilization while slightly increasing FF and LUT compared to the floating-point hardware implementation. See \Fig{tab:resource_utilization} and \Fig{fig:resource_utilization}. The use of FF and LUT increases to implement the HF6 logic, while the floating-point implementation instantiates Xilinx LogiCORE IPs using DSPs.
 
+The compute performance of the CPU and TP on each convolution layer of the model is presented in \Tab{tab:performance} and \fig{fig:acceleration}. The peak acceleration and power efficiency of the TP with HF6 is 5,743.29 MFLOPS/s/W and $48.3\times$, respectively. The HF6 hardware demonstrates an improvement of $3.7\times$ in acceleration and power efficiency with respect to the standard floating-point hardware. See \Fig{fig:acceleration}. The estimated power dissipation on the SoC is presented in \fig{fig:power}. This shows a very similar breakdown of power dissipation in both implementations. However, the energy efficiency is increased due to the higher speed in floating-point operations.
 
-\begin{figure}[t!]
-	\centering
-	\includegraphics[width=1\columnwidth]{../figures/power_breakdown/acceleration_power_reduction.pdf}
-	\caption{Inference acceleration and power reduction on the TP with floating-point and HF6 vs. CPU on the Zynq-7007S SoC.}
-	\label{fig:acceleration}
-\end{figure}
-
-\begin{figure}[t!]
+\begin{figure}[h!]
 	\centering
 	\includegraphics[width=1\columnwidth]{../figures/power_breakdown/resource_utilization.pdf}
 	\caption{Hardware resource utilization on the Zynq-7007S SoC.}
 	\label{fig:resource_utilization}
 \end{figure}
 
-\begin{figure}[t!]
+\begin{figure}[h!]
 	\centering
 	\includegraphics[width=1\columnwidth]{../figures/power_breakdown/power_breakdown.pdf}
 	\caption{Estimated power dissipation on the Zynq-7007S SoC with PS at 666MHz and PL at 200MHz.}
 	\label{fig:power}
 \end{figure}
+
+The run-time inference of TensorFlow Lite on the Zynq-7007S SoC is illustrated in \Fig{fig:runtime}. This shows a cooperative run-time performance where the computational intensive tensor operations are delegated to the dedicated hardware. The implementation with the standard floating-point accelerator gets a latency of $48 ms$, while the implementation with the HF6 accelerator gets a latency of $27.9 ms$. These represent an overall inference acceleration of $8\times$ and $13.87\times$, respectively.
+
+\subsubsection{SoC Design and Compatibility}
+The proposed design is an alternative for low-power floating-point ML inference. The 32-bit floating-point representation in activation maps enables backward ML compatibility. The 6-bit floating-point representation (E4M1) reduces the 24-bit mantissa multiplication to 1-bit flag operation. This reduces latency, hardware area, and power consumption.
+
+Backwards ML compatibility gives portability from training to inference. This enables to run inference of HF6 quantized models on standard floating-point hardware and vise versa. Running inference of models without QAT enables rapid deployment; however, this will incur in accuracy degradation, see \Fig{fig:model_evaluation}(c).
+
+\subsubsection{Future Work}
+As future work, we plan to investigate further improvements in energy efficiency. To reduce energy consumption, activation maps can be represented with brain floating-point. This would reduce hardware resource utilization, memory footprint, and data transfer. To increase performance, this implementation would require matching computational throughput with memory bandwidth using parallelization approaches.
