@@ -217,12 +217,12 @@ The compute performance and inference schedule of the model on this hardware imp
 \end{figure}
 
 \subsection{Results and discussion}
-\subsubsection{CNN-Regression Model}
-The training with iterative early stop obtains a model with enhanced accuracy than using plain early stop. This is method iteratively restarts the moving averages of Adam optimizer, which helps to search for better local minima. This iterative searching is suitable for models with reduced computational cost; for example, low-power sensor analytics applications.
+\subsubsection{Training and Quantization}
+The training with iterative early stop obtains a model with enhanced accuracy than using plain early stop. This method iteratively resets the moving averages of Adam's optimizer, which helps to search for better local minima. This iterative search is suitable for models with low computational cost; for example, low power sensor data analytics.
 
-The TensorFlow Lite 8-bit quantization preserves overall accuracy. The regularization effect can improve the solution. However, the error distribution in CNN linear regressions gets slightly degraded. \fig{fig:2d_error_distribtion}(b) shows this effect on three different models, where vertical and horizontal patterns appear in the fixed-point quantization. We attribute this effect to the 8-bit resolution in the output activation maps. In the case of HF6 quantization, the activation maps are floating-point preventing this degradation.
+The TensorFlow Lite 8-bit quantization preserves overall accuracy. The regularization effect can improve the solution. However, the error distribution in CNN linear regressions gets slightly degraded. \fig{fig:2d_error_distribtion}(b) shows this effect on three different models, where vertical and horizontal patterns appear in the error distribution of fixed-point quantization. We attribute this effect to the 8-bit resolution in the output activation maps. In the case of HF6 quantization, the activation maps are floating-point preventing this degradation.
 
-The proposed HF6 quantization preserves model accuracy and reduces power dissipation with an efficient parameter quantization.
+The proposed HF6 quantization reduces power dissipation and preserves model accuracy. The 6-bit floating-point representation (E4M1) in the convolution parameters produces a better result than the 6-bit logarithmic representation (E5M0). This is demonstrated in \Fig{fig:model_evaluation}(d) and \Fig{fig:model_evaluation}(e).
 
 \begin{figure}[t!]
 	\centering
@@ -231,10 +231,10 @@ The proposed HF6 quantization preserves model accuracy and reduces power dissipa
 	\label{fig:2d_error_distribtion}
 \end{figure}
 
-\subsubsection{Hardware/Software Platform}
-The HF6 hardware implementation reduces on-chip memory and DSP utilization while slightly increasing FF and LUT compared to the floating-point hardware implementation. See \Fig{tab:resource_utilization} and \Fig{fig:resource_utilization}. The use of FF and LUT increases to implement the HF6 logic, while the floating-point implementation instantiates Xilinx LogiCORE IPs using DSPs.
+\subsubsection{Hardware/Software Performance}
+The proposed HF6 hardware design reduces on-chip memory and DSP utilization while slightly increasing FF and LUT compared to the floating-point hardware implementation. See \Tab{tab:resource_utilization} and \Fig{fig:resource_utilization}. The HF6 hardware is implemented using FF and LUT, while the floating-point hardware is implemented using Xilinx LogiCORE IPs with DSPs.
 
-The compute performance of the CPU and TP on each convolution layer of the model is presented in \Tab{tab:performance} and \fig{fig:acceleration}. The peak acceleration and power efficiency of the TP with HF6 is 5,743.29 MFLOPS/s/W and $48.3\times$, respectively. The HF6 hardware demonstrates an improvement of $3.7\times$ in acceleration and power efficiency with respect to the standard floating-point hardware. See \Fig{fig:acceleration}. The estimated power dissipation on the SoC is presented in \fig{fig:power}. This shows a very similar breakdown of power dissipation in both implementations. However, the energy efficiency is increased due to the higher speed in floating-point operations.
+The compute performance of the CPU and TP on each convolution layer of the model is presented in \Tab{tab:performance} and \fig{fig:acceleration}. The peak acceleration and power efficiency of the TP with HF6 is $48.3\times$ and $5,743.29$ MFLOPS/s/W, respectively. The HF6 hardware demonstrates an improvement of $3.7\times$ in acceleration and power efficiency with respect to the standard floating-point hardware. See \Fig{fig:acceleration}. The estimated power dissipation on the SoC is presented in \fig{fig:power}. This shows a very similar breakdown of power dissipation in both implementations. However, the energy efficiency is increased due to the higher speed in HF6 hardware.
 
 \begin{figure}[h!]
 	\centering
@@ -250,10 +250,12 @@ The compute performance of the CPU and TP on each convolution layer of the model
 	\label{fig:power}
 \end{figure}
 
-The run-time inference of TensorFlow Lite on the Zynq-7007S SoC is illustrated in \Fig{fig:runtime}. This shows a cooperative run-time performance where the computational intensive tensor operations are delegated to the dedicated hardware. The implementation with the standard floating-point accelerator gets a latency of $48 ms$, while the implementation with the HF6 accelerator gets a latency of $27.9 ms$. These represent an overall inference acceleration of $8\times$ and $13.87\times$, respectively.
+The run-time inference of TensorFlow Lite on the SoC is illustrated in \Fig{fig:runtime}. This shows a cooperative performance where the convolution tensor operations are delegated to the dedicated hardware accelerator. The platform with floating-point hardware accelerator obtains a latency of $48 ms$, while the implementation with HF6 obtains a latency of $27.9 ms$. These represent an overall acceleration of $8\times$ and $13.87\times$, respectively.
 
 \subsubsection{SoC Design and Compatibility}
-The proposed design is an alternative for low-power floating-point ML inference. The 32-bit floating-point representation in activation maps enables backward ML compatibility. The 6-bit floating-point representation (E4M1) reduces the 24-bit mantissa multiplication to 1-bit flag operation. This reduces latency, hardware area, and power consumption.
+The proposed design is an alternative for low-power floating-point ML inference with a cooperative hardware/software mechanism. This architecture delegates compute-bound tensor operations to a dedicated hardware accelerator, while memory-bound operations are processed by the CPU.
+
+The 32-bit floating-point representation in activation maps enables backward ML compatibility. The 6-bit floating-point representation (E4M1) reduces the 24-bit mantissa multiplication to 1-bit flag operation. This reduces latency, hardware area, and power consumption.
 
 Backwards ML compatibility gives portability from training to inference. This enables to run inference of HF6 quantized models on standard floating-point hardware and vise versa. Running inference of models without QAT enables rapid deployment; however, this will incur in accuracy degradation, see \Fig{fig:model_evaluation}(c).
 
