@@ -6,7 +6,7 @@ Representation of every numeric value, in any number system, is composed of an i
 In scientific computation, it is frequently necessary to represent very large and very small values. This is difficult to achieve using the fixed-point format because the bitwidth required to maintain both the desired precision and the desired range grows large. In such situations, floating point formats are used to represent real numbers. Floating point formats resemble scientific notation, such as $-3.2004\times10^{17}$. Every floating point number can be divided into three fields: sign $s$, exponent $e$, and fraction $f$. Using the binary number system, it is possible to represent any floating-point number as:
 
 \begin{eqnarray} \label{eq:float}
-(-1)^{2} \times 1.f \times 2^{e-BIAS}
+(-1)^{s} \times 1.f \times 2^{e-BIAS}
 \end{eqnarray}
 
 Note that the exponent is biased, meaning that the stored value is shifted from 0 by a given value that depends on the bitwidth of the exponent field in the particular format. Also, the fraction represents the portion of the mantissa
