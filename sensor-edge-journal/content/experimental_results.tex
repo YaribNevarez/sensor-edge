@@ -216,7 +216,7 @@ The compute performance and inference schedule of the model on this hardware imp
 	\label{fig:runtime}
 \end{figure}
 
-\subsection{Results and discussion}
+\subsection{Discussion}
 \subsubsection{Training and Quantization}
 The training with iterative early stop obtains a model with enhanced accuracy than using plain early stop. This method iteratively resets the moving averages of Adam's optimizer, which helps to search for better local minima. This iterative search is suitable for models with low computational cost; for example, low power sensor data analytics.
 
