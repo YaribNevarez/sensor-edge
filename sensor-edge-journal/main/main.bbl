@@ -128,18 +128,6 @@ P.~Colangelo, N.~Nasiri, E.~Nurvitadhi, A.~Mishra, M.~Margala, and K.~Nealis,
   symposium on field-programmable custom computing machines (FCCM)}.\hskip 1em
   plus 0.5em minus 0.4em\relax IEEE, 2018, pp. 73--80.
 
-\bibitem{gao2020edgedrnn}
-C.~Gao, A.~Rios-Navarro, X.~Chen, S.-C. Liu, and T.~Delbruck, ``Edgedrnn:
-  Recurrent neural network accelerator for edge inference,'' \emph{IEEE Journal
-  on Emerging and Selected Topics in Circuits and Systems}, vol.~10, no.~4, pp.
-  419--432, 2020.
-
-\bibitem{meloni2019cnn}
-P.~Meloni, A.~Garufi, G.~Deriu, M.~Carreras, and D.~Loi, ``Cnn hardware
-  acceleration on a low-power and low-cost apsoc,'' in \emph{2019 Conference on
-  Design and Architectures for Signal and Image Processing (DASIP)}.\hskip 1em
-  plus 0.5em minus 0.4em\relax IEEE, 2019, pp. 7--12.
-
 \bibitem{lai2017deep}
 L.~Lai, N.~Suda, and V.~Chandra, ``Deep convolutional neural network inference
   with floating-point weights and fixed-point activations,'' \emph{arXiv
@@ -151,9 +139,26 @@ S.~O. Settle, M.~Bollavaram, P.~D'Alberto, E.~Delaye, O.~Fernandez, N.~Fraser,
   low-power high-throughput inference engines,'' \emph{arXiv preprint
   arXiv:1805.07941}, 2018.
 
+\bibitem{meloni2019cnn}
+P.~Meloni, A.~Garufi, G.~Deriu, M.~Carreras, and D.~Loi, ``Cnn hardware
+  acceleration on a low-power and low-cost apsoc,'' in \emph{2019 Conference on
+  Design and Architectures for Signal and Image Processing (DASIP)}.\hskip 1em
+  plus 0.5em minus 0.4em\relax IEEE, 2019, pp. 7--12.
+
+\bibitem{gao2020edgedrnn}
+C.~Gao, A.~Rios-Navarro, X.~Chen, S.-C. Liu, and T.~Delbruck, ``Edgedrnn:
+  Recurrent neural network accelerator for edge inference,'' \emph{IEEE Journal
+  on Emerging and Selected Topics in Circuits and Systems}, vol.~10, no.~4, pp.
+  419--432, 2020.
+
 \bibitem{goodfellow2016deep}
 I.~Goodfellow, Y.~Bengio, and A.~Courville, \emph{Deep learning}.\hskip 1em
   plus 0.5em minus 0.4em\relax MIT press, 2016.
+
+\bibitem{ieee1985ieee}
+I.~C. S. S. C.~W. group of~the Microprocessor Standards~Subcommittee and
+  A.~N.~S. Institute, \emph{IEEE standard for binary floating-point
+  arithmetic}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 1985, vol. 754.
 
 \bibitem{nevarez2021accelerating}
 Y.~Nevarez, D.~Rotermund, K.~R. Pawelzik, and A.~Garcia-Ortiz, ``Accelerating

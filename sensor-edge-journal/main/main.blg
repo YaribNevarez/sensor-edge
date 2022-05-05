@@ -8,11 +8,11 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ../content/bibliography.bib
-Repeated entry---line 877 of file ../content/bibliography.bib
+Repeated entry---line 893 of file ../content/bibliography.bib
  : @article{wang2019deep
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1123 of file ../content/bibliography.bib
+Repeated entry---line 1139 of file ../content/bibliography.bib
  : @techreport{xilinx2015zynq
  :                           ,
 I'm skipping whatever remains of this entry
@@ -21,45 +21,45 @@ I'm skipping whatever remains of this entry
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 31 entries,
+You've used 32 entries,
             4087 wiz_defined-function locations,
-            991 strings with 14158 characters,
-and the built_in function-call counts, 21724 in all, are:
-= -- 1678
-> -- 673
-< -- 134
-+ -- 344
-- -- 137
-* -- 1041
-:= -- 3275
-add.period$ -- 67
-call.type$ -- 31
+            996 strings with 14371 characters,
+and the built_in function-call counts, 22150 in all, are:
+= -- 1709
+> -- 682
+< -- 135
++ -- 348
+- -- 139
+* -- 1058
+:= -- 3345
+add.period$ -- 69
+call.type$ -- 32
 change.case$ -- 29
 chr.to.int$ -- 291
-cite$ -- 31
-duplicate$ -- 1621
-empty$ -- 1762
-format.name$ -- 166
-if$ -- 5039
+cite$ -- 32
+duplicate$ -- 1654
+empty$ -- 1811
+format.name$ -- 169
+if$ -- 5140
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 316
-newline$ -- 116
-num.names$ -- 31
-pop$ -- 785
+int.to.str$ -- 32
+missing$ -- 323
+newline$ -- 119
+num.names$ -- 32
+pop$ -- 804
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1653
+skip$ -- 1691
 stack$ -- 0
 substring$ -- 726
-swap$ -- 1245
-text.length$ -- 37
+swap$ -- 1266
+text.length$ -- 38
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 31
+type$ -- 32
 warning$ -- 0
-while$ -- 88
-width$ -- 33
-write$ -- 305
+while$ -- 89
+width$ -- 34
+write$ -- 313
 (There were 2 error messages)
