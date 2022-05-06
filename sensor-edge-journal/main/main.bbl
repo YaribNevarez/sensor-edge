@@ -151,14 +151,20 @@ C.~Gao, A.~Rios-Navarro, X.~Chen, S.-C. Liu, and T.~Delbruck, ``Edgedrnn:
   on Emerging and Selected Topics in Circuits and Systems}, vol.~10, no.~4, pp.
   419--432, 2020.
 
+\bibitem{gu2018recent}
+J.~Gu, Z.~Wang, J.~Kuen, L.~Ma, A.~Shahroudy, B.~Shuai, T.~Liu, X.~Wang,
+  G.~Wang, J.~Cai \emph{et~al.}, ``Recent advances in convolutional neural
+  networks,'' \emph{Pattern Recognition}, vol.~77, pp. 354--377, 2018.
+
 \bibitem{goodfellow2016deep}
 I.~Goodfellow, Y.~Bengio, and A.~Courville, \emph{Deep learning}.\hskip 1em
   plus 0.5em minus 0.4em\relax MIT press, 2016.
 
-\bibitem{ieee1985ieee}
-I.~C. S. S. C.~W. group of~the Microprocessor Standards~Subcommittee and
-  A.~N.~S. Institute, \emph{IEEE standard for binary floating-point
-  arithmetic}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 1985, vol. 754.
+\bibitem{zuras2008ieee}
+D.~Zuras, M.~Cowlishaw, A.~Aiken, M.~Applegate, D.~Bailey, S.~Bass,
+  D.~Bhandarkar, M.~Bhat, D.~Bindel, S.~Boldo \emph{et~al.}, ``Ieee standard
+  for floating-point arithmetic,'' \emph{IEEE Std}, vol. 754, no. 2008, pp.
+  1--70, 2008.
 
 \bibitem{nevarez2021accelerating}
 Y.~Nevarez, D.~Rotermund, K.~R. Pawelzik, and A.~Garcia-Ortiz, ``Accelerating
