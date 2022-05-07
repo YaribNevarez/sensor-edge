@@ -37,3 +37,9 @@ The most widely used format for floating-point arithmetic is the IEEE 754 standa
 \end{figure}
 
 Reduced bit size than those specified in the IEEE 754 standard are often sufficient to provide the desired precision. Reduced bit size designs require fewer hardware resources enabling low-power implementations. In custom hardware designs, it is possible to customize the exact floating-point format implemented. In later sections, we use the term E$a$M$b$ to denote floating-point representations, where $a$ and $b$ are the exponent and mantissa bit size, respectively. For example, E4M1 means 4-bit exponent and 1-bit mantissa, see \Fig{fig:floating}(d).
+
+There are three special definitions in IEEE-754 standard. The first is subnormal numbers when $E=0$, then \Equ{eq:float} is modified to \Equ{eq:float_subnorm}. Infinity and not a number (NaN) are the other two special cases but are not used in our work. This is because our saturation scheme saturates large numbers to the maximal number.
+
+\begin{eqnarray} \label{eq:float_subnorm}
+(-1)^{S} \times 0.M \times 2^{1-B}
+\end{eqnarray}
