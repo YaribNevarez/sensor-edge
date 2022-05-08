@@ -171,6 +171,13 @@ Y.~Nevarez, D.~Rotermund, K.~R. Pawelzik, and A.~Garcia-Ortiz, ``Accelerating
   spike-by-spike neural networks on fpga with hybrid custom floating-point and
   logarithmic dot-product approximation,'' \emph{IEEE Access}, 2021.
 
+\bibitem{du2014leveraging}
+Z.~Du, K.~Palem, A.~Lingamneni, O.~Temam, Y.~Chen, and C.~Wu, ``Leveraging the
+  error resilience of machine-learning applications for designing highly energy
+  efficient accelerators,'' in \emph{2014 19th Asia and South Pacific design
+  automation conference (ASP-DAC)}.\hskip 1em plus 0.5em minus 0.4em\relax
+  IEEE, 2014, pp. 201--206.
+
 \bibitem{hannwindowsine}
 S.~Sikdar, S.~Banerjee, and G.~Ashish, ``Ultrasonic guided wave propagation and
   disbond identification in a honeycomb composite sandwich structure using

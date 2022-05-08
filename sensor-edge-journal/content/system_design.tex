@@ -1,9 +1,9 @@
 \section{System Design}
 \label{sec:system_design}
-The system design is a hardware/software co-design framework for low-power AI deployment. This architecture allows design exploration of dedicated hardware for TensorFlow Lite on low-cost embedded FPGAs.
+The system design is a hardware/software co-design framework for low-power AI deployment. This architecture allows design exploration of dedicated hardware integrated with TensorFlow Lite on low-cost embedded FPGAs.
 
 \subsection{Base embedded system architecture}
-The base embedded system architecture implements a cooperative hardware-software platform. \Fig{fig:system_architecture} illustrates the top-level hardware architecture. The TPs execute low-level tensor operations delegated from the embedded CPU. The TPs employ AXI-Lite interface for configuration and AXI-Stream interfaces via Direct Memory Access (DMA) for data movement from DDR memory. Each TP asserts an interrupt flag once the job/transaction is complete. Interrupt events are handled by the embedded CPU to collect results and start a new transaction. The hardware architecture can resize its resource utilization and energy consumption by customizing the TPs prior to the hardware synthesis.
+The base embedded system architecture implements a cooperative hardware-software platform. \Fig{fig:system_architecture} illustrates the top-level hardware architecture. The TPs execute low-level tensor operations delegated from the embedded CPU. The TPs employ AXI-Lite interface for configuration and AXI-Stream interfaces via Direct Memory Access (DMA) for data movement from DDR memory. Each TP asserts an interrupt flag once the job/transaction is complete. Interrupt events are handled by the embedded CPU to collect results and start a new transaction. The hardware architecture can configure its resource utilization and energy consumption by customizing the TPs prior to the hardware synthesis.
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{../figures/system_design.pdf}
@@ -13,7 +13,7 @@ The base embedded system architecture implements a cooperative hardware-software
 \subsection{Tensor processor}
 The TP is a dedicated hardware module to compute tensor operations. The hardware architecture is described in \fig{fig:accelerator}. This architecture implements high performance communication with AXI-Stream, direct CPU communication with AXI-Lite, and on-chip storage utilizing BRAM. This hardware architecture is implemented with high-level synthesis (HLS). The tensor operations are implemented based on the C++ TensorFlow Lite micro kernels.
 
-The TP is an extensible hardware module that executes low-level tensor operations. In this paper, we focus on the \emph{Conv2D} tensor operator that executes inference of convolution layers.
+The TP is an extensible hardware module that executes low-level tensor operations. In this paper, we focus on the \emph{Conv2D} tensor operation that computes 2D convolution layers.
 
 \begin{figure}[t!]
 	\centering
@@ -24,7 +24,7 @@ The TP is an extensible hardware module that executes low-level tensor operation
 \subsubsection{\textbf{Modes of operation}}
 The TP has two modes of operation: \emph{configuration} and \emph{execution}.
 \begin{itemize}
-	\item In \emph{configuration} mode, the TP receives the tensor operation ID for \emph{Conv2D} and hyperparameters: stride, dilation, padding, offset, activation, depth-multiplier, input shape, filter shape, bias shape, and output shape. Afterwards, the TP receives filter and bias tensors, which are locally stored in BRAM.
+	\item In \emph{configuration} mode, the TP receives the tensor operation ID for \emph{Conv2D} and hyperparameters: stride, dilation, padding, offset, activation, depth-multiplier, input shape, filter shape, bias shape, and output shape. Afterwards, the TP receives filter and bias tensors, which are locally stored in BRAM. The filter and bias tensors are transferred with standard FP representation. The TP extracts the 6-bit format for local on-chip storage.
 	
 	\item In \emph{execution} mode, the TP executes the tensor operation according to the hyperparameters given in the configuration mode. During execution, the input and output tensors are moved from/to the DDR memory via DMA.
 \end{itemize}
@@ -32,10 +32,15 @@ The TP has two modes of operation: \emph{configuration} and \emph{execution}.
 \label{sec:dot_product}
 We implement the floating-point computation adopting the dot-product with hybrid custom floating-point\cite{nevarez2021accelerating}. The hardware dot-product is illustrated in \Fig{fig:dot_product}. This approach: (1) denormalizes input values, (2) executes computation with integer format for exponent and mantissa, and finally, (3) it normalizes the result into IEEE 754 format, see \Fig{fig:dot_product_hybrid}. 
 
-Rather than a parallelized structure, this is a pipelined hardware design suitable for resource-limited devices. The latency in clock cycles of this hardware module is defined by \equ{eq:dot_custom_float_latency}, where $N$ is the vector length. The latency equations are obtained from the general pipelined hardware latency formula: $L=\left(N-1\right)II+IL$, where $II$ is the initiation interval (\fig{fig:dot_product_hybrid}(a)), and $IL$ is the iteration latency (\fig{fig:dot_product_hybrid}(b)). Both $II$ and $IL$ are obtained from the high-level synthesis results. Both the exponent and mantissa bit widths of the filter and bias buffers are set to a 4-bit exponent and a 1-bit mantissa (E4M1), which corresponds to float6 quantization.
+Rather than a parallelized structure, this is a pipelined hardware design suitable for resource-limited devices. The latency in clock cycles of this hardware module is defined by \equ{eq:dot_custom_float_latency}, where $N$ is the vector length. The latency equations are obtained from the general pipelined hardware latency formula: $L=\left(N-1\right)II+IL$, where $II$ is the initiation interval (\fig{fig:dot_product_hybrid}(a)), and $IL$ is the iteration latency (\fig{fig:dot_product_hybrid}(b)). Both $II$ and $IL$ are obtained from the high-level synthesis results. Both the exponent and mantissa bit widths of the filter and bias buffers are set to a 4-bit exponent and a 1-bit mantissa (E4M1), which corresponds to float6 quantization. The 1-bit mantissa enables low-power multiply-accumulate (MAC) implementations by reducing the mantissa multiplication to a flag operation. This approach reduces energy consumption and resource utilization.
+
 \begin{eqnarray} \label{eq:dot_custom_float_latency}
 L_{hf}=N+7
 \end{eqnarray}
+
+The Infinity and NaN special cases are not considered in this design since are not expected in ANN computation. For the FP subnormal case, the element-wise multiplication skips when having a zero entry and applies approximation when having subnormal mantissas. The 1-bit mantissa has one subnormal case, which is handled as a normalized case. This simplifies the hardware design.
+
+The approximation error is defined by the difference between \Equ{eq:float} and \Equ{eq:float_subnorm} when $E=0$ and $M=2^{-1}$, which defines the error as $e=2^{-B-1}$. From \Equ{eq:float_bias} with $E_size=4$, we have $B=7$. Hence, $e=3.9\mathrm{e}{-3}$. This error is produced when having the subnormal case $E=0$ and $M=2^{-1}$, which corresponds to the value $\pm7.8\mathrm{e}{-3}$ deviated to $\pm1.17\mathrm{e}{-3}$. This approximation is allowed base on the intrinsic error tolerance of neural networks\cite{du2014leveraging}.
 
 \begin{figure}[t!]
 	\centering
@@ -54,7 +59,7 @@ L_{hf}=N+7
 
 \subsubsection{\textbf{On-chip memory utilization}}
 \label{sec:memory_utilization}
-The total on-chip memory utilization on the TP is defined by \Equ{eq:tp_memory}, where $TP_B$ and $V_{M}$ represent the tensor buffers and local variables required for the design, respectively. \Equ{eq:tp_memory_buffer} defines the tensor buffers, where $Input_{M}$ is the \emph{input buffer}, $Filter_{M}$ is the \emph{filter buffer}, $Bias_{M}$ is the \emph{bias buffer}. The on-chip memory buffers are defined in bits. \fig{fig:accelerator_buffers} illustrates the convolution operation utilizing the on-chip memory buffers.
+The total on-chip memory utilization on the TP is defined by \Equ{eq:tp_memory}, where $TP_B$ and $V_{M}$ represent the tensor buffers and local variables (memory) required for the design, respectively. \Equ{eq:tp_memory_buffer} defines the tensor buffers, where $Input_{M}$ is the \emph{input buffer}, $Filter_{M}$ is the \emph{filter buffer}, $Bias_{M}$ is the \emph{bias buffer}. The on-chip memory buffers are defined in bits. \fig{fig:accelerator_buffers} illustrates the convolution operation utilizing the on-chip memory buffers.
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{../figures/accelerator_buffers.pdf}
@@ -68,17 +73,17 @@ TP_{M}=TP_B+V_{M}
 TP_{B}=Input_{M}+Filter_{M}+Bias_{M}
 \end{eqnarray}
 
-The memory utilization of \emph{input buffer} is defined by \Equ{eq:input_memory}, where $K_{H}$ is the height of the convolution kernel, $W_{I}$ is the width of the input tensor, $C_{I}$ is the number of input channels, and $BitSize_{I}$ is the bit size of each input tensor element.
+The memory utilization of \emph{input buffer} is defined by \Equ{eq:input_memory}, where $K_{H}$ is the height of the convolution kernel, $W_{I}$ is the width of the input tensor, $C_{I}$ is the number of input channels, and $BitSize_{I}$ is the bit size of input tensor.
 \begin{eqnarray} \label{eq:input_memory}
 Input_{M}=K_{H}W_{I}C_{I}BitSize_{I}
 \end{eqnarray}
 
-The memory utilization of \emph{filter buffer} is defined by \Equ{eq:filter_memory}, where $K_{W}$ and $K_{H}$ are the width and height of the convolution kernel, respectively; $C_{I}$ and $C_{O}$ are the number of input and output channels, respectively; and $BitSize_{F}$ is the bit size of each filter element.
+The memory utilization of \emph{filter buffer} is defined by \Equ{eq:filter_memory}, where $K_{W}$ and $K_{H}$ are the width and height of the convolution kernel, respectively; $C_{I}$ and $C_{O}$ are the number of input and output channels, respectively; and $BitSize_{F}$ is the bit size of filter values.
 \begin{eqnarray} \label{eq:filter_memory}
 Filter_{M}=C_{I}K_{W}K_{H}C_{O}BitSize_{F}
 \end{eqnarray}
 
-The memory utilization of \emph{bias buffer} is defined by \Equ{eq:bias_memory}, where $C_{O}$ is the number of output channels, and $BitSize_{B}$ is the bit size of each bias element.
+The memory utilization of \emph{bias buffer} is defined by \Equ{eq:bias_memory}, where $C_{O}$ is the number of output channels, and $BitSize_{B}$ is the bit size of bias values.
 \begin{eqnarray} \label{eq:bias_memory}
 Bias_{M}=C_{O}BitSize_{B}
 \end{eqnarray}
@@ -88,19 +93,19 @@ As a design trade-off, \Equ{eq:channel_in_memory} defines the capacity of output
 C_{O}=\frac{TP_{M}-V_{M}-K_{H}W_{I}C_{I}BitSize_{I}}{C_{I}K_{W}K_{H}BitSize_{F}+BitSize_{B}}
 \end{eqnarray}
 
-The floating-point formats implemented in the TP are defined by $BitSize_F$, $BitSize_B$ and $BitSize_I$. The HF6 defines 6-bits for $BitSize_F$ and $BitSize_B$, and 32-bits for $BitSize_I$. These are design parameters defined before hardware synthesis. This allows fine control of BRAM utilization, which is suitable for resource-limited devices.
+The floating-point formats implemented in the TP are defined by $BitSize_F$, $BitSize_B$ and $BitSize_I$. The HF6 defines 6-bit for $BitSize_F$ and $BitSize_B$, and 32-bit for $BitSize_I$. These are design parameters defined before hardware synthesis. This allows fine control of BRAM utilization, which is suitable for resource-limited devices.
 
 \subsection{Training Method}
-The CNN-regression models are trained and quantized in separate stages.
-\subsubsection{Training with Iterative Early Stop Cycle}
-To achieve better performance on CNN-regression models, we implement a training procedure with iterative early stop cycle. This allows to reach better local minima. This is a four steps process: (1) a base model is obtained with an initial training, (2) the base model is iteratively re-trained to search for better local minima, (3) in case of a better local minimum, the base model is updated and used for subsequent re-training iterations, (4) the training cycle is automatically aborted with a patience of unsatisfactory search iterations. See \Algo{alg:training}. This method minimizes the MSE, which is calculated with the Euclidean distance between the validation and predicted coordinates. The early stop has a patience of 10 epochs and mini-batch size between 512 to 1024 samples.
+The models are trained and quantized in separate stages.
+\subsubsection{Training with Iterative Early Stop}
+To achieve better performance on CNN-regression models, we implement a training procedure with iterative early stop cycle. This allows to reach better local minima. This is a four steps process: (1) a base model is obtained with an initial training, (2) the base model is iteratively re-trained to search for better local minima, (3) in case of a better local minimum, the base model is updated/saved and used for subsequent re-training iterations, (4) the training cycle stops automatically with a given patience for unsatisfactory search iterations. See \Algo{alg:training}. This method minimizes the MSE.
 
-\subsubsection{Quantized Aware Training}
+\REVIEW{Talk about the moving averages.}
+
+\subsubsection{Quantization Aware Training}
 The quantization aware training (QAT) method is integrated into the training process, this operates after each mini-batch update. The quantization is applied on the trainable parameters of convolution layers. This method is implemented as a callback function in the TensorFlow/Keras framework, see \Algo{alg:quantization_integration}.
 
-The quantization method uses rounding strategy to reduce the floating-point memory representation. This maps the full precision floating-point values to the closest representable 6-bit floating-point values, see \Algo{alg:quantize_training}. We have observed that the exponent bit size plays a more predominant influence on the model accuracy than the mantissa bit size. In \cite{lai2017deep}, Lai et al. demonstrated that 4-bit exponent is adequate and consistent across different networks (SqueezeNet, AlexNet, GoogLeNet, VGG-16). In this work, we investigate 4-bit exponent and 1-bit mantissa. This method quantizes the filter and bias tensors of the convolution layers.
-
-The resulting quantized parameters are wrapped into the standard floating-point. This allows compatibility with standard hardware. On the proposed embedded system, the 6-bit floating-point values are extracted and buffered in the on-chip memory of the TP during operation.
+The quantization method uses rounding strategy to reduce the FP representation. This maps the full precision FP values to the closest representable 6-bit FP values, see \Algo{alg:quantize_training}. This method quantizes the filter and bias tensors of the convolution layers. We have observed that the exponent bit size plays a more predominant influence on the model accuracy than the mantissa bit size. In \cite{lai2017deep}, Lai et al. demonstrated that 4-bit exponent is adequate and consistent across different networks (SqueezeNet, AlexNet, GoogLeNet, VGG-16). In this work, we investigate 4-bit exponent and 1-bit mantissa.
 
 \begin{algorithm}[h!]
 	\label{alg:training}
@@ -218,7 +223,7 @@ The resulting quantized parameters are wrapped into the standard floating-point.
 \subsection{Embedded software architecture}
 The software architecture is a layered object-oriented application framework written in C++, see \fig{fig:sw_stack}. A description of the software layers is as follows:
 \begin{itemize}
-	\item \emph{Application}: As the highest level of abstraction, this software layer implements the analytics application using the ML library.
+	\item \emph{Application}: As the highest level of abstraction, this software layer implements the application invoking the ML library.
 	\item \emph{Machine learning library}: This layer consist of TensorFlow Lite for micro controllers. This offers a comprehensive high level API that allows ML inference. This provides delegate software interfaces for custom hardware accelerators.
 	\item \emph{Hardware abstraction layer}: This layer consist of the hardware drivers to handle initialization and runtime operation of the TP and DMA.
 \end{itemize}
