@@ -206,4 +206,9 @@ U.~Xilinx, ``Zynq-7000 all programmable soc: Technical reference manual,''
 J.~Hrica, ``Floating-point design with vivado hls,'' \emph{Xilinx Application
   Note}, 2012.
 
+\bibitem{springenberg2014striving}
+J.~T. Springenberg, A.~Dosovitskiy, T.~Brox, and M.~Riedmiller, ``Striving for
+  simplicity: The all convolutional net,'' \emph{arXiv preprint
+  arXiv:1412.6806}, 2014.
+
 \end{thebibliography}

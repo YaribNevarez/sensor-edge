@@ -98,9 +98,16 @@ The floating-point formats implemented in the TP are defined by $BitSize_F$, $Bi
 \subsection{Training Method}
 The models are trained and quantized in separate stages.
 \subsubsection{Training with Iterative Early Stop}
-To achieve better performance on CNN-regression models, we implement a training procedure with iterative early stop cycle. This allows to reach better local minima. This is a four steps process: (1) a base model is obtained with an initial training, (2) the base model is iteratively re-trained to search for better local minima, (3) in case of a better local minimum, the base model is updated/saved and used for subsequent re-training iterations, (4) the training cycle stops automatically with a given patience for unsatisfactory search iterations. See \Algo{alg:training}. This method minimizes the MSE.
+To achieve better performance on CNN-regression models, we implement a training procedure with iterative early stop cycle. This allows to reach better local minima. This is a four steps process:
 
-\REVIEW{Talk about the moving averages.}
+\begin{enumerate}
+	\item A model is obtained with an initial training with standard early stop monitoring.
+	\item The model is iteratively re-trained with standard early stop to search for better local minima. In each early stop the Adam optimizer restarts the moving averages.
+	\item In case of a better local minimum, the base model is updated/saved and used for subsequent re-training iterations, otherwise it is discarded.
+	\item The cyclic process stops automatically with a given patience. This allows to set a maximum training iterations before the stop.
+\end{enumerate}
+
+This method is described in \Algo{alg:training}.
 
 \subsubsection{Quantization Aware Training}
 The quantization aware training (QAT) method is integrated into the training process, this operates after each mini-batch update. The quantization is applied on the trainable parameters of convolution layers. This method is implemented as a callback function in the TensorFlow/Keras framework, see \Algo{alg:quantization_integration}.
@@ -142,7 +149,7 @@ The quantization method uses rounding strategy to reduce the FP representation. 
 
 \begin{algorithm}[h!]
 	\label{alg:quantization_integration}
-	\caption{Quantization aware training.}
+	\caption{OnMiniBatchUpdate\_Callback.}
 	\begin{algorithmic}
 		\SetAlgoLined
 		\renewcommand{\algorithmicrequire}{\textbf{input:}}
@@ -155,12 +162,8 @@ The quantization method uses rounding strategy to reduce the FP representation. 
 		\REQUIRE $N_{ep}$ as the number of epochs.
 		\REQUIRE $B_{size}$ as the mini-batch size.
 		\ENSURE $MODEL$ as the quantized output model.
-		\STATE $MODEL \gets Quantize(MODEL,E_{size}, M_{size})$
-		\STATE $mse_i \gets Evaluate(MODEL, D_{val})$ // Benchmark
-		\STATE $Train(MODEL, D_{train}, D_{val}, N_{ep}, B_{size})$
-		\STATE
-		\STATE \bf{OnMiniBatchUpdate\_Callback():}
-		\STATE $MODEL \gets Quantize(MODEL,E_{size}, M_{size})$
+		\STATE //Quantize
+		\STATE $MODEL \gets \Algo{alg:quantize_training}(MODEL,E_{size}, M_{size})$ 
 		\IF {$1<epoch$}
 		\STATE // Update model after first epoch
 		\STATE $mse_v \gets Evaluate(MODEL, D_{val})$
