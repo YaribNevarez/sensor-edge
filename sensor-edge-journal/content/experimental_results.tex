@@ -1,17 +1,24 @@
 \section{Experimental results}
 \label{sec:experimental_results}
-In this section, we present experimental results of the HF6 concept on low-cost sensor analytics applications. As a use case, we present a CNN-regression model to predict x- y- coordinates of structural anomalies based on acoustic sensor data. We compare quantitative and qualitative aspects of the data analytics using floating-point 32-bit, fixed-point 8-bit, Hybrid-Logarithmic 6-bit, and Hybrid-Float6.
+In this section, we present experimental results on a low-power/low-cost sensor analytics application. As a use case, we present a CNN-regression model to predict x- y- coordinates of structural anomalies based on acoustic sensor data. We compare quantitative and qualitative aspects of the analytics using floating-point 32-bit, fixed-point 8-bit, Hybrid-Logarithmic 6-bit, and Hybrid-Float6.
 
-To demonstrate the hardware concept, we deploy the CNN model for low-power inference in the smallest Zynq SoC. We compare the performance of the dedicated hardware implemented with standard floating-point and Hybrid-Float6 architecture.
+To demonstrate the proposed hardware concept, we deploy the CNN model for low-power inference in the smallest Zynq SoC. We compare the performance of the TP implemented with standard FP (using Xilinx LogiCORE IPs) and Hybrid-Float6 architecture.
 
 \subsection{Sensor Analytics Application}
-The sensor analytics model is designed to predict x- y- coordinates of acoustic emissions on a metal plate with noise disturbance. In this subsection, we present the structure for experimental setup, data sets, and the CNN-regression model.
+The analytics model is designed to predict x- y- coordinates of acoustic emissions on a metal plate. The metal plate is in the presence of noise disturbance to simulate realistic conditions. In this subsection, we present the structure for experimental setup, data sets, and the CNN-regression model.
 
 \subsubsection{Experimental Setup}
-The experiment uses eight piezoelectric sensors (Vallen Systeme VS900) fixed on a metal plate (90 cm x 86.6 cm x 0.3 cm). The VS900 devices can operate either in active or passive mode. Six VS900 are used in passive mode as acoustic sensors and two in active mode to produce acoustic emissions. These acoustic emissions represent the anomalies on x- y- coordinates and the noise disturbance of the system. See \fig{fig:data_set}(a). The acoustic emissions are labeled with their coordinates to create data sets.
+The experiment uses eight piezoelectric sensors (Vallen Systeme VS900) fixed on a metal plate (90 cm x 86.6 cm x 0.3 cm). The VS900 devices can operate either in active or passive mode. Six VS900 are used in passive mode as acoustic sensors and two in active mode to produce acoustic emissions. These acoustic emissions simulate anomalies on x- y- coordinates as well as the noise disturbance on the system. See \fig{fig:data_set}(a). The acoustic emissions are labeled with their coordinates to create data sets.
 
 \subsubsection{Data Sets}
-The data sets are recorded with pulses and the x- y- coordinates as labels. The pulses for training and validation data sets are shown in \fig{fig:data_set}(b) and \fig{fig:data_set}(c), respectively. The pulses for training and validation data sets are mutually exclusive, this exclusion is represented by the cross symbols in \fig{fig:data_set}(c). This illustrates a grid layout used to collect samples for the data sets. This grid is $10\times10$ and it does not consider the four corners as they are used for structure holders.
+The data sets are recorded applying pulses on the metal plate, the x- y- coordinates of these pulses are used as labels. The pulses for training and validation data sets are shown in \fig{fig:data_set}(b) and \fig{fig:data_set}(c), respectively. The pulses for training and validation data sets are mutually exclusive, this exclusion is represented by the cross symbols in \fig{fig:data_set}(c). This creates a grid layout used to collect samples for the data sets. This grid is $10\times10$. This grid does not consider the four corners as they are used for structure holders.
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=\columnwidth]{../figures/histograms/data_set.pdf}
+	\caption{Experimental setup for sensor analytics on structural health monitoring.}
+	\label{fig:data_set}
+\end{figure}
 
 In order to create reproducible acoustic emissions, we use 9-cycle sine pulse in a Hanning window with central frequency $f_\mathrm{c}$ (narrow-banded in the frequency domain). We assume guided Lamb waves based on the plate structure. The narrow-band behavior also reduces the dispersion of the acoustic emission waves~\cite{hannwindowsine}. The waveform can be expressed as a function of time $t$ as follows:
 
@@ -46,13 +53,6 @@ In order to generate larger data sets, we create four further variants with time
 	\includegraphics[width=\columnwidth]{../figures/histograms/spectrograms.pdf}
 	\caption{Spectrograms of sensors $S_1, S_2$ converted to grayscale for pulses at $x =0.105$, $y = 0.109$ with noise disturbance.}
 	\label{fig:spectrograms}
-\end{figure}
-
-\begin{figure}[t!]
-	\centering
-	\includegraphics[width=\columnwidth]{../figures/histograms/data_set.pdf}
-	\caption{Experimental setup for sensor analytics on structural health monitoring.}
-	\label{fig:data_set}
 \end{figure}
 
 \subsubsection{CNN-Regression Model}

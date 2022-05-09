@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.3)  8 MAY 2022 05:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.3)  8 MAY 2022 23:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1029,34 +1029,35 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [7]
+<../figures/histograms/data_set.pdf, id=270, 252.945pt x 505.89pt>
+File: ../figures/histograms/data_set.pdf Graphic file (type pdf)
+<use ../figures/histograms/data_set.pdf>
+Package pdftex.def Info: ../figures/histograms/data_set.pdf  used on input line
+ 18.
+(pdftex.def)             Requested size: 242.67355pt x 485.35553pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 19.
+
+
+Package xcolor Warning: Incompatible color definition on input line 19.
+
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 4
-0.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+7.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
 LaTeX Font Warning: Font shape `TS1/ptm/n/n' undefined
 (Font)              using `TS1/ptm/m/n' instead
-(Font)              for symbol `textmu' on input line 40.
+(Font)              for symbol `textmu' on input line 47.
 
-<../figures/histograms/spectrograms.pdf, id=270, 252.945pt x 83.1105pt>
+<../figures/histograms/spectrograms.pdf, id=271, 252.945pt x 83.1105pt>
 File: ../figures/histograms/spectrograms.pdf Graphic file (type pdf)
 <use ../figures/histograms/spectrograms.pdf>
 Package pdftex.def Info: ../figures/histograms/spectrograms.pdf  used on input 
-line 46.
+line 53.
 (pdftex.def)             Requested size: 242.67355pt x 79.73695pt.
-
-Package xcolor Warning: Incompatible color definition on input line 47.
-
-
-Package xcolor Warning: Incompatible color definition on input line 47.
-
-<../figures/histograms/data_set.pdf, id=271, 252.945pt x 505.89pt>
-File: ../figures/histograms/data_set.pdf Graphic file (type pdf)
-<use ../figures/histograms/data_set.pdf>
-Package pdftex.def Info: ../figures/histograms/data_set.pdf  used on input line
- 53.
-(pdftex.def)             Requested size: 242.67355pt x 485.35553pt.
 
 Package xcolor Warning: Incompatible color definition on input line 54.
 
@@ -1066,11 +1067,32 @@ Package xcolor Warning: Incompatible color definition on input line 54.
 
 Package xcolor Warning: Incompatible color definition on input line 58.
 
-<../figures/models.pdf, id=272, 252.945pt x 252.945pt>
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 60.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[8 <../figures/histograms/data_set.pdf>]
+<../figures/models.pdf, id=284, 252.945pt x 252.945pt>
 File: ../figures/models.pdf Graphic file (type pdf)
 <use ../figures/models.pdf>
 Package pdftex.def Info: ../figures/models.pdf  used on input line 72.
 (pdftex.def)             Requested size: 242.67355pt x 242.67776pt.
+
 
 Package xcolor Warning: Incompatible color definition on input line 73.
 
@@ -1083,7 +1105,7 @@ Package xcolor Warning: Incompatible color definition on input line 78.
 
 Package xcolor Warning: Incompatible color definition on input line 79.
 
-<../figures/histograms/training_and_quantization.pdf, id=273, 252.945pt x 397.4
+<../figures/histograms/training_and_quantization.pdf, id=285, 252.945pt x 397.4
 85pt>
 File: ../figures/histograms/training_and_quantization.pdf Graphic file (type pd
 f)
@@ -1097,36 +1119,12 @@ Package xcolor Warning: Incompatible color definition on input line 87.
 
 Package xcolor Warning: Incompatible color definition on input line 87.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-File: notaglinelogo.png Graphic file (type png)
-<use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 92.
-(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[8 <../figures/histograms/spectrograms.pdf>]
-<../figures/histograms/model_evaluation.pdf, id=290, 252.945pt x 607.068pt>
+<../figures/histograms/model_evaluation.pdf, id=286, 252.945pt x 607.068pt>
 File: ../figures/histograms/model_evaluation.pdf Graphic file (type pdf)
 <use ../figures/histograms/model_evaluation.pdf>
 Package pdftex.def Info: ../figures/histograms/model_evaluation.pdf  used on in
 put line 95.
 (pdftex.def)             Requested size: 242.67355pt x 582.42667pt.
-
 
 Package xcolor Warning: Incompatible color definition on input line 96.
 
@@ -1140,14 +1138,11 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Package xcolor Warning: Incompatible color definition on input line 100.
 
 
-Package xcolor Warning: Incompatible color definition on input line 107.
-
-
-Package xcolor Warning: Incompatible color definition on input line 112.
+Underfull \vbox (badness 7326) has occurred while \output is active []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 114.
+Package pdftex.def Info: notaglinelogo.png  used on input line 102.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1164,11 +1159,25 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[9 <../figures/histograms/data_set.pdf> <../figures/models.pdf
+[9 <../figures/histograms/spectrograms.pdf> <../figures/models.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ../figures/models.pdf): PDF inclusion: 
 multiple pdfs with page group included in a single page
+> <../figures/histograms/training_and_quantization.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ../figures/histograms/training_and_quan
+tization.pdf): PDF inclusion: multiple pdfs with page group included in a singl
+e page
 >]
+Underfull \vbox (badness 1354) has occurred while \output is active []
+
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 112.
+
 
 Package xcolor Warning: Incompatible color definition on input line 119.
 
@@ -1176,9 +1185,6 @@ Package xcolor Warning: Incompatible color definition on input line 119.
 Underfull \hbox (badness 2573) in paragraph at lines 122--123
 []\T1/ptm/n/n/10 In this plat-form, we im-ple-ment the pro-posed hard-
  []
-
-
-Underfull \vbox (badness 1939) has occurred while \output is active []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
@@ -1199,12 +1205,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[10 <../figures/histograms/training_and_quantization.pdf> <../figures/histogram
-s/model_evaluation.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ../figures/histograms/model_evaluation.
-pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
+[10 <../figures/histograms/model_evaluation.pdf>]
 
 Package xcolor Warning: Incompatible color definition on input line 124.
 
@@ -1337,9 +1338,6 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Package xcolor Warning: Incompatible color definition on input line 255.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
 Package pdftex.def Info: notaglinelogo.png  used on input line 257.
@@ -1442,7 +1440,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  7632 strings out of 481239
  116751 string characters out of 5920378
- 398865 words of memory out of 5000000
+ 399864 words of memory out of 5000000
  22667 multiletter control sequences out of 15000+600000
  620532 words of font info for 121 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1463,7 +1461,7 @@ fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (14 pages, 2855089 bytes).
+Output written on main.pdf (14 pages, 2855063 bytes).
 PDF statistics:
  1196 PDF objects out of 1200 (max. 8388607)
  367 compressed objects within 4 object streams
