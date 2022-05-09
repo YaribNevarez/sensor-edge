@@ -40,7 +40,7 @@ L_{hf}=N+7
 
 The Infinity and NaN special cases are not considered in this design since are not expected in ANN computation. For the FP subnormal case, the element-wise multiplication skips when having a zero entry and applies approximation when having subnormal mantissa. The 1-bit mantissa has one subnormal case, which is handled as a normalized case. This approximation simplifies the hardware design.
 
-The approximation error is defined by the difference between \Equ{eq:float} and \Equ{eq:float_subnorm} when $E=0$ and $M=2^{-1}$, the result defines the error as $e=2^{-B-1}$. From \Equ{eq:float_bias} with $E_size=4$, we have $B=7$. Hence, $e=3.9\mathrm{e}{-3}$. This error is produced when having the subnormal case $E=0$ and $M=2^{-1}$, which corresponds to the value $\pm7.8\mathrm{e}{-3}$ deviated to $\pm1.17\mathrm{e}{-3}$. This approximation is allowed base on the intrinsic error tolerance of neural networks\cite{du2014leveraging}.
+The approximation error is defined by the difference between \Equ{eq:float} and \Equ{eq:float_subnorm} when $E=0$ and $M=2^{-1}$. The result defines the error as $e=2^{-B-1}$. Then, from \Equ{eq:float_bias} with $E_size=4$, we have $B=7$. Hence, $e=3.9\mathrm{e}{-3}$. This error is produced when having the subnormal case $E=0$ and $M=2^{-1}$, which corresponds to the value $\pm7.8\mathrm{e}{-3}$ deviated to $\pm1.17\mathrm{e}{-3}$. This approximation is allowed base on the intrinsic error tolerance of neural networks\cite{du2014leveraging}.
 
 \begin{figure}[t!]
 	\centering
