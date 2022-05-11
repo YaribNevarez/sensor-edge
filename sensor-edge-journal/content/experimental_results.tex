@@ -226,7 +226,7 @@ The TensorFlow Lite 8-bit quantization preserves the overall model accuracy. In 
 
 The proposed 6-bit FP representation (E4M1) in convolution parameters improves latency, hardware area, and power dissipation, while preserving model accuracy. In our application, this number format produces better results than the 6-bit logarithmic representation (E5M0). This is demonstrated in \Fig{fig:model_evaluation}(d) and \Fig{fig:model_evaluation}(e).
 
-Applying HF6 quantization on ALL-CNN-C \cite{springenberg2014striving} produces an accuracy degradation of 1.39\% and 0.11\% with QAT. While applying 6-bit logarithmic produces a degradation of 11.18\%.
+Applying HF6 quantization on ALL-CNN-C \cite{springenberg2014striving} produces an accuracy degradation of 1.39\% and 0.11\% with QAT. While applying 6-bit logarithmic produces a degradation of 11.18\% and 7.22\% with QAT.
 
 \begin{figure}[t!]
 	\centering
@@ -277,6 +277,7 @@ To reduce energy consumption, activation maps can be represented by Bfloat16. Th
 		Format (activation/weight) &FP 16-bit &FP 8-bit / 8-bit &FP 16-bit / 8-bit &INT 16-bit &FP 32-bit / 6-bit \\
 		Frequency (MHz) &200 &200 &200 &80 &200 \\
 		Peak power efficiency (GFLOP/s/W) &18.72 &115.40 &82.88 &2.98 &5.74 \\
+		Peak throughput (GFLOP/s) & 202.42 & 1086.8 & 760.83 &  10.62& 0.482\\
 		Wall plug power (W) &10.81 &9.42 &9.18 &2.5 &2.3 \\
 		BRAM 36Kb utilization &196.5 &234.5 &913 &44 &15 \\
 		DSP utilization &1728 &768 &1027 &54 &20 \\
