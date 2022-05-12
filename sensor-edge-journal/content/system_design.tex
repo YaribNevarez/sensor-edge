@@ -3,7 +3,7 @@
 The system design is a hardware/software co-design framework for low-power AI deployment. This architecture allows design exploration of dedicated hardware integrated with TensorFlow Lite on low-cost embedded FPGAs.
 
 \subsection{Base embedded system architecture}
-The base embedded system architecture implements a cooperative hardware-software platform. \Fig{fig:system_architecture} illustrates the top-level hardware architecture. The TPs execute low-level tensor operations delegated from the embedded CPU. The TPs employ AXI-Lite interface for configuration and AXI-Stream interfaces via Direct Memory Access (DMA) for data movement from DDR memory. Each TP asserts an interrupt flag once the job/transaction is complete. Interrupt events are handled by the embedded CPU to collect results and start a new transaction. The hardware architecture can configure its resource utilization and energy consumption by customizing the TPs prior to the hardware synthesis.
+The base embedded system architecture implements a cooperative hardware-software platform. See \Fig{fig:system_architecture}. The embedded CPU delegates low-level compute-bound tensor operations to the TPs. The TPs employ AXI-Lite interface for configuration and AXI-Stream interfaces via Direct Memory Access (DMA) for data movement from DDR memory. Each TP asserts an interrupt flag once the job/transaction is complete. Interrupt events are handled by the embedded CPU to collect results and start a new transaction. The hardware architecture can vary its resource utilization by customizing the TPs prior to the hardware synthesis.
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{../figures/system_design.pdf}
@@ -11,7 +11,7 @@ The base embedded system architecture implements a cooperative hardware-software
 	\label{fig:system_architecture}
 \end{figure}
 \subsection{Tensor processor}
-The TP is a dedicated hardware module to compute tensor operations. The hardware architecture is described in \fig{fig:accelerator}. This architecture implements high performance communication with AXI-Stream, direct CPU communication with AXI-Lite, and on-chip storage utilizing BRAM. This hardware architecture is implemented with high-level synthesis (HLS). The tensor operations are implemented based on the C++ TensorFlow Lite micro kernels.
+The TP is a dedicated hardware module to compute tensor operations. This architecture implements high performance communication with AXI-Stream, direct CPU communication with AXI-Lite, and on-chip storage utilizing BRAM. This hardware architecture is implemented with high-level synthesis (HLS). The tensor operations are implemented based on the C++ TensorFlow Lite micro kernels. See \fig{fig:accelerator}.
 
 The TP is an extensible hardware module that executes low-level tensor operations. In this paper, we focus on the \emph{Conv2D} tensor operation that computes 2D convolution layers.
 
@@ -24,15 +24,15 @@ The TP is an extensible hardware module that executes low-level tensor operation
 \subsubsection{\textbf{Modes of operation}}
 The TP has two modes of operation: \emph{configuration} and \emph{execution}.
 \begin{itemize}
-	\item In \emph{configuration} mode, the TP receives the tensor operation ID for \emph{Conv2D} and hyperparameters: stride, dilation, padding, offset, activation, depth-multiplier, input shape, filter shape, bias shape, and output shape. Afterwards, the TP receives filter and bias tensors, which are locally stored in BRAM. The filter and bias tensors are transferred with standard FP representation. The TP extracts the 6-bit format for local on-chip storage.
+	\item In \emph{configuration} mode, the TP receives the tensor operation hyperparameters: stride, dilation, padding, offset, activation, depth-multiplier, input shape, filter shape, bias shape, and output shape. Afterwards, the TP receives filter and bias tensors, which are locally stored in BRAM. The filter and bias tensors are transferred with standard FP representation. Then, the TP extracts the 6-bit FP format for local on-chip storage.
 	
-	\item In \emph{execution} mode, the TP executes the tensor operation according to the hyperparameters given in the configuration mode. During execution, the input and output tensors are moved from/to the DDR memory via DMA.
+	\item In \emph{execution} mode, the TP executes the tensor operation according to the hyperparameters given in the configuration mode. During execution, the input and output tensors are moved from/to the off-chip memory via DMA.
 \end{itemize}
 \subsubsection{\textbf{Dot-product with hybrid floating-point}}
 \label{sec:dot_product}
-We implement the floating-point computation adopting the dot-product with hybrid custom floating-point\cite{nevarez2021accelerating}. The hardware dot-product is illustrated in \Fig{fig:dot_product}. This approach: (1) denormalizes input values, (2) executes computation with integer format for exponent and mantissa, and finally, (3) it normalizes the result into IEEE 754 format. 
+We implement the floating-point computation adopting the dot-product with hybrid custom floating-point\cite{nevarez2021accelerating}. The hardware dot-product is illustrated in \Fig{fig:dot_product} and \Fig{fig:dot_product_loop}(a). This design instantiates an HF6 MAC. The accumulator variable is a 64-bit fixed-point number with 23-bit fraction. During operation, the feature map and filter values are extracted from on-chip memory (BRAM). Both values have to be different than zero to enable the MAC operation. The result is biased by accumulating a denormalized bias value, see \Fig{fig:dot_product_loop}(b). The ReLu activation is applied and the result is normalized to converted to IEEE 754 standard FP, see \Fig{fig:dot_product_loop}(c).
 
-Rather than a parallelized structure, this is a pipelined hardware design suitable for resource-limited devices. The latency in clock cycles of this hardware module is defined by \equ{eq:dot_custom_float_latency}, where $N$ is the vector length. The latency equations are obtained from the general pipelined hardware latency formula: $L=\left(N-1\right)II+IL$, where $II$ is the initiation interval, and $IL$ is the iteration latency. Both $II$ and $IL$ are obtained from the high-level synthesis results. Both the exponent and mantissa bit widths of the filter and bias buffers are set to a 4-bit exponent and a 1-bit mantissa (E4M1), which corresponds to float6 quantization.
+Rather than a parallelized structure, this is a pipelined hardware design suitable for resource-limited devices. The latency in clock cycles of this hardware module is defined by \equ{eq:dot_custom_float_latency}, where $N$ is the vector length. This latency equation is obtained from the general pipelined hardware latency formula: $L=\left(N-1\right)II+IL$, where $II$ is the initiation interval, and $IL$ is the iteration latency. Both $II$ and $IL$ are obtained from the high-level synthesis results. Both the exponent and mantissa bit widths of the filter and bias buffers are set to a 4-bit exponent and a 1-bit mantissa (E4M1), which corresponds to float6 quantization.
 
 \begin{eqnarray} \label{eq:dot_custom_float_latency}
 L_{hf}=N+7
@@ -45,8 +45,15 @@ L_{hf}=N+7
 	\label{fig:dot_product}
 \end{figure}
 
-\subsubsection{Multiply-Accumulate}
-The 6-bit FP representation enables hardware optimization in the mantissa multiplication. The 1-bit mantissa enables efficient multiply-accumulate (MAC) implementations by reducing the mantissa multiplication to an addition, see \fig{fig:multiplier}. This approach reduces latency, energy consumption, and resource utilization.
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{../figures/dot_product_hybrid.pdf}
+	\caption{(a) Dot-product hardware module with Hybrid-Float6 MAC, (b) bias accumulation, (c) activation and normalization.}
+	\label{fig:dot_product_loop}
+\end{figure}
+
+\subsubsection{\textbf{Multiply-Accumulate}}
+The 6-bit FP representation enables hardware a optimization in the mantissa multiplication. The 1-bit mantissa enables efficient multiply-accumulate (MAC) implementations by reducing the mantissa multiplication to a multiplexed addition, see \fig{fig:multiplier}. This approach reduces latency, energy consumption, and resource utilization.
 
 \begin{figure}[t!]
 	\centering
@@ -55,10 +62,9 @@ The 6-bit FP representation enables hardware optimization in the mantissa multip
 	\label{fig:multiplier}
 \end{figure}
 
-The Infinity and NaN special cases are not considered in this design since are not expected in ANN computation. For the FP subnormal case, the element-wise multiplication skips when having a zero entry and applies approximation when having subnormal mantissa. The 1-bit mantissa has one subnormal case, which is handled as a normalized case. This approximation simplifies the hardware design.
+The Infinity and NaN special cases are not considered in this design since are not expected in ANN computation. For the subnormal case, the element-wise multiplication is disabled when having a zero entry and applies approximation when having subnormal mantissa. In the case of standard FP, subnormal numbers are not expected and the generated error is negligible. In the case of 6-bit FP, the 1-bit mantissa has one subnormal case, which is handled as a normalized case. This approximation simplifies the hardware design.
 
-The approximation error is defined by the difference between \Equ{eq:float} and \Equ{eq:float_subnorm} when $E=0$ and $M=2^{-1}$. The result defines the error as $e=2^{-B-1}$. Then, from \Equ{eq:float_bias} with $E_size=4$, we have $B=7$. Hence, $e=3.9\mathrm{e}{-3}$. This error is produced when having the subnormal case $E=0$ and $M=2^{-1}$, which corresponds to the value $\pm7.8\mathrm{e}{-3}$ deviated to $\pm1.17\mathrm{e}{-2}$. This approximation is allowed base on the intrinsic error tolerance of neural networks\cite{du2014leveraging}.
-
+The approximation error is defined by the difference between \Equ{eq:float} and \Equ{eq:float_subnorm} when $E=0$ and $M=2^{-1}$. The result defines the error as $e=2^{-B-1}$. Then, from \Equ{eq:float_bias} with $E_size=4$, we have $B=7$. Hence, $e=3.9\mathrm{e}{-3}$. This error is produced when having the subnormal case $E=0$ and $M=2^{-1}$, which corresponds to the value $\pm7.8\mathrm{e}{-3}$ deviated to $\pm1.17\mathrm{e}{-2}$. This approximation leverages the intrinsic error tolerance of ANN to reduce hardware resource utilization and energy consumption \cite{du2014leveraging}.
 
 
 \subsubsection{\textbf{On-chip memory utilization}}
