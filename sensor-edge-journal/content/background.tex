@@ -5,7 +5,7 @@
 A convolutional layer aims to learn feature representations from an input layer. The convolution layer is made of convolution kernels that are used to compute feature maps. Each unit of a feature map is connected to a region of neighboring units on the input maps (from previous layer). Such a neighborhood of the previous layer is known as the receptive field of the unit. A new feature map can be obtained by first convolving the input maps with a learned kernel and then applying a nonlinear elementwise activation function to the convolved results. All spatial locations on the input maps share a kernel to generate a feature map. All feature maps are obtained by convolving several different kernels\cite{gu2018recent}.
 
 
-The 2D convolution process is performed by the \emph{Conv2D} tensor operation, described in \Equ{eq:conv2D}, where $h$ is the input feature maps, $W$ is the convolution kernels (known as filters), and $b$ is the bias for the output feature maps\cite{goodfellow2016deep}. We denote \emph{Conv} as \emph{Conv2D} operator.
+The 2D convolution process is performed by the \emph{Conv2D} tensor operation, described in \Equ{eq:conv2D}, where $h$ is the input feature maps, $W$ is the convolution kernels (known as filters), and $b$ is the bias for the output feature maps\cite{goodfellow2016deep}. $K\times L\times M$ is the receptive field size, $K\times L$ is the convolution kernel, and $M$ is the number of input channels/feature maps. We denote \emph{Conv} as \emph{Conv2D} operator.
 \begin{eqnarray} \label{eq:conv2D}
 Conv\left(W,h\right)_{i,j,o}=\sum_{k,l,m}^{K,L,M} h_{(i+k,j+l,m)} W_{(o,k,l,m)}+b_{o}
 \end{eqnarray}
