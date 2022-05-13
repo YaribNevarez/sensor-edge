@@ -72,9 +72,9 @@
 \newlabel{sec:memory_utilization}{{\mbox  {IV-B}4}{6}}
 \newlabel{eq:tp_memory}{{6}{6}}
 \newlabel{eq:tp_memory_buffer}{{7}{6}}
-\newlabel{eq:input_memory}{{8}{6}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Design parameters for on-chip memory buffers on the TP.}}{6}\protected@file@percent }
 \newlabel{fig:accelerator_buffers}{{8}{6}}
+\newlabel{eq:input_memory}{{8}{6}}
 \newlabel{eq:filter_memory}{{9}{6}}
 \newlabel{eq:bias_memory}{{10}{6}}
 \newlabel{eq:channel_in_memory}{{11}{6}}
@@ -84,11 +84,11 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-C}2}Quantization Aware Training}{7}\protected@file@percent }
 \newlabel{alg:training}{{1}{7}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Training with iterative early stop cycle.}}{7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Embedded software architecture}{7}\protected@file@percent }
 \newlabel{alg:quantization_integration}{{2}{7}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces OnMiniBatchUpdate\_Callback.}}{7}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Base embedded software architecture.}}{7}\protected@file@percent }
 \newlabel{fig:sw_stack}{{9}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Embedded software architecture}{7}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {V}Experimental results}{7}\protected@file@percent }
 \newlabel{sec:experimental_results}{{V}{7}}
 \citation{hannwindowsine}
@@ -116,23 +116,23 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Training results.}}{10}\protected@file@percent }
 \newlabel{fig:optimization}{{13}{10}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-B}3}Quantization Aware Training for Hybrid-Float6}{10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-B}4}Quantization Aware Training for Hybrid-Logarithmic 6-bit}{10}\protected@file@percent }
 \citation{xilinx2015zynq}
 \@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Performance of the model with different data representations.}}{11}\protected@file@percent }
 \newlabel{fig:model_evaluation}{{14}{11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-B}4}Quantization Aware Training for Hybrid-Logarithmic 6-bit}{11}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Hardware Design Exploration}{11}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-C}1}Benchmark on Embedded CPU}{11}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-C}2}Benchmark on Tensor Processor with Standard Floating-Point Hardware using Xilinx LogiCORE IP}{11}\protected@file@percent }
 \citation{hrica2012floating}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Resource utilization and power dissipation on the Zynq-7007S SoC.}}{12}\protected@file@percent }
-\newlabel{tab:resource_utilization}{{1}{12}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Compute performance of the CPU and TP on each Conv2D tensor operation. This table presents: tensor operation, computational cost in mega floating-point operations (MFLOP), latency, throughput, power efficiency, and estimated energy consumption as the energy delay product (EDP).}}{12}\protected@file@percent }
-\newlabel{tab:performance}{{2}{12}}
 \@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Inference acceleration and power reduction on the TP with floating-point and HF6 vs. CPU on the Zynq-7007S SoC.}}{12}\protected@file@percent }
 \newlabel{fig:acceleration}{{15}{12}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Resource utilization and power dissipation on the Zynq-7007S SoC.}}{12}\protected@file@percent }
+\newlabel{tab:resource_utilization}{{1}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-C}3}Tensor Processor with Hybrid-Float6 Hardware}{12}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Compute performance of the CPU and TP on each Conv2D tensor operation. This table presents: tensor operation, computational cost in mega floating-point operations (MFLOP), latency, throughput, power efficiency, and estimated energy consumption as the energy delay product (EDP).}}{12}\protected@file@percent }
+\newlabel{tab:performance}{{2}{12}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Resource utilization and power dissipation of multiplier and adder floating-point (IEEE 754) operator cores (Xilinx LogiCORE IP).}}{12}\protected@file@percent }
 \newlabel{tab:LogiCORE}{{3}{12}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-C}3}Tensor Processor with Hybrid-Float6 Hardware}{12}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Discussion}{12}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-D}1}Training and Quantization}{12}\protected@file@percent }
 \citation{springenberg2014striving}
@@ -158,8 +158,6 @@
 \bibcite{abdeljaber2017real}{9}
 \bibcite{guo2016hierarchical}{10}
 \bibcite{du2014leveraging}{11}
-\bibcite{nurvitadhi2017can}{12}
-\bibcite{wu2021low}{13}
 \@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Hardware resource utilization on the Zynq-7007S SoC.}}{14}\protected@file@percent }
 \newlabel{fig:resource_utilization}{{18}{14}}
 \@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Estimated power dissipation on the Zynq-7007S SoC with PS at 666MHz and PL at 200MHz.}}{14}\protected@file@percent }
@@ -169,6 +167,8 @@
 \@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusions}{14}\protected@file@percent }
 \newlabel{sec:conclusions}{{VI}{14}}
 \@writefile{toc}{\contentsline {section}{REFERENCES}{14}\protected@file@percent }
+\bibcite{nurvitadhi2017can}{12}
+\bibcite{wu2021low}{13}
 \bibcite{han2015deep}{14}
 \bibcite{han2015learning}{15}
 \bibcite{mei2017200mhz}{16}
