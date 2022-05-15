@@ -236,7 +236,7 @@ Applying HF6 quantization on ALL-CNN-C \cite{springenberg2014striving} produces 
 \end{figure}
 
 \subsubsection{Implementation and Performance}
-The proposed HF6 hardware design reduces on-chip memory and DSP utilization while slightly increasing FF and LUT compared to the standard FP hardware implementation. See \Tab{tab:resource_utilization} and \Fig{fig:resource_utilization}. The HF6 hardware is implemented using FF and LUT, while the FP hardware is implemented using Xilinx LogiCORE IPs with DSPs.
+The proposed HF6 implementation reduces on-chip memory and DSP utilization while slightly increasing FF and LUT compared to the standard FP implementation. See \Tab{tab:resource_utilization} and \Fig{fig:resource_utilization}. The HF6 logic is implemented using FF and LUT, while the FP logic is implemented using Xilinx LogiCORE IPs with DSPs.
 
 The compute performance of the CPU and TP on each convolution layer of the model is presented in \Tab{tab:performance} and \fig{fig:acceleration}. 
 The peak acceleration and power efficiency of the TP with standard FP is $13\times$ and $1,558.13$ MFLOPS/s/W, respectively. The peak acceleration and power efficiency of the TP with HF6 is $48.3\times$ and $5,743.29$ MFLOPS/s/W, respectively. The HF6 hardware demonstrates an improvement of $3.7\times$ in acceleration and power efficiency with respect to the standard FP hardware. See \Fig{fig:acceleration}. The estimated power dissipation on the SoC is presented in \fig{fig:power}. This shows a very similar breakdown of power dissipation in both implementations. However, the energy efficiency is increased due to the reduced latency in HF6 hardware. A comparison of related work is presented in \Tab{tab:comparison}.
@@ -255,7 +255,7 @@ The peak acceleration and power efficiency of the TP with standard FP is $13\tim
 	\label{fig:power}
 \end{figure}
 
-The run-time inference of TensorFlow Lite on the SoC is illustrated in \Fig{fig:runtime}. This shows a cooperative system where the convolution operations are delegated to the dedicated hardware accelerator. The ARM CPU obtains a latency of $387ms$ (2.58 FPS). The platform with standard FP hardware obtains a latency of $48 ms$ (20.8 FPS), while the implementation with HF6 obtains a latency of $27.9 ms$ (35.84 FPS). These represent an overall acceleration of $8\times$ and $13.87\times$ over the CPU, respectively.
+The run-time inference of TensorFlow Lite on the SoC is illustrated in \Fig{fig:runtime}. This shows the convolution layers as the compute-bound operations. The proposed embedded platform is a cooperative system where the convolution operations are delegated to the dedicated hardware accelerator. The ARM CPU obtains a latency of $387ms$ (2.58 FPS). The platform with standard FP hardware obtains a latency of $48 ms$ (20.8 FPS), while the implementation with HF6 obtains a latency of $27.9 ms$ (35.84 FPS). These represent an overall acceleration of $8\times$ and $13.87\times$ over the CPU, respectively.
 
 For ML compatibility/portability, the 6-bit FP is wrapped into the standard FP representation. The dedicated hardware design extracts the 6-bit format automatically and performs the computation.
 
