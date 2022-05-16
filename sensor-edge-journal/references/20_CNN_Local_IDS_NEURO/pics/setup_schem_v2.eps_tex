@@ -1,0 +1,92 @@
+%% Creator: Inkscape inkscape 0.92.2, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'setup_schem_v2.eps' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{242.66999817bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.02608481)%
+    \put(0,0){\includegraphics[width=\unitlength]{pics/setup_schem_v2.eps}}%
+    \put(0.25507044,0.04824529){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{86.6 cm}}}%
+    \put(0.83024523,0.8921464){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{x}}}%
+    \put(0.03723777,0.08837616){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{y}}}%
+    \put(0.08800167,0.9151232){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.16547361,0.9151232){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.24275555,0.91558626){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{3}}}%
+    \put(0.3200382,0.9148922){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{4}}}%
+    \put(0.47460208,0.91558626){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{6}}}%
+    \put(0.39731943,0.91558626){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{5}}}%
+    \put(0.62916632,0.91558626){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{8}}}%
+    \put(0.55100102,0.91537594){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{7}}}%
+    \put(0.7721664,0.91558626){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.70644861,0.91558626){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{9}}}%
+    \put(0.02108932,0.84011737){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.02127825,0.75988593){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.02127825,0.68011649){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{3}}}%
+    \put(0.02127825,0.59919134){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{4}}}%
+    \put(0.02127825,0.51965361){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{6}}}%
+    \put(0.02127825,0.43942217){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{5}}}%
+    \put(0.02127825,0.35919002){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{8}}}%
+    \put(0.02039597,0.27874826){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{7}}}%
+    \put(0.0097141,0.1184957){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.02127825,0.1987275){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{9}}}%
+    \put(0.27396983,0.1786667){\color[rgb]{0,0.37254902,0}\makebox(0,0)[lb]{\smash{\small$N_1$}}}%
+    \put(0.35671551,0.25967597){\color[rgb]{0.16862745,0.19607843,1}\makebox(0,0)[lb]{\smash{\small$S_5$}}}%
+    \put(0.59187194,0.3346932){\color[rgb]{0.16862745,0.19607843,1}\makebox(0,0)[lb]{\smash{\small$S_6$}}}%
+    \put(0.7475213,0.211786){\color[rgb]{0.16862745,0.19607843,1}\makebox(0,0)[lb]{\smash{\small$S_2$}}}%
+    \put(0.448258,0.4999443){\color[rgb]{0.16862745,0.19607843,1}\makebox(0,0)[lb]{\smash{\small$S_1$}}}%
+    \put(0.26464009,0.57184413){\color[rgb]{0.16862745,0.19607843,1}\makebox(0,0)[lb]{\smash{\small$S_4$}}}%
+    \put(0.35423906,0.76865493){\color[rgb]{0.16862745,0.19607843,1}\makebox(0,0)[lb]{\smash{\small$S_7$}}}%
+    \put(0.59396233,0.65820343){\color[rgb]{0.16862745,0.19607843,1}\makebox(0,0)[lb]{\smash{\small$S_3$}}}%
+    \put(0.81681955,0.6369748){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{90 cm}}}%
+    \put(0.85782772,0.46762065){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{87.6 cm}}}%
+    \put(0.41161028,0.08272741){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{84.2 cm}}}%
+    \put(0.44456061,0.99738905){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Invalid pulse position}}}%
+    \put(0.12601648,0.96051996){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Noise source}}}%
+    \put(0.44647383,0.96005725){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Sensor positions}}}%
+    \put(0.12410576,0.99738905){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Pulse position}}}%
+  \end{picture}%
+\endgroup%

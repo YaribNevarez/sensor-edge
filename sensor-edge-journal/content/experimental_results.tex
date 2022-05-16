@@ -1,6 +1,6 @@
 \section{Experimental results}
 \label{sec:experimental_results}
-In this section, we present experimental results on a low-power/low-cost sensor analytics application. As a use case, we present a CNN-regression model to predict x- y- coordinates of structural anomalies based on acoustic sensor data. We compare quantitative and qualitative aspects of the analytics using floating-point 32-bit, fixed-point 8-bit, Hybrid-Logarithmic 6-bit, and Hybrid-Float6.
+In this section, we present experimental results on a low-power/low-cost sensor analytics application. As a use case, we present a CNN-regression model to predict x- y- coordinates of acoustic emissions based on piezoelectric vibrations. We compare quantitative and qualitative aspects of the analytics using floating-point 32-bit, fixed-point 8-bit, Hybrid-Logarithmic 6-bit, and Hybrid-Float6.
 
 To demonstrate the proposed hardware concept, we deploy the CNN model for low-power inference in the smallest Zynq SoC. We compare the performance of the TP implemented with standard FP (using Xilinx LogiCORE IPs) and Hybrid-Float6 architecture.
 
@@ -8,15 +8,15 @@ To demonstrate the proposed hardware concept, we deploy the CNN model for low-po
 The analytics model is designed to predict x- y- coordinates of acoustic emissions on a metal plate. The metal plate is in the presence of noise disturbance to simulate realistic conditions. In this subsection, we present the structure for experimental setup, data sets, and the CNN-regression model.
 
 \subsubsection{Experimental Setup}
-The experiment uses eight piezoelectric sensors (Vallen Systeme VS900) fixed on a metal plate (90 cm x 86.6 cm x 0.3 cm). The VS900 devices can operate either in active or passive mode. Six VS900 are used in passive mode as acoustic sensors and two in active mode to produce acoustic emissions. These acoustic emissions simulate anomalies on x- y- coordinates as well as the noise disturbance on the system. See \fig{fig:data_set}(a). The acoustic emissions are labeled with their coordinates to create data sets.
+The experiment uses eight piezoelectric sensors (Vallen Systeme VS900) attached with magnetic holders on a metal plate (90 cm x 86.6 cm x 0.3 cm). The VS900 devices can operate either in active or passive mode. Six VS900 are used in passive mode as acoustic sensors and two in active mode to produce acoustic emissions. These acoustic emissions simulate anomalies on x- y- coordinates as well as the noise disturbance on the system. See \fig{fig:data_set}(a). The acoustic emissions are labeled with their coordinates to create data sets.
 
 \subsubsection{Data Sets}
-The data sets are recorded applying pulses on the metal plate, the x- y- coordinates of these pulses are used as labels. The pulses for training and validation data sets are shown in \fig{fig:data_set}(b) and \fig{fig:data_set}(c), respectively. The pulses for training and validation data sets are mutually exclusive, this exclusion is represented by the cross symbols in \fig{fig:data_set}(c). This creates a grid layout used to collect samples for the data sets. This grid is $10\times10$. This grid does not consider the four corners as they are used for structure holders.
+The data sets are recorded applying pulses on the metal plate, the x- y- coordinates of these pulses are used as labels. The pulses for training and validation data sets are shown in \fig{fig:data_set}(b) and \fig{fig:data_set}(c), respectively. The pulses for training and validation data sets are mutually exclusive, this exclusion is represented by the cross symbols in \fig{fig:data_set}(c). This creates a grid layout used to collect samples for the data sets. This grid is $10\times10$. This grid does not consider the four corners as they are used for magnetic holders.
 
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=\columnwidth]{../figures/histograms/data_set.pdf}
-	\caption{Experimental setup for sensor analytics on structural health monitoring.}
+	\caption{Experimental setup for sensor analytics on structural health monitoring, all lengths are in meters (m).}
 	\label{fig:data_set}
 \end{figure}
 
@@ -26,9 +26,9 @@ In order to create reproducible acoustic emissions, we use 9-cycle sine pulse in
 x_\mathrm{pulse}(t) = \frac{1}{2} \Big(1-\cos{\frac{f_\mathrm{c} t}{5}} \Big) A_0 \sin{f_\mathrm{c} t}.
 \end{equation}
 
-To generate the data sets, we use slightly different pulse amplitudes and frequencies for excitation. The pulse frequency $f_c$ is varied in 1 kHz steps between 300 kHz and 349 kHz and the amplitude $A_0$ is varied in 0.1 V steps between 2.6 V and 3.5 V. This results in 500 different pulses for each of the excitation points.
+To generate the data sets, we use slightly different pulse amplitudes and frequencies for excitation. The pulse frequency $f_c$ is varied in 1 kHz steps between $\unit[300]{kHz}$ and $\unit[349]{kHz}$ and the amplitude $A_0$ is varied in $\unit[0.1]{V}$ steps between $\unit[2.6]{V}$ and $\unit[3.5]{V}$. This results in 500 different pulses for each of the excitation points.
 
-The signals for labeled pulses and noise disturbance are generated by arbitrary waveform generators (AWGs). The sensor signals are recorded via a Vallen AMSY-6 measurement system with a resolution of 18 bits and a sampling rate of $f_\mathrm{S} = 10 MHz$. The disturbance signal is gaussian noise with amplitudes between 0-3 V. This noise is applied via the piezoelectric device $N$ at $x=0.227$ and $y=0.828$, see \fig{fig:data_set}(a).
+The signals for labeled pulses and noise disturbance are generated by arbitrary waveform generators (AWGs). The sensor signals are recorded via a Vallen AMSY-6 measurement system with a resolution of 18 bits and a sampling rate of $f_\mathrm{S} =\unit[10]{MHz}$. The disturbance signal is gaussian noise with amplitudes between 0-3 V. This noise is applied via the piezoelectric device $N$ at $x=\unit[0.227]{m}$ and $y=\unit[0.828]{m}$, see \fig{fig:data_set}(a).
 
 To obtain both time and frequency domain information, the sampled pulses are converted into the time-frequency domain using the Short-Time Fourier Transform (STFT). This is calculated as follows~\cite{stft_lit}:
 
@@ -51,7 +51,7 @@ In order to generate larger data sets, we create four further variants with time
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=\columnwidth]{../figures/histograms/spectrograms.pdf}
-	\caption{Spectrograms of sensors $S_1, S_2$ converted to grayscale for pulses at $x =0.105$, $y = 0.109$ with noise disturbance.}
+	\caption{Spectrograms of sensors $S_1, S_2$ converted to grayscale for pulses at $x =0.105$ m, $y = 0.109$ m with noise disturbance.}
 	\label{fig:spectrograms}
 \end{figure}
 
@@ -79,7 +79,7 @@ The data analytics is implemented with a CNN-regression model, see \fig{fig:mode
 \subsubsection{Base Model}
 The model in \fig{fig:model} is trained using Adam algorithm with iterative early stop. The Adam optimizer is configured with the default settings presented in \cite{kingma2014adam}: $\alpha = 0.001$, $\beta_1 = 0.9$, $\beta_2 = 0.999$, and $\epsilon = 1\mathrm{e}{-8}$. The training cycle patience is 10 iterations, the optimizer is executed with early stop patience of 10 epochs, and mini-batch size of 512 samples. This is applied using the method described in \Algo{alg:training} with $N_I = 10$, $N_E=10$, $B_{size}=512$.
 
-The training results are illustrated in \fig{fig:optimization}(a). In this experiment, the initial and the final models achieve $MSE=0.0135m^2$ and $MSE=0.0122m^2$, respectively. The $MSE$ is calculated with the Euclidean distance (loss) between the expected and the predicted coordinates. The initial model is obtained at the first early stop. In each stop, the moving averages of the Adam optimizer get initialized. This facilitates searching for better local minima. The model gets saved/updated when finding a better minimum.
+The training results are illustrated in \fig{fig:optimization}(a). In this experiment, the initial and the final models achieve $MSE=\unit[0.0135]{m^2}$ and $MSE=\unit[0.0122]{m^2}$, respectively. The $MSE$ is calculated with the Euclidean distance (loss) between the expected and the predicted coordinates. The initial model is obtained at the first early stop. In each stop, the moving averages of the Adam optimizer get initialized. This facilitates searching for better local minima. The model gets saved/updated when finding a better minimum.
 
 \begin{figure}[h!]
 	\centering
@@ -88,7 +88,7 @@ The training results are illustrated in \fig{fig:optimization}(a). In this exper
 	\label{fig:optimization}
 \end{figure}
 
-The resulting model achieves $MSE=0.0122m^2$, which corresponds to $MAE=0.0955m$. See \fig{fig:model_evaluation}(a). In total, the training takes 379 epochs in 25 stops. The first stop takes 43 epochs for the initial model and subsequent training iterations take an average of 14 epochs. The total time is 53 minutes using a PC with AMD Ryzen 5 5600H and NVIDIA GeForce RTX 3050.
+The resulting model achieves $MSE=\unit[0.0122]{m^2}$, which corresponds to $MAE=\unit[0.0955]{m}$. See \fig{fig:model_evaluation}(a). In total, the training takes 379 epochs in 25 stops. The first stop takes 43 epochs for the initial model and subsequent training iterations take an average of 14 epochs. The total time is 53 minutes using a PC with AMD Ryzen 5 5600H and NVIDIA GeForce RTX 3050.
 
 \begin{figure}[h!]
 	\centering
@@ -102,17 +102,17 @@ This integer quantization is an optimization method that converts 32-bit FP numb
 
 The base model is quantized using the TensorFlow Lite library with integer-only quantization settings. The filter and bias tensors are represented by 8-bit and 32-bit signed integers, respectively. The input and output activation tensors are represented by 8-bit signed integer. For convolution layers, this quantization includes two additional tensor coefficients (output-multiplier and output-shift). These tensors are the same shape as the bias tensor and represented by 32-bit signed integers as well.
 
-The fixed-point model achieves $MSE=0.0122 m^2$ and $MAE=0.0952m$. See \fig{fig:model_evaluation}(b). The MAE obtains a reduction of 0.31\% compared to the base model. We attribute this to the regularization effect.
+The fixed-point model achieves $MSE=\unit[0.0122]{m^2}$ and $MAE=\unit[0.0952]{m}$. See \fig{fig:model_evaluation}(b). The MAE obtains a reduction of 0.31\% compared to the base model. We attribute this to the regularization effect.
 
 \subsubsection{Quantization Aware Training for Hybrid-Float6}
 The QAT is a post-training step. We run this method during two epochs with mini-batch size of 10 samples with 4-bit exponent and 1-bit mantissa as parameters. This is applied using the method described in \Algo{alg:quantization_integration} with $N_{ep}=2$, $B_{size}=10$, $E_{size}=4$, $M_{size}=1$.
 
-The QAT is illustrated in \fig{fig:optimization}(b). First, the model gets quantized with HF6 format before starting QAT, this obtains $MSE=0.0188m^2$ and $MAE=0.1232m$. This illustrates the inference of the base FP model (without QAT) on HF6 hardware. See \fig{fig:model_evaluation}(c). Then, after QAT, the final model achieves $MSE=0.0112$ and $MAE=0.0919$. This corresponds to an error reduction of 8.2\% and 3.77\%, respectively. See \fig{fig:model_evaluation}(d). The QAT time is 185 minutes.
+The QAT is illustrated in \fig{fig:optimization}(b). First, the model gets quantized with HF6 format before starting QAT, this obtains $MSE=\unit[0.0188]{m^2}$ and $MAE=\unit[0.1232]{m}$. This illustrates the inference of the base FP model (without QAT) on HF6 hardware. See \fig{fig:model_evaluation}(c). Then, after QAT, the final model achieves $MSE=\unit[0.0112]{m^2}$ and $MAE=\unit[0.0919]{m}$. This corresponds to an error reduction of 8.2\% and 3.77\%, respectively. See \fig{fig:model_evaluation}(d). The QAT time is 185 minutes.
 
 \subsubsection{Quantization Aware Training for Hybrid-Logarithmic 6-bit}
 For the sake of quality comparison, we generate the model with 6-bit logarithmic quantization on convolution parameters, see \fig{fig:floating}(e). This quantization matches the bit size of HF6. We run the QAT on the base model with hybrid logarithmic parameters. Then, the filter and bias tensors of convolution layers are represented by 6-bit signed logarithmic. This is applied using the method described in \Algo{alg:quantization_integration} with $N_{ep}=2$, $B_{size}=10$, $E_{size}=5$, $M_{size}=0$.
 
-In this case, the model gets quality degradation. The model reaches $MSE=0.0123$ and $MAE=0.0968$, which correspond to an error increase of 0.82\% and 1.36\%, respectively. See \fig{fig:model_evaluation}(e).
+In this case, the model gets quality degradation. The model reaches $MSE=\unit[0.0123]{m^2}$ and $MAE=\unit[0.0968]{m}$, which correspond to an error increase of 0.82\% and 1.36\%, respectively. See \fig{fig:model_evaluation}(e).
 
 A summary of inference with different data representations is presented in \fig{fig:model_evaluation}(f).
 
@@ -122,7 +122,7 @@ The proposed hardware/software co-design is demonstrated on the Zynq-7007S syste
 In this platform, we implement the proposed hardware/software architecture to deploy the sensor analytics application. The desired model is converted to TensorFlow Lite (floating-point) and deployed on the SoC as a hex dump in a C array, this is used for the embedded software build. The Zynq-7007S SoC performs inference running TensorFlow Lite on the PS. The computational workload of convolution layers is delegated to the dedicated hardware.
 
 \subsubsection{Benchmark on Embedded CPU}
-We explore the performance of the embedded CPU for inference without hardware acceleration. In this case, TensorFlow Lite creates the CNN as a sequential model that allocates all computation to the CPU (ARM Cortex-A9) at 666 MHz and power dissipation of $1,187 W$.
+We explore the performance of the embedded CPU for inference without hardware acceleration. In this case, TensorFlow Lite creates the CNN as a sequential model that allocates all computation to the CPU (ARM Cortex-A9) at $\unit[666]{MHz}$ and power dissipation of $\unit[1,187]{W}$.
 
 The compute performance and run-time inference of the CPU are shown in \Tab{tab:performance}(a) and \fig{fig:runtime}(a), respectively.
 
@@ -138,7 +138,7 @@ For this design, we implement the TP with standard FP hardware prior synthesis. 
 
 Using equations from Section \ref{sec:memory_utilization}, the on-chip memory buffer utilization are $Input_M=84,480$b, $Filter_M=950,400$b, and $Bias_M=1,920$b. Hence, the required on-chip memory buffer size is $TP_B=1,036,800$b.
 
-The post-implementation resource utilization and power dissipation are presented in \Tab{tab:resource_utilization}(a). The complete hardware platform utilizes 83\% of BRAM, this includes the on-chip memory requirements of the TP, DMA, and AXI interconnects. The total available on-chip memory (BRAM) on the Zynq-7007S SoC is 1.8Mb. The estimated power dissipation of the TP is $85mW$ at $200MHz$ (this estimation is provided by Xilinx Vivado).
+The post-implementation resource utilization and power dissipation are presented in \Tab{tab:resource_utilization}(a). The complete hardware platform utilizes 83\% of BRAM, this includes the on-chip memory requirements of the TP, DMA, and AXI interconnects. The total available on-chip memory (BRAM) on the Zynq-7007S SoC is 1.8Mb. The estimated power dissipation of the TP is $\unit[85]{mW}$ at $\unit[200]{MHz}$ (this estimation is provided by Xilinx Vivado).
 
 \begin{table}[!h]\centering
 	\caption{Resource utilization and power dissipation on the Zynq-7007S SoC.}\label{tab:resource_utilization}
@@ -203,9 +203,9 @@ The implementation of the dot-product with standard FP engine (IEEE 754 arithmet
 \subsubsection{Tensor Processor with Hybrid-Float6 Hardware}
 To demonstrate the proposed design, the TP with HF6 hardware restates the standard FP design parameters with the following customization for the FP 6-bit quantization in filter and bias: $BitSize_F=BitSize_B=6$.
 
-Using equations from Section \ref{sec:memory_utilization}, the on-chip memory requirements are $Input_M=84,480b$, $Filter_M=178,200b$, $Bias_M=360b$. Hence, the required on-chip memory buffer size is $TP_B=263,040b$.
+Using equations from Section \ref{sec:memory_utilization}, the on-chip memory requirements are $Input_M=\unit[84,480]{b}$, $Filter_M=\unit[178,200]{b}$, $Bias_M=\unit[360]{b}$. Hence, the required on-chip memory buffer size is $TP_B=\unit[263,040]{b}$.
 
-The post-implementation resource utilization and power dissipation are presented in \Tab{tab:resource_utilization}(b). The complete hardware platform utilizes 30\% of BRAM, this includes the on-chip memory requirements of the TP, DMA, and AXI interconnects. The estimated power dissipation of the TP is $84mW$ at $200MHz$ (this estimation is provided by Xilinx Vivado).
+The post-implementation resource utilization and power dissipation are presented in \Tab{tab:resource_utilization}(b). The complete hardware platform utilizes 30\% of BRAM, this includes the on-chip memory requirements of the TP, DMA, and AXI interconnects. The estimated power dissipation of the TP is $\unit[84]{mW}$ at $\unit[200]{MHz}$ (this estimation is provided by Xilinx Vivado).
 
 The compute performance and inference schedule of the model on this hardware implementation are shown in \Tab{tab:performance}(c) and \fig{fig:runtime}(c), respectively. \Fig{fig:acceleration} presents a comparison of the acceleration and the reduction of power dissipation between standard FP and HF6 hardware implementations.
 
@@ -214,7 +214,7 @@ This deployment does not require model parameter extraction/treatment. The 6-bit
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=1\columnwidth]{../figures/runtime/runtime.pdf}
-	\caption{Run-time inference of TensorFlow Lite on the Zynq-7007S SoC. (a) CPU ARM Cortex-A9 at 666MHz, (b) cooperative CPU + TP with floating-point Xilinx LogiCORE IP at 200MHz, and (c) cooperative CPU + TP with Hybrid-Float6 at 200MHz.}
+	\caption{Run-time inference of TensorFlow Lite on the Zynq-7007S SoC. (a) CPU ARM Cortex-A9 at $\unit[666]{MHz}$, (b) cooperative CPU + TP with floating-point Xilinx LogiCORE IP at $\unit[200]{MHz}$, and (c) cooperative CPU + TP with Hybrid-Float6 at $\unit[200]{MHz}$.}
 	\label{fig:runtime}
 \end{figure}
 
@@ -251,11 +251,11 @@ The peak acceleration and power efficiency of the TP with standard FP is $13\tim
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1\columnwidth]{../figures/power_breakdown/power_breakdown.pdf}
-	\caption{Estimated power dissipation on the Zynq-7007S SoC with PS at 666MHz and PL at 200MHz.}
+	\caption{Estimated power dissipation on the Zynq-7007S SoC with PS at $\unit[666]{MHz}$ and PL at $\unit[200]{MHz}$.}
 	\label{fig:power}
 \end{figure}
 
-The run-time inference of TensorFlow Lite on the SoC is illustrated in \Fig{fig:runtime}. This shows the convolution layers as the compute-bound operations. The proposed embedded platform is a cooperative system where the convolution operations are delegated to the dedicated hardware accelerator. The ARM CPU obtains a latency of $387ms$ (2.58 FPS). The platform with standard FP hardware obtains a latency of $48 ms$ (20.8 FPS), while the implementation with HF6 obtains a latency of $27.9 ms$ (35.84 FPS). These represent an overall acceleration of $8\times$ and $13.87\times$ over the CPU, respectively.
+The run-time inference of TensorFlow Lite on the SoC is illustrated in \Fig{fig:runtime}. This shows the convolution layers as the compute-bound operations. The proposed embedded platform is a cooperative system where the convolution operations are delegated to the dedicated hardware accelerator. The ARM CPU obtains a latency of $\unit[387]{ms}$ ($\unit[2.58]{FPS}$). The platform with standard FP hardware obtains a latency of $\unit[48]{ms}$ ($\unit[20.8]{FPS}$), while the implementation with HF6 obtains a latency of $\unit[27.9]{ms}$ ($\unit[35.84]{FPS}$). These represent an overall acceleration of $8\times$ and $13.87\times$ over the CPU, respectively.
 
 For ML compatibility/portability, the 6-bit FP is wrapped into the standard FP representation. The dedicated hardware design extracts the 6-bit format automatically and performs the computation.
 

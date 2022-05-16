@@ -1,0 +1,5 @@
+The physical size of a hardware multiplier scales with the square of the mantissa width.
+
+neural networks are far more sensitive to the size of the exponent than that of the mantissa.
+
+

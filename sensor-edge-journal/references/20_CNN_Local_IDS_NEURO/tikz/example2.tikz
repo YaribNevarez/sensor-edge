@@ -1,0 +1,109 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=0.39\figurewidth,
+height=0.419\figureheight,
+at={(0\figurewidth,0.581\figureheight)},
+scale only axis,
+point meta min=-100,
+point meta max=-40,
+axis on top,
+clip=false,
+xmin=4,
+xmax=388,
+xlabel style={font=\color{white!15!black},yshift = 0.1cm},
+xlabel={Time [\textmu s]},
+y dir=reverse,
+ymin=71.4285714285714,
+ymax=528.571428571429,
+ylabel style={font=\color{white!15!black},yshift = -0.2cm},
+ylabel={Frequency [kHz]},
+axis background/.style={fill=white}
+]
+\addplot [forget plot] graphics [xmin=4, xmax=388, ymin=71.4285714285714, ymax=528.571428571429] {tikz/example2-1.png};
+\node[right, align=left, font=\color{white}]
+at (rel axis cs:0.05,0.85) {a)};
+\end{axis}
+
+\begin{axis}[%
+width=0.39\figurewidth,
+height=0.419\figureheight,
+at={(0.54\figurewidth,0.581\figureheight)},
+scale only axis,
+point meta min=-100,
+point meta max=-40,
+axis on top,
+clip=false,
+xmin=4,
+xmax=388,
+xlabel style={font=\color{white!15!black},yshift = 0.1cm},
+xlabel={Time [\textmu s]},
+y dir=reverse,
+ymin=71.4285714285714,
+ymax=528.571428571429,
+ylabel style={font=\color{white!15!black},yshift = -0.2cm},
+ylabel={Frequency [kHz]},
+axis background/.style={fill=white}
+]
+\addplot [forget plot] graphics [xmin=4, xmax=388, ymin=71.4285714285714, ymax=528.571428571429] {tikz/example2-2.png};
+\node[right, align=left, font=\color{white}]
+at (rel axis cs:0.05,0.85) {b)};
+\end{axis}
+
+\begin{axis}[%
+width=0.39\figurewidth,
+height=0.419\figureheight,
+at={(0\figurewidth,0\figureheight)},
+scale only axis,
+point meta min=-100,
+point meta max=-40,
+axis on top,
+clip=false,
+xmin=4,
+xmax=388,
+xlabel style={font=\color{white!15!black},yshift = 0.1cm},
+xlabel={Time [\textmu s]},
+y dir=reverse,
+ymin=71.4285714285714,
+ymax=528.571428571429,
+ylabel style={font=\color{white!15!black},yshift = -0.2cm},
+ylabel={Frequency [kHz]},
+axis background/.style={fill=white}
+]
+\addplot [forget plot] graphics [xmin=4, xmax=388, ymin=71.4285714285714, ymax=528.571428571429] {tikz/example2-3.png};
+\node[right, align=left, font=\color{white}]
+at (rel axis cs:0.05,0.85) {c)};
+\end{axis}
+
+\begin{axis}[%
+width=0.39\figurewidth,
+height=0.419\figureheight,
+at={(0.54\figurewidth,0\figureheight)},
+scale only axis,
+point meta min=-100,
+point meta max=-40,
+axis on top,
+clip=false,
+xmin=4,
+xmax=388,
+xlabel style={font=\color{white!15!black},yshift = 0.1cm},
+xlabel={Time [\textmu s]},
+y dir=reverse,
+ymin=71.4285714285714,
+ymax=528.571428571429,
+ylabel style={font=\color{white!15!black},yshift = -0.2cm},
+ylabel={Frequency [kHz]},
+axis background/.style={fill=white}
+]
+\addplot [forget plot] graphics [xmin=4, xmax=388, ymin=71.4285714285714, ymax=528.571428571429] {tikz/example2-4.png};
+\node[right, align=left, font=\color{white}]
+at (rel axis cs:0.05,0.85) {d)};
+\end{axis}
+
+\end{tikzpicture}%
