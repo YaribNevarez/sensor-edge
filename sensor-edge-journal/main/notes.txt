@@ -2,4 +2,6 @@ The physical size of a hardware multiplier scales with the square of the mantiss
 
 neural networks are far more sensitive to the size of the exponent than that of the mantissa.
 
+model can be stored in full 32-bit format. This means that model portability across hardware platforms is not a concern. 
 
+For the overwhelming majority of computations within a deep neural network, it isn’t essential to compute, say, the 18th digit of each number; the network can accomplish a task with the same accuracy using a lower-precision approximation. Surprisingly, some models can even reach a higher accuracy with lower precision, which research usually attributes to regularization effects from the lower precision [Choi et al., 2018].
