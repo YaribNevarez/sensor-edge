@@ -140,7 +140,7 @@ The quantization method uses rounding strategy to reduce the FP representation. 
 		\ENSURE $MODEL$ as the full-precision output model.
 		\STATE $Train(MODEL, D_{train}, D_{val}, N_{E}, B_{size})$
 		\STATE $mse_i \gets Evaluate(MODEL, D_{val})$ // Benchmark
-		\STATE $n_i \gets 0$
+		\STATE $n_I \gets 0$
 		\WHILE {$n_I<N_I$}
 		\STATE // Iterative early stop cycle
 		\STATE $Train(MODEL, D_{train}, D_{val}, N_{E}, B_{size})$
@@ -149,7 +149,7 @@ The quantization method uses rounding strategy to reduce the FP representation. 
 			\STATE $Update(MODEL)$
 			\STATE $mse_i \gets mse_v$
 		\ELSE
-			\STATE $MODEL  \gets LoadPreviousModel()$
+			\STATE $MODEL  \gets LoadPreviousWeights()$
 			\STATE $n_I \gets n_I + 1$
 		\ENDIF
 		\ENDWHILE
@@ -172,8 +172,8 @@ The quantization method uses rounding strategy to reduce the FP representation. 
 		\REQUIRE $N_{ep}$ as the number of epochs.
 		\REQUIRE $B_{size}$ as the mini-batch size.
 		\ENSURE $MODEL$ as the quantized output model.
-		\STATE //Quantize
-		\STATE $MODEL \gets \Algo{alg:quantize_training}(MODEL,E_{size}, M_{size})$ 
+		\STATE // Quantize
+		\STATE $MODEL \gets$ \Algo{alg:quantize_training}$(MODEL,E_{size}, M_{size})$ 
 		\IF {$1<epoch$}
 		\STATE // Update model after first epoch
 		\STATE $mse_v \gets Evaluate(MODEL, D_{val})$
