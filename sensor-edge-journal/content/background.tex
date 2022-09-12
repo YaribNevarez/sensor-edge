@@ -2,16 +2,16 @@
 \label{sec:background}
 
 \subsection{Conv2D tensor operation}
-A convolutional layer aims to learn feature representations from an input layer. The convolution layer is made of convolution kernels that are used to compute feature maps. Each unit of a feature map is connected to a region of neighboring units on the input maps (from previous layer). Such a neighborhood of the previous layer is known as the receptive field of the unit. A new feature map can be obtained by first convolving the input maps with a learned kernel and then applying a nonlinear elementwise activation function to the convolved results. All spatial locations on the input maps share a kernel to generate a feature map. All feature maps are obtained by convolving several different kernels\cite{gu2018recent}.
+A convolutional layer aims to learn and extract feature representations from input layers. The convolution layer is made of convolution kernels that are used to compute feature maps. Each unit of a feature map is connected to a region of neighboring units on the input maps (from previous layer). Such a neighborhood of the previous layer is known as the receptive field of the unit. A new feature map can be obtained by first convolving the input maps with a learned kernel and then applying a nonlinear elementwise activation function to the convolved results. All spatial locations on the input maps share a kernel to generate a feature map. All feature maps are obtained by convolving several different kernels\cite{gu2018recent}.
 
 
-The 2D convolution process is performed by the \emph{Conv2D} tensor operation, described in \Equ{eq:conv2D}, where $h$ is the input tensor containing the feature maps, $W$ is the convolution kernels (known as filters), and $b$ is the bias vector for the output feature maps\cite{goodfellow2016deep}. $K\times L\times M$ is the receptive field size, $K\times L$ is the convolution kernel, and $M$ is the number of input channels/feature maps. We denote \emph{Conv} as \emph{Conv2D} operator.
+The 2D convolution is performed by the \emph{Conv2D} tensor operation described in \Equ{eq:conv2D}, where $h$ is the input tensor containing the feature maps, $W$ is the convolution kernels (known as filters), and $b$ is the bias vector used on the output feature maps\cite{goodfellow2016deep}. $K\times L\times M$ is the receptive field size, $K\times L$ is the 2D convolution kernel, and $M$ is the number of input channels or input feature maps. We denote \emph{Conv} as \emph{Conv2D} operator.
 \begin{eqnarray} \label{eq:conv2D}
 Conv\left(W,h\right)_{i,j,o}=\sum_{k,l,m}^{K,L,M} h_{(i+k,j+l,m)} W_{(o,k,l,m)}+b_{o}
 \end{eqnarray}
 
 \subsection{Floating-point Number Representation}
-The representation of every numerical value, in any number system, is made of an integer and a fractional part. The border that delimits them is called the radix point. The fixed-point format for representing numeric values derives its name from the fact that in this format, the base point is fixed at a certain position. For integer numbers, this position is at the right of the least significant digit.
+The representation of every numerical value, in any number system, is made of an integer and a fractional part. The border that delimits them is called the radix point. The fixed-point format derives its name from the fact that in this, the base point is fixed at a certain position. For integer numbers, this position is at the right of the least significant digit.
 
 In scientific computation, it is often necessary to represent very large and very small values. This is difficult to achieve using the fixed-point format because the bit size/width required to maintain both the desired precision and the desired range are very large. In such situations, FP formats are used to represent real numbers. Each FP number can be divided into three fields: sign $S$, exponent $E$, and mantissa $M$. Using the binary number system, it is possible to represent any FP number as:
 
@@ -27,12 +27,12 @@ B=2^{E_{size}-1}-1
 
 There is a natural trade-off between small bit size requiring fewer hardware resources and larger bit size providing higher precision. Within a given total bit size, it is possible to assign various combinations of sizes to the exponent and mantissa fields, with wider exponents resulting in a higher range and wider mantissa resulting in better precision.
 
-The most widely used format for FP arithmetic is the IEEE 754 standard \cite{zuras2008ieee}. The IEEE single-precision format (32-bit) is expressed by \Equ{eq:float} with $B$ = 127, 8 bits for the exponent and 23 bits for the mantissa, see \Fig{fig:floating}(a). In FP formats, the numbers are normalized, the leading one is an implicit bit, and only the fractional part is explicitly stored in the mantissa field.
+The most widely used format for FP arithmetic is the IEEE 754 standard \cite{zuras2008ieee}. The IEEE single-precision format (32-bit) is expressed by \Equ{eq:float} with 8-bits for the exponent, 23-bits for the mantissa, and $B$ = 127, see \Fig{fig:floating}(a). In FP formats, the numbers are normalized, the leading one is an implicit bit, and only the fractional part is explicitly stored in the mantissa field.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1\columnwidth]{../figures/power_breakdown/floating_point.pdf}
-	\caption{Floating-point number representation.}
+	\caption{Floating-point number representations.}
 	\label{fig:floating}
 \end{figure}
 
