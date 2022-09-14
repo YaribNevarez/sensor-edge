@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.3)  13 SEP 2022 00:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.3)  14 SEP 2022 04:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -809,25 +809,25 @@ Package xcolor Warning: Incompatible color definition on input line 13.
 <../figures/accelerator.pdf, id=50, 252.945pt x 180.675pt>
 File: ../figures/accelerator.pdf Graphic file (type pdf)
 <use ../figures/accelerator.pdf>
-Package pdftex.def Info: ../figures/accelerator.pdf  used on input line 20.
+Package pdftex.def Info: ../figures/accelerator.pdf  used on input line 18.
 (pdftex.def)             Requested size: 252.56088pt x 180.40436pt.
 
-Overfull \hbox (9.88733pt too wide) in paragraph at lines 20--21
+Overfull \hbox (9.88733pt too wide) in paragraph at lines 18--19
  [][] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 21.
+Package xcolor Warning: Incompatible color definition on input line 19.
 
 
-Package xcolor Warning: Incompatible color definition on input line 21.
+Package xcolor Warning: Incompatible color definition on input line 19.
 
 
-Package xcolor Warning: Incompatible color definition on input line 24.
+Package xcolor Warning: Incompatible color definition on input line 22.
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 30.
+Package pdftex.def Info: notaglinelogo.png  used on input line 28.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -851,48 +851,48 @@ pdfTeX warning: /usr/bin/pdflatex (file ../figures/system_design.pdf): PDF incl
 usion: multiple pdfs with page group included in a single page
 >]
 
-Package xcolor Warning: Incompatible color definition on input line 31.
+Package xcolor Warning: Incompatible color definition on input line 29.
 
 <../figures/dot-product_unit.pdf, id=67, 252.945pt x 187.902pt>
 File: ../figures/dot-product_unit.pdf Graphic file (type pdf)
 <use ../figures/dot-product_unit.pdf>
-Package pdftex.def Info: ../figures/dot-product_unit.pdf  used on input line 43
+Package pdftex.def Info: ../figures/dot-product_unit.pdf  used on input line 41
 .
 (pdftex.def)             Requested size: 252.56088pt x 187.62054pt.
 
-Overfull \hbox (9.88733pt too wide) in paragraph at lines 43--44
+Overfull \hbox (9.88733pt too wide) in paragraph at lines 41--42
  [][] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 44.
+Package xcolor Warning: Incompatible color definition on input line 42.
 
 
-Package xcolor Warning: Incompatible color definition on input line 44.
+Package xcolor Warning: Incompatible color definition on input line 42.
 
 <../figures/dot_product_hybrid.pdf, id=68, 252.945pt x 346.89601pt>
 File: ../figures/dot_product_hybrid.pdf Graphic file (type pdf)
 <use ../figures/dot_product_hybrid.pdf>
 Package pdftex.def Info: ../figures/dot_product_hybrid.pdf  used on input line 
-50.
+48.
 (pdftex.def)             Requested size: 252.56088pt x 346.37642pt.
 
-Overfull \hbox (9.88733pt too wide) in paragraph at lines 50--51
+Overfull \hbox (9.88733pt too wide) in paragraph at lines 48--49
  [][] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 51.
+Package xcolor Warning: Incompatible color definition on input line 49.
 
 
-Package xcolor Warning: Incompatible color definition on input line 51.
+Package xcolor Warning: Incompatible color definition on input line 49.
 
 
-Package xcolor Warning: Incompatible color definition on input line 55.
+Package xcolor Warning: Incompatible color definition on input line 53.
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 57.
+Package pdftex.def Info: notaglinelogo.png  used on input line 55.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -921,48 +921,48 @@ pdfTeX warning: /usr/bin/pdflatex (file ../figures/dot_product_hybrid.pdf): PDF
 <../figures/multiplier.pdf, id=162, 252.945pt x 397.485pt>
 File: ../figures/multiplier.pdf Graphic file (type pdf)
 <use ../figures/multiplier.pdf>
-Package pdftex.def Info: ../figures/multiplier.pdf  used on input line 60.
+Package pdftex.def Info: ../figures/multiplier.pdf  used on input line 58.
 (pdftex.def)             Requested size: 252.56088pt x 396.88963pt.
 
-Overfull \hbox (9.88733pt too wide) in paragraph at lines 60--61
+Overfull \hbox (9.88733pt too wide) in paragraph at lines 58--59
  [][] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 61.
+Package xcolor Warning: Incompatible color definition on input line 59.
 
 
-Package xcolor Warning: Incompatible color definition on input line 61.
+Package xcolor Warning: Incompatible color definition on input line 59.
 
 
-Package xcolor Warning: Incompatible color definition on input line 70.
+Package xcolor Warning: Incompatible color definition on input line 68.
 
 <../figures/accelerator_buffers.pdf, id=163, 252.945pt x 144.54pt>
 File: ../figures/accelerator_buffers.pdf Graphic file (type pdf)
 <use ../figures/accelerator_buffers.pdf>
 Package pdftex.def Info: ../figures/accelerator_buffers.pdf  used on input line
- 75.
+ 73.
 (pdftex.def)             Requested size: 252.56088pt x 144.32349pt.
 
-Overfull \hbox (9.88733pt too wide) in paragraph at lines 75--76
+Overfull \hbox (9.88733pt too wide) in paragraph at lines 73--74
  [][] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 76.
+Package xcolor Warning: Incompatible color definition on input line 74.
 
 
-Package xcolor Warning: Incompatible color definition on input line 76.
+Package xcolor Warning: Incompatible color definition on input line 74.
 
 
-Underfull \hbox (badness 1354) in paragraph at lines 96--97
+Underfull \hbox (badness 1354) in paragraph at lines 94--95
 []\T1/ptm/n/n/10 The mem-ory uti-liza-tion of \T1/ptm/m/it/10 bias buffer \T1/p
 tm/n/n/10 is de-fined by
  []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 107.
+Package pdftex.def Info: notaglinelogo.png  used on input line 102.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -985,16 +985,16 @@ pdfTeX warning: /usr/bin/pdflatex (file ../figures/accelerator_buffers.pdf): PD
 F inclusion: multiple pdfs with page group included in a single page
 >]
 
-Package xcolor Warning: Incompatible color definition on input line 108.
+Package xcolor Warning: Incompatible color definition on input line 106.
 
 
-Package xcolor Warning: Incompatible color definition on input line 110.
+Package xcolor Warning: Incompatible color definition on input line 109.
 
 
-Package xcolor Warning: Incompatible color definition on input line 122.
+Package xcolor Warning: Incompatible color definition on input line 121.
 
 
-Overfull \hbox (10.0pt too wide) detected at line 157
+Overfull \hbox (10.0pt too wide) detected at line 156
 [][] 
  []
 
@@ -1002,7 +1002,7 @@ Overfull \hbox (10.0pt too wide) detected at line 157
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (10.0pt too wide) detected at line 186
+Overfull \hbox (10.0pt too wide) detected at line 185
 [][] 
  []
 
@@ -1010,7 +1010,7 @@ Overfull \hbox (10.0pt too wide) detected at line 186
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (10.0pt too wide) detected at line 229
+Overfull \hbox (10.0pt too wide) detected at line 228
 [][] 
  []
 
@@ -1020,29 +1020,25 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <../figures/sw_stack.pdf, id=214, 252.945pt x 130.086pt>
 File: ../figures/sw_stack.pdf Graphic file (type pdf)
 <use ../figures/sw_stack.pdf>
-Package pdftex.def Info: ../figures/sw_stack.pdf  used on input line 232.
+Package pdftex.def Info: ../figures/sw_stack.pdf  used on input line 231.
 (pdftex.def)             Requested size: 252.56088pt x 129.89113pt.
 
-Overfull \hbox (9.88733pt too wide) in paragraph at lines 232--233
+Overfull \hbox (9.88733pt too wide) in paragraph at lines 231--232
  [][] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 233.
+Package xcolor Warning: Incompatible color definition on input line 232.
 
 
-Package xcolor Warning: Incompatible color definition on input line 233.
+Package xcolor Warning: Incompatible color definition on input line 232.
 
 
-Package xcolor Warning: Incompatible color definition on input line 236.
-
-) (../content/experimental_results.tex
-
-Package xcolor Warning: Incompatible color definition on input line 1.
+Package xcolor Warning: Incompatible color definition on input line 235.
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 4.
+Package pdftex.def Info: notaglinelogo.png  used on input line 240.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1059,7 +1055,10 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[7]
+[7]) (../content/experimental_results.tex
+
+Package xcolor Warning: Incompatible color definition on input line 1.
+
 
 Package xcolor Warning: Incompatible color definition on input line 7.
 
@@ -1083,7 +1082,7 @@ Package xcolor Warning: Incompatible color definition on input line 19.
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 32.
+Package pdftex.def Info: notaglinelogo.png  used on input line 30.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1129,7 +1128,7 @@ Package xcolor Warning: Incompatible color definition on input line 58.
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 67.
+Package pdftex.def Info: notaglinelogo.png  used on input line 60.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1184,9 +1183,6 @@ Package xcolor Warning: Incompatible color definition on input line 87.
 
 Package xcolor Warning: Incompatible color definition on input line 87.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 <../figures/histograms/model_evaluation.pdf, id=255, 252.945pt x 607.068pt>
 File: ../figures/histograms/model_evaluation.pdf Graphic file (type pdf)
 <use ../figures/histograms/model_evaluation.pdf>
@@ -1205,15 +1201,9 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Package xcolor Warning: Incompatible color definition on input line 100.
 
-
-Package xcolor Warning: Incompatible color definition on input line 107.
-
-
-Underfull \vbox (badness 1418) has occurred while \output is active []
-
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 109.
+Package pdftex.def Info: notaglinelogo.png  used on input line 104.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1237,8 +1227,11 @@ pdfTeX warning: /usr/bin/pdflatex (file ../figures/histograms/training_and_quan
 tization.pdf): PDF inclusion: multiple pdfs with page group included in a singl
 e page
 >]
-Underfull \vbox (badness 1354) has occurred while \output is active []
+Underfull \vbox (badness 5050) has occurred while \output is active []
 
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
 
 
 Package xcolor Warning: Incompatible color definition on input line 112.
@@ -1254,12 +1247,9 @@ Underfull \hbox (badness 2573) in paragraph at lines 122--123
 
 Package xcolor Warning: Incompatible color definition on input line 124.
 
-
-Package xcolor Warning: Incompatible color definition on input line 129.
-
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 132.
+Package pdftex.def Info: notaglinelogo.png  used on input line 124.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1277,6 +1267,9 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [11 <../figures/histograms/model_evaluation.pdf>]
+
+Package xcolor Warning: Incompatible color definition on input line 129.
+
 
 Package xcolor Warning: Incompatible color definition on input line 144.
 
@@ -1321,30 +1314,9 @@ Underfull \hbox (badness 1496) in paragraph at lines 210--211
 []\T1/ptm/n/n/10 The com-pute per-for-mance and in-fer-ence sched-ule of
  []
 
-<../figures/runtime/runtime.pdf, id=684, 252.945pt x 578.16pt>
-File: ../figures/runtime/runtime.pdf Graphic file (type pdf)
-<use ../figures/runtime/runtime.pdf>
-Package pdftex.def Info: ../figures/runtime/runtime.pdf  used on input line 216
-.
-(pdftex.def)             Requested size: 242.67355pt x 554.69206pt.
-
-Package xcolor Warning: Incompatible color definition on input line 217.
-
-
-Package xcolor Warning: Incompatible color definition on input line 217.
-
-
-Package xcolor Warning: Incompatible color definition on input line 221.
-
-
-Package xcolor Warning: Incompatible color definition on input line 222.
-
-
-Underfull \vbox (badness 2057) has occurred while \output is active []
-
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 224.
+Package pdftex.def Info: notaglinelogo.png  used on input line 212.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1362,13 +1334,31 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [12 <../figures/power_breakdown/acceleration_power_reduction.pdf>]
+<../figures/runtime/runtime.pdf, id=694, 252.945pt x 578.16pt>
+File: ../figures/runtime/runtime.pdf Graphic file (type pdf)
+<use ../figures/runtime/runtime.pdf>
+Package pdftex.def Info: ../figures/runtime/runtime.pdf  used on input line 216
+.
+(pdftex.def)             Requested size: 242.67355pt x 554.69206pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 221.
+
+
+Package xcolor Warning: Incompatible color definition on input line 222.
+
 <../figures/histograms/2D_error_distribtion.pdf, id=695, 252.945pt x 216.81pt>
 File: ../figures/histograms/2D_error_distribtion.pdf Graphic file (type pdf)
 <use ../figures/histograms/2D_error_distribtion.pdf>
 Package pdftex.def Info: ../figures/histograms/2D_error_distribtion.pdf  used o
 n input line 233.
 (pdftex.def)             Requested size: 242.67355pt x 208.0095pt.
-
 
 Package xcolor Warning: Incompatible color definition on input line 234.
 
@@ -1378,9 +1368,42 @@ Package xcolor Warning: Incompatible color definition on input line 234.
 
 Package xcolor Warning: Incompatible color definition on input line 238.
 
+<../figures/power_breakdown/resource_utilization.pdf, id=696, 252.945pt x 108.4
+05pt>
+File: ../figures/power_breakdown/resource_utilization.pdf Graphic file (type pd
+f)
+<use ../figures/power_breakdown/resource_utilization.pdf>
+Package pdftex.def Info: ../figures/power_breakdown/resource_utilization.pdf  u
+sed on input line 246.
+(pdftex.def)             Requested size: 242.67355pt x 104.00475pt.
+
+Package xcolor Warning: Incompatible color definition on input line 247.
+
+
+Package xcolor Warning: Incompatible color definition on input line 247.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../figures/power_breakdown/power_breakdown.pdf, id=697, 252.945pt x 115.632pt>
+
+File: ../figures/power_breakdown/power_breakdown.pdf Graphic file (type pdf)
+<use ../figures/power_breakdown/power_breakdown.pdf>
+Package pdftex.def Info: ../figures/power_breakdown/power_breakdown.pdf  used o
+n input line 253.
+(pdftex.def)             Requested size: 242.67355pt x 110.9384pt.
+
+Package xcolor Warning: Incompatible color definition on input line 254.
+
+
+Package xcolor Warning: Incompatible color definition on input line 254.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 243.
+Package pdftex.def Info: notaglinelogo.png  used on input line 259.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1397,41 +1420,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[13 <../figures/runtime/runtime.pdf> <../figures/histograms/2D_error_distribtio
-n.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ../figures/histograms/2D_error_distribt
-ion.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
-e
->]
-<../figures/power_breakdown/resource_utilization.pdf, id=1073, 252.945pt x 108.
-405pt>
-File: ../figures/power_breakdown/resource_utilization.pdf Graphic file (type pd
-f)
-<use ../figures/power_breakdown/resource_utilization.pdf>
-Package pdftex.def Info: ../figures/power_breakdown/resource_utilization.pdf  u
-sed on input line 246.
-(pdftex.def)             Requested size: 242.67355pt x 104.00475pt.
-
-
-Package xcolor Warning: Incompatible color definition on input line 247.
-
-
-Package xcolor Warning: Incompatible color definition on input line 247.
-
-<../figures/power_breakdown/power_breakdown.pdf, id=1074, 252.945pt x 115.632pt
->
-File: ../figures/power_breakdown/power_breakdown.pdf Graphic file (type pdf)
-<use ../figures/power_breakdown/power_breakdown.pdf>
-Package pdftex.def Info: ../figures/power_breakdown/power_breakdown.pdf  used o
-n input line 253.
-(pdftex.def)             Requested size: 242.67355pt x 110.9384pt.
-
-Package xcolor Warning: Incompatible color definition on input line 254.
-
-
-Package xcolor Warning: Incompatible color definition on input line 254.
-
+[13 <../figures/runtime/runtime.pdf>]
 
 Package xcolor Warning: Incompatible color definition on input line 262.
 
@@ -1451,7 +1440,7 @@ Package xcolor Warning: Incompatible color definition on input line 2.
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 49.
+Package pdftex.def Info: notaglinelogo.png  used on input line 34.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1468,16 +1457,21 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[14 <../figures/power_breakdown/resource_utilization.pdf> <../figures/power_bre
-akdown/power_breakdown.pdf
+[14 <../figures/histograms/2D_error_distribtion.pdf> <../figures/power_breakdow
+n/resource_utilization.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ../figures/power_breakdown/resource_uti
+lization.pdf): PDF inclusion: multiple pdfs with page group included in a singl
+e page
+> <../figures/power_breakdown/power_breakdown.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ../figures/power_breakdown/power_breakd
 own.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
 e
->]) (../biography/biography.tex
+>]
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 1.
+Package pdftex.def Info: notaglinelogo.png  used on input line 219.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1494,7 +1488,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[15]
+[15]) (../biography/biography.tex
 <../biography/yarib_300_375.jpg, id=1099, 301.125pt x 376.40625pt>
 File: ../biography/yarib_300_375.jpg Graphic file (type jpg)
 <use ../biography/yarib_300_375.jpg>
@@ -1644,11 +1638,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7782 strings out of 481239
- 119741 string characters out of 5920378
- 399797 words of memory out of 5000000
- 22791 multiletter control sequences out of 15000+600000
- 637630 words of font info for 149 fonts, out of 8000000 for 9000
+ 7783 strings out of 481239
+ 119753 string characters out of 5920378
+ 400797 words of memory out of 5000000
+ 22792 multiletter control sequences out of 15000+600000
+ 639274 words of font info for 150 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,13n,55p,1776b,871s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1667,7 +1661,7 @@ fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (17 pages, 3460533 bytes).
+Output written on main.pdf (17 pages, 3460876 bytes).
 PDF statistics:
  1193 PDF objects out of 1200 (max. 8388607)
  360 compressed objects within 4 object streams
