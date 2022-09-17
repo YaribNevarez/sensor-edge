@@ -100,23 +100,29 @@ The final model achieves $MSE=\unit[0.0122]{m^2}$, which corresponds to $MAE=\un
 \end{figure}
 
 \subsubsection{TensorFlow Lite 8-bit quantization}
-This integer quantization is an optimization method that converts 32-bit FP numbers (such as weights and activations) to 8-bit fixed-point numbers. This quantization scheme allows inference to be carried out using integer-only arithmetic\cite{hannwindowsine}.
+This optimization method converts filter and bias tensors as well as activation maps to 8-bit integer representation, this allows inference using integer-only arithmetic\cite{hannwindowsine}. In this research, this quantization is applied only to the convolution layers as they are the compute bound operations. Other layers employ 32-bit FP representation.
 
-The base model is quantized using the TensorFlow Lite library with integer-only quantization settings. The filter and bias tensors are represented by 8-bit and 32-bit signed integers, respectively. The input and output activation tensors are represented by 8-bit signed integer. For convolution layers, this quantization includes two additional tensor coefficients (output-multiplier and output-shift). These tensors are the same shape as the bias tensor and represented by 32-bit signed integers as well.
+In the compute graph, the imput and output feature maps are glued with linear quantization at the input and output of the \emph{Conv2D} operations.
 
-The fixed-point model achieves $MSE=\unit[0.0122]{m^2}$ and $MAE=\unit[0.0952]{m}$. See \fig{fig:model_evaluation}(b). The MAE obtains a reduction of 0.31\% compared to the base model. We attribute this to the regularization effect.
+The base model is quantized using the TensorFlow Lite library with integer-only quantization on the \emph{Conv2D} tensor operations. The filter and bias tensors are represented by 8-bit and 32-bit signed integers, respectively. The input and output activation maps are represented by 8-bit signed integer. The TensorFlow quantization includes two additional vectors (output-multiplier and output-shift coefficients), these two vectors are the same shape as the bias vector with 32-bit integer representation.
 
-\subsubsection{Quantization Aware Training for Hybrid-Float6}
-The QAT is a post-training step. We run this method during two epochs with mini-batch size of 10 samples with 4-bit exponent and 1-bit mantissa as parameters. This is applied using the method described in \Algo{alg:quantization_integration} with $N_{ep}=2$, $B_{size}=10$, $E_{size}=4$, $M_{size}=1$.
+This model achieves $MSE=\unit[0.0126]{m^2}$ and $MAE=\unit[0.0992]{m}$. See \fig{fig:model_evaluation}(b). The MAE increases 5.1\% of the base model. We attribute this degradation to the 8-bit quantization on the \emph{Conv2D} layers.
 
-The QAT is illustrated in \fig{fig:optimization}(b). First, the model gets quantized with HF6 format before starting QAT, this obtains $MSE=\unit[0.0188]{m^2}$ and $MAE=\unit[0.1232]{m}$. This illustrates the inference of the base FP model (without QAT) on HF6 hardware. See \fig{fig:model_evaluation}(c). Then, after QAT, the final model achieves $MSE=\unit[0.0112]{m^2}$ and $MAE=\unit[0.0919]{m}$. This corresponds to an error reduction of 8.2\% and 3.77\%, respectively. See \fig{fig:model_evaluation}(d). The QAT time is 185 minutes.
+\subsubsection{Inference of non-quantized models on HF6 hardware}
+We explore the inference of the base model without quantization on the HF6 hardware. See \fig{fig:model_evaluation}(c). This obtains $MSE=\unit[0.0188]{m^2}$ and $MAE=\unit[0.1232]{m}$. The MAE increases 29.5\% of the base model. We attribute this degradation to the rounding errors of non-quantized filters and bias in \emph{Conv2D} layers.
+
+\subsubsection{Quantization Aware Training for HF6 hardware}
+The QAT is a post-training optimization. We run the QAT during two epochs with mini-batch size of 10 samples. This a custom floating-point quantization  targeting the HF6 format: 4-bit exponent and 1-bit mantissa. This is applied to filter and bias tensors of \emph{Conv2D} layers. This method is described in \Algo{alg:quantization_integration} with $N_{ep}=2$, $B_{size}=10$, $E_{size}=4$, $M_{size}=1$. The optimization results are illustrated in \fig{fig:optimization}(b).
+
+The resulting model achieves $MSE=\unit[0.0112]{m^2}$ and $MAE=\unit[0.0919]{m}$. This corresponds to an error reduction of 8.2\% and 3.77\%, respectively. We attribute this improvement to the regularization effect. See \fig{fig:model_evaluation}(d). The QAT time is 185 minutes.
+
 
 \subsubsection{Quantization Aware Training for Hybrid-Logarithmic 6-bit}
-For the sake of quality comparison, we generate the model with 6-bit logarithmic quantization on convolution parameters, see \fig{fig:floating}(e). This quantization matches the bit size of HF6. We run the QAT on the base model with hybrid logarithmic parameters. Then, the filter and bias tensors of convolution layers are represented by 6-bit signed logarithmic. This is applied using the method described in \Algo{alg:quantization_integration} with $N_{ep}=2$, $B_{size}=10$, $E_{size}=5$, $M_{size}=0$.
+For the sake of quality comparison with logarithmic quantization, we generate the model with 6-bit logarithmic representation on trainable parameters of convolution layers. See \fig{fig:floating}(e). This quantization matches the bit size of HF6. The filter and bias tensors of \emph{Conv2D} layers are quantized with the 6-bit logarithmic format: 1-bit sign, 5-bit signed exponent, and 0-bit mantissa. This is applied using the method described in \Algo{alg:quantization_integration} with $N_{ep}=2$, $B_{size}=10$, $E_{size}=5$, $M_{size}=0$.
 
-In this case, the model gets quality degradation. The model reaches $MSE=\unit[0.0123]{m^2}$ and $MAE=\unit[0.0968]{m}$, which correspond to an error increase of 0.82\% and 1.36\%, respectively. See \fig{fig:model_evaluation}(e).
+The model achieves $MSE=\unit[0.0123]{m^2}$ and $MAE=\unit[0.0968]{m}$, which correspond to an error increase of 0.82\% and 1.36\%, respectively. We attribute this degradation to the 6-bit logarithmic quantization. See \fig{fig:model_evaluation}(e). 
 
-A summary of inference with different data representations is presented in \fig{fig:model_evaluation}(f).
+A summary of improvement-degradation of inference with different data representations is presented in \fig{fig:model_evaluation}(f).
 
 \subsection{Hardware Design Exploration}
 The proposed hardware/software co-design is demonstrated on the Zynq-7007S system-on-chip (SoC) on the MiniZed development board. This SoC integrates a single ARM Cortex-A9 processing system (PS) and a programmable logic (PL) equivalent to Xilinx Artix-7 (FPGA) in a single chip \cite{xilinx2015zynq}. The Zynq-7007S SoC architecture maps the custom logic and software in the PL and PS, respectively.
