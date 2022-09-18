@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.3)  18 SEP 2022 14:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.3)  18 SEP 2022 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1521,40 +1521,27 @@ File: ../biography/Beering_bw_klein.jpeg Graphic file (type jpg)
 Package pdftex.def Info: ../biography/Beering_bw_klein.jpeg  used on input line
  7.
 (pdftex.def)             Requested size: 72.26715pt x 90.22575pt.
-<../biography/person.png, id=1110, 192.72pt x 192.72pt>
-File: ../biography/person.png Graphic file (type png)
-<use ../biography/person.png>
-Package pdftex.def Info: ../biography/person.png  used on input line 11.
-(pdftex.def)             Requested size: 72.2698pt x 72.2698pt.
-File: ../biography/person.png Graphic file (type png)
-<use ../biography/person.png>
-Package pdftex.def Info: ../biography/person.png  used on input line 11.
-(pdftex.def)             Requested size: 72.2698pt x 72.2698pt.
-File: ../biography/person.png Graphic file (type png)
-<use ../biography/person.png>
-Package pdftex.def Info: ../biography/person.png  used on input line 14.
-(pdftex.def)             Requested size: 72.2698pt x 72.2698pt.
-File: ../biography/person.png Graphic file (type png)
-<use ../biography/person.png>
-Package pdftex.def Info: ../biography/person.png  used on input line 14.
-(pdftex.def)             Requested size: 72.2698pt x 72.2698pt.
-<../biography/wyu.jpg, id=1115, 489.83pt x 583.17876pt>
-File: ../biography/wyu.jpg Graphic file (type jpg)
-<use ../biography/wyu.jpg>
-Package pdftex.def Info: ../biography/wyu.jpg  used on input line 17.
-(pdftex.def)             Requested size: 72.26797pt x 86.04036pt.
-File: ../biography/wyu.jpg Graphic file (type jpg)
-<use ../biography/wyu.jpg>
-Package pdftex.def Info: ../biography/wyu.jpg  used on input line 17.
-(pdftex.def)             Requested size: 72.26797pt x 86.04036pt.
-
-Underfull \hbox (badness 1629) in paragraph at lines 17--22
-[]\T1/ptm/n/n/8 He is cur-rently a Post-Doctoral Re-searcher
- []
-
+<../biography/amir.png, id=1110, 301.125pt x 376.40625pt>
+File: ../biography/amir.png Graphic file (type png)
+<use ../biography/amir.png>
+Package pdftex.def Info: ../biography/amir.png  used on input line 11.
+(pdftex.def)             Requested size: 72.26688pt x 90.33359pt.
+File: ../biography/amir.png Graphic file (type png)
+<use ../biography/amir.png>
+Package pdftex.def Info: ../biography/amir.png  used on input line 11.
+(pdftex.def)             Requested size: 72.26688pt x 90.33359pt.
+<../biography/Ardalan.jpeg, id=1113, 240.9pt x 278.03876pt>
+File: ../biography/Ardalan.jpeg Graphic file (type jpg)
+<use ../biography/Ardalan.jpeg>
+Package pdftex.def Info: ../biography/Ardalan.jpeg  used on input line 14.
+(pdftex.def)             Requested size: 72.26688pt x 83.40802pt.
+File: ../biography/Ardalan.jpeg Graphic file (type jpg)
+<use ../biography/Ardalan.jpeg>
+Package pdftex.def Info: ../biography/Ardalan.jpeg  used on input line 14.
+(pdftex.def)             Requested size: 72.26688pt x 83.40802pt.
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 22.
+Package pdftex.def Info: notaglinelogo.png  used on input line 17.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1572,7 +1559,21 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [16 <../biography/yarib_300_375.jpg> <../biography/Beering_bw_klein.jpeg> <../b
-iography/person.png>]
+iography/Amir.png (PNG copy)> <../biography/Ardalan.jpeg>]
+<../biography/wyu.jpg, id=1123, 489.83pt x 583.17876pt>
+File: ../biography/wyu.jpg Graphic file (type jpg)
+<use ../biography/wyu.jpg>
+Package pdftex.def Info: ../biography/wyu.jpg  used on input line 17.
+(pdftex.def)             Requested size: 72.26797pt x 86.04036pt.
+File: ../biography/wyu.jpg Graphic file (type jpg)
+<use ../biography/wyu.jpg>
+Package pdftex.def Info: ../biography/wyu.jpg  used on input line 17.
+(pdftex.def)             Requested size: 72.26797pt x 86.04036pt.
+
+Underfull \hbox (badness 1629) in paragraph at lines 17--22
+[]\T1/ptm/n/n/8 He is cur-rently a Post-Doctoral Re-searcher
+ []
+
 <../biography/YizhiChen.jpg, id=1126, 168.63pt x 240.9pt>
 File: ../biography/YizhiChen.jpg Graphic file (type jpg)
 <use ../biography/YizhiChen.jpg>
@@ -1649,10 +1650,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7782 strings out of 481239
- 119741 string characters out of 5920378
+ 7788 strings out of 481239
+ 119884 string characters out of 5920378
  400797 words of memory out of 5000000
- 22791 multiletter control sequences out of 15000+600000
+ 22796 multiletter control sequences out of 15000+600000
  637630 words of font info for 149 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,13n,55p,1776b,871s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1672,10 +1673,10 @@ fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (17 pages, 3454881 bytes).
+Output written on main.pdf (17 pages, 3554446 bytes).
 PDF statistics:
  1198 PDF objects out of 1200 (max. 8388607)
  363 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 250 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 255 words of extra memory for PDF output out of 10000 (max. 10000000)
 
