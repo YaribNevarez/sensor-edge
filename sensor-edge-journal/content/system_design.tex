@@ -104,7 +104,7 @@ C_{O}=\frac{TP_{M}-V_{M}-K_{H}W_{I}C_{I}BitSize_{I}}{C_{I}K_{W}K_{H}BitSize_{F}+
 The floating-point formats implemented in the TP are defined by $BitSize_F$, $BitSize_B$ and $BitSize_I$. The HF6 defines 6-bit for $BitSize_F$ and $BitSize_B$, and 32-bit for $BitSize_I$. These are design parameters defined before hardware synthesis. This allows fine control of BRAM utilization, which is suitable for resource-limited devices.
 
 \subsection{Training Method}
-The training method consists of two separate stages: (1) training with iterative early stop and (2) quantization aware training.
+The training method consists of two separate stages: (1) training with iterative early stop and (2) quantization-aware training.
  
 \subsubsection{Training with Iterative Early Stop}
 To achieve better performance on CNN-regression models, we implement a training procedure with an iterative early stop cycle. This allows to reach better local minima. This process consists of four steps:
@@ -118,8 +118,8 @@ To achieve better performance on CNN-regression models, we implement a training 
 
 This method is described in \Algo{alg:training}.
 
-\subsubsection{Quantization Aware Training}
-The quantization aware training (QAT) method is integrated into the training process, this operates as a callback on each mini-batch update. The quantization is applied on the trainable parameters of convolution layers. This method is implemented on the ML framework (TensorFlow/Keras), see \Algo{alg:quantization_integration}.
+\subsubsection{Quantization-Aware Training}
+The quantization-aware training (QAT) method is integrated into the training process, this operates as a callback on each mini-batch update. The quantization is applied on the trainable parameters of convolution layers. This method is implemented on the ML framework (TensorFlow/Keras), see \Algo{alg:quantization_integration}.
 
 The quantization method uses rounding strategy to reduce the FP representation. This maps the full precision FP values to the closest representable 6-bit FP values, see \Algo{alg:quantize_training}. This method quantizes the filter and bias tensors of the convolution layers. We have observed that the exponent bit size plays a more predominant influence on the model accuracy than the mantissa bit size. In \cite{lai2017deep}, Lai et al. demonstrated that 4-bit exponent and X-bit mantissa is adequate and consistent across different networks (SqueezeNet, AlexNet, GoogLeNet, VGG-16). In this work, we investigate 4-bit exponent and 1-bit mantissa.
 
