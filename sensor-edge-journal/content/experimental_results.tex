@@ -8,10 +8,10 @@ To demonstrate the proposed concept, we deploy the CNN model in the smallest Zyn
 The analytics model is designed to predict x- y- coordinates of acoustic emissions on a metal plate. The metal plate is in the presence of noise disturbance to simulate realistic conditions. In this subsection, we present the structure for experimental setup, data sets, and the CNN-regression model.
 
 \subsubsection{Experimental Setup}
-The experiment uses eight piezoelectric sensors (Vallen Systeme VS900) attached with magnetic holders on a metal plate (90 cm x 86.6 cm x 0.3 cm). The VS900 devices can operate either in active or passive mode. Six VS900 are used in passive mode as acoustic sensors and two in active mode to produce acoustic emissions. These acoustic emissions simulate anomalies on x- y- coordinates as well as the noise disturbance on the system. See \fig{fig:data_set}(a). To create data sets, the samples of acoustic emissions are labeled with their coordinates.
+The experiment uses eight piezoelectric sensors (Vallen Systeme VS900) attached with magnetic holders on a metal plate ($\unit[90]{cm}\times\unit[86.6]{cm}\times\unit[0.3]{cm}$). The VS900 devices can operate either in active or passive mode. Six VS900 are used in passive mode as acoustic sensors and two in active mode to produce acoustic emissions. These acoustic emissions simulate anomalies on x- y- coordinates as well as the noise disturbance on the system. See \fig{fig:data_set}(a). To create data sets, the samples of acoustic emissions are labeled with their coordinates.
 
 \subsubsection{Data Sets}
-The data sets are recorded applying pulses on the metal plate, the x- y- coordinates of these pulses are used as labels. The pulses for training and validation data sets are shown in \fig{fig:data_set}(b) and \fig{fig:data_set}(c), respectively. The pulses for training and validation data sets are mutually exclusive, this exclusion is represented by the cross symbols in \fig{fig:data_set}(c). This creates a grid layout used to collect samples for the data sets. This grid is $10\times10$. This grid does not consider the four corners as they are used for magnetic holders.
+The data sets are recorded applying pulses on the metal plate, the x- y- coordinates of these pulses are used as labels. The pulses for training and validation data sets are shown in \fig{fig:data_set}(b) and \fig{fig:data_set}(c), respectively. The pulses for training and validation data sets are mutually exclusive, this exclusion is represented by the cross symbols in \fig{fig:data_set}(c). This creates a grid layout used to collect samples for the data sets. This grid is $10\times10$ \REVIEW{divisions, these are on the metal plate area ($\unit[90]{cm}\times\unit[86.6]{cm}$)}. This grid does not consider the four corners as they are used for magnetic holders.
 
 \begin{figure}[t!]
 	\centering
@@ -102,7 +102,7 @@ The final model achieves $MSE=\unit[0.0122]{m^2}$, which corresponds to $MAE=\un
 \subsubsection{TensorFlow Lite 8-bit Quantization}
 This optimization method converts filter and bias tensors as well as activation maps to 8-bit integer representation, this allows inference using integer-only arithmetic\cite{hannwindowsine}. In this research, this quantization is applied only to the convolution layers as they are the compute bound operations. Other layers employ 32-bit FP representation.
 
-In the compute graph, the imput and output feature maps are glued with linear quantization at the input and output of the \emph{Conv2D} operations.
+In the compute graph, the \REVIEW{input} and output feature maps are glued with linear quantization at the input and output of the \emph{Conv2D} operations.
 
 The base model is quantized using the TensorFlow Lite library with integer-only quantization on the \emph{Conv2D} tensor operations. The filter and bias tensors are represented by 8-bit and 32-bit signed integers, respectively. The input and output activation maps are represented by 8-bit signed integer. The TensorFlow quantization includes two additional vectors (output-multiplier and output-shift coefficients), these two vectors are the same shape as the bias vector with 32-bit integer representation.
 
@@ -280,6 +280,8 @@ In this research, we foresee two lines of future work:
 \item \textbf{To reduce energy consumption.} Activation maps can be represented by Bfloat16 and 8-bit custom floating-point. This would reduce hardware resource utilization, memory footprint, and data transfer while preserving accuracy.
 
 \item \textbf{To increase performance.} This implementation would require matching computational throughput with memory bandwidth using systolic arrays. This would replace the light-weight pipeline hardware design with a parallelized structure. This requires larger hardware area and energy consumption.
+
+\item \REVIEW{\textbf{To use in computer vision applications.} This implementation would require higher on-chip memory capacity for filter and bias vectors as well as parallel hardware structures. This requires larger hardware area and energy consumption.}
 \end{itemize}
 
 \begin{table*}[!t]\centering

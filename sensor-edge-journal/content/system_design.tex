@@ -3,7 +3,7 @@
 The system design is a hardware/software co-design framework for low-power ML analytics. This architecture allows design exploration for dedicated hardware in embedded systems. For ML compatibility, the proposed framework integrates TensorFlow Lite micro.
 
 \subsection{Base embedded system architecture}
-The embedded system architecture consists of a cooperative hardware-software platform. See \Fig{fig:system_architecture}. The embedded CPU delegates low-level compute-bound tensor operations to the TPs. The TPs employ AXI-Lite interface for configuration and AXI-Stream interfaces via Direct Memory Access (DMA) for data movement from of-chip memory. Each TP and DMA pair asserts interrupt flags once its compute job/transaction completes. Interrupt events are handled by the embedded CPU to use the results and to start a new compute job/transaction. The hardware architecture can vary its resource utilization by customizing the TPs prior to the hardware synthesis.
+The embedded system architecture consists of a cooperative hardware-software platform. See \Fig{fig:system_architecture}. The embedded CPU delegates low-level compute-bound tensor operations to the TPs. The TPs employ AXI-Lite interface for configuration and AXI-Stream interfaces via Direct Memory Access (DMA) for data movement from \REVIEW{off-chip} memory. Each TP and DMA pair asserts interrupt flags once its compute job/transaction completes. Interrupt events are handled by the embedded CPU to use the results and to start a new compute job/transaction. The hardware architecture can vary its resource utilization by customizing the TPs prior to the hardware synthesis.
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{../figures/system_design.pdf}
@@ -28,7 +28,7 @@ The TP has two modes of operation: \emph{configuration} and \emph{execution}.
 \end{itemize}
 \subsubsection{\textbf{Dot-product with hybrid floating-point}}
 \label{sec:dot_product}
-We implement the floating-point computation adopting the dot-product with hybrid custom floating-point\cite{nevarez2021accelerating}. The hardware dot-product is illustrated in \Fig{fig:dot_product} and \Fig{fig:dot_product_loop}(a). This design instantiates an HF6 MAC and an accumulator register of 64-bit fixed-point with 23-bit fraction. During operation, the feature map and filter values are extracted from on-chip memory (BRAM). Both values have to be different than zero to enable the MAC operation. The result is biased by accumulating a denormalized bias value. Since the bias is stored with 6-bit FP, its fractional part has to be aligned with the 23-bit fraction of the accumulator, see \Fig{fig:dot_product_loop}(b). The ReLu activation is applied and the result is normalized to convert it to IEEE 754 standard FP, see \Fig{fig:dot_product_loop}(c).
+We implement the floating-point computation adopting the dot-product with hybrid custom floating-point\cite{nevarez2021accelerating}. The hardware dot-product is illustrated in \Fig{fig:dot_product} and \Fig{fig:dot_product_loop}(a). This design instantiates an HF6 MAC \REVIEW{with an internal} accumulator register of 64-bit fixed-point with 23-bit fraction. During operation, the feature map and filter values are extracted from on-chip memory (BRAM). Both values have to be different than zero to enable the MAC operation. The result is biased by accumulating a denormalized bias value. Since the bias is stored with 6-bit FP, its fractional part has to be aligned with the 23-bit fraction of the accumulator, see \Fig{fig:dot_product_loop}(b). The ReLu activation is applied \REVIEW{to the accumulator} and the result is normalized to convert it to IEEE 754 standard FP, see \Fig{fig:dot_product_loop}(c).
 
 Rather than a parallelized hardware structure, this is a pipelined hardware design suitable for resource-limited devices. The latency in clock cycles of this hardware module is defined by \equ{eq:dot_custom_float_latency}, where $N$ is the length for the vector dot-product. This latency equation is obtained from the general pipelined hardware latency formula: $L=\left(N-1\right)II+IL$, where $II$ is the initiation interval, and $IL$ is the iteration latency. Both $II$ and $IL$ are obtained from the high-level synthesis results. Both the exponent and mantissa bit widths of the filter and bias are set to 4-bit exponent and 1-bit mantissa (E4M1), which corresponds to float6 quantization.
 
@@ -232,8 +232,16 @@ The quantization method uses rounding strategy to reduce the FP representation. 
 	\caption{High level embedded software architecture.}
 	\label{fig:sw_stack}
 \end{figure}
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{../figures/sw_stack_flowchart.pdf}
+	\caption{Software flowchart.}
+	\label{fig:sw_stack_flowchart}
+\end{figure}
+
 \subsection{Embedded software architecture}
-The software architecture is a layered object-oriented application framework written in C++, see \fig{fig:sw_stack}. Description of the software layers is as follows:
+The software architecture is a layered object-oriented application framework written in C++, see \fig{fig:sw_stack}\REVIEW{ and \mbox{\fig{fig:sw_stack_flowchart}}}. Description of the software layers is as follows:
 \begin{itemize}
 	\item \emph{Application}: As the highest level of abstraction, this software layer implements the analytics application, this invokes the ML library.
 	\item \emph{Machine learning library}: This software layer offers a comprehensive high level API for ML inference. This layer consist of TensorFlow Lite micro, this is modified to implement the delegate software interfaces for the proposed hardware accelerator.
