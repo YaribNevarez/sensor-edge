@@ -274,14 +274,14 @@ The proposed design is an alternative for high accuracy and low-power floating-p
 
 The hybrid 32-bit FP and 6-bit FP quantization enables high quality of results and backward ML compatibility. Backwards ML compatibility gives portability from training to inference. This enables to run inference of HF6 quantized models on standard FP hardware and vise versa. The proposed HF6 architecture allows to compute inference of non-quantized floating-point ML models for rapid deployment; however, this will incur in accuracy degradation depending on the resilience of the model, see \Fig{fig:model_evaluation}(c).
 
-\subsubsection{Future Work}
-In this research, we foresee two lines of future work:
+\subsubsection{Limitations and Directions for Future Work}
+In this research, we foresee three lines of future work:
 \begin{itemize}
-\item \textbf{To reduce energy consumption.} Activation maps can be represented by Bfloat16 and 8-bit custom floating-point. This would reduce hardware resource utilization, memory footprint, and data transfer while preserving accuracy.
+\item \textbf{To reduce energy consumption.} The proposed architecture consists of a hybrid floating-point quantization using 32-bit activation maps. These can be represented using lower-bit formats; for example, Bfloat16 and 8-bit or lower custom floating-point. This would reduce hardware resource utilization, memory footprint and data transfer, while preserving backward compatibility and accuracy (based on the dynamic value range of custom floating-point formats).
 
-\item \textbf{To increase performance.} This implementation would require matching computational throughput with memory bandwidth using systolic arrays. This would replace the light-weight pipeline hardware design with a parallelized structure. This requires larger hardware area and energy consumption.
+\item \textbf{To increase performance.} This implementation requires matching higher computational throughput with memory bandwidth. This would replace the light-weight pipeline hardware design with a parallelized structure. This will increase hardware area and energy consumption. This can be achieved by using wider memory channels and systolic arrays to increase throughput.
 
-\item \REVIEW{\textbf{To use in computer vision applications.} This implementation would require higher on-chip memory capacity for filter and bias vectors as well as parallel hardware structures. This requires larger hardware area and energy consumption.}
+\item \REVIEW{\textbf{To use in computer vision applications.} This implementation is designed for sensor analytics workloads. For computer vision applications, the hardware design would require increased on-chip memory capacity for larger bias and filter vectors (using equations from Section \ref{sec:memory_utilization}), and higher computational throughput in a larger FPGA SoC.}
 \end{itemize}
 
 \begin{table*}[!t]\centering
